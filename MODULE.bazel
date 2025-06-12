@@ -1,0 +1,10 @@
+module(name = "monorepo", version = "0.1")
+
+local_path_override(module_name = "code_repo", path = "code/")
+bazel_dep(name = "code_repo", version = "0.1")
+
+local_path_override(module_name = "toolchains", path = "toolchains/")
+bazel_dep(name = "toolchains", version = "0.1")
+
+local_path_override(module_name = "mplab_xc8_compiler", path = "mplab_xc8_compiler/")
+bazel_dep(name = "mplab_xc8_compiler", version = "0.1")

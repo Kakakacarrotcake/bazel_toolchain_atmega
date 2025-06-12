@@ -1,0 +1,1 @@
+module(name = "mplab_xc8_compiler", version = "0.1")

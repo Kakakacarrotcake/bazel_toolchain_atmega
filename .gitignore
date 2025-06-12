@@ -1,0 +1,4 @@
+bazel-bin
+bazel-gtest_atmega_328
+bazel-out
+bazel-testlogs

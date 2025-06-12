@@ -1,0 +1,21 @@
+package(default_visibility = ["//visibility:public"])
+
+filegroup(
+    name = "xc8_compiler",
+    srcs = [
+        # "bin/xc8-cc",
+        "bin/xc8-clangd"
+    ],
+)
+filegroup(name = "ar", srcs = ["bin/xc8-ar"])
+filegroup(name = "objdump", srcs = ["bin/avr-objdump"])
+filegroup(name = "objcopy", srcs = ["bin/avr-objcopy"])
+filegroup(name = "ccov", srcs = ["bin/xc-ccov"])
+filegroup(name = "lm", srcs = ["bin/xc-lm"])
+filegroup(name = "ld", srcs = ["bin/avr/bin/avr-ld"])
+# filegroup(name = "ar", srcs = ["bin/avr/bin/avr-ar"])
+filegroup(name = "cpp", srcs = ["bin/avr/bin/avr-cpp"])
+filegroup(name = "gcov", srcs = ["bin/avr/bin/avr-gcov"])
+filegroup(name = "strip", srcs = ["bin/avr/bin/avr-strip"])
+filegroup(name = "nm", srcs = ["bin/avr/bin/avr-nm"])
+

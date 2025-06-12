@@ -1,0 +1,33 @@
+
+
+cc_binary(
+    name = "main",
+    srcs = [
+        "src/main.cpp"
+    ],
+    deps = [
+        ":math"
+    ]
+)
+
+cc_library(
+    name = "math",
+    srcs = [
+        "src/math.cpp",
+    ],
+    hdrs = [
+        "hdr/math.hpp"
+    ],
+)
+
+cc_test(
+    name = "test_math",
+    srcs = [
+        "test/test_math.cpp"
+    ],
+    deps = [
+        "@googletest//:gtest",
+        "@googletest//:gtest_main",
+        ":math"
+    ]
+)

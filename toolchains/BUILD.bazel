@@ -1,0 +1,114 @@
+load("//:linux_x86_64_toolchain_config_info.bzl", "linux_x86_64_toolchain_config_info")
+
+constraint_value(
+    name = "bare_metal",
+    constraint_setting = "@platforms//os"
+)
+
+constraint_value(
+    name = "atmega-328",
+    constraint_setting = "@platforms//cpu"
+)
+
+platform(
+    name = "bare_metal_atmega_328",
+    constraint_values = [
+        ":bare_metal",
+        ":atmega-328"
+    ]
+)
+
+platform(
+    name = "linux_x86_64",
+    constraint_values = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64"
+    ]
+)
+
+linux_x86_64_toolchain_config_info(name = "linux_x86_64_toolchain_config_info")
+
+
+filegroup(name = "empty")
+cc_toolchain(
+    name = "linux_x86_64_toolchain",
+    toolchain_identifier = "linux_x86_64_toolchain",
+    toolchain_config = "linux_x86_64_toolchain_config_info",
+    all_files = ":empty",
+    compiler_files = ":empty",
+    dwp_files = ":empty",
+    linker_files = ":empty",
+    objcopy_files = ":empty",
+    strip_files = ":empty",
+)
+
+
+toolchain(
+    name = "cc_linux_x86_64_toolchain",
+    toolchain = "linux_x86_64_toolchain",
+    toolchain_type = "@bazel_tools//tools/cpp:toolchain_type",
+    exec_compatible_with = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64"
+    ],
+    target_compatible_with = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64"
+    ]
+)
+
+# ATmega328 toolchain
+load("//:bare_metal_atmega_328_toolchain_config_info.bzl", "bare_metal_atmega_328_toolchain_config_info")
+
+bare_metal_atmega_328_toolchain_config_info(
+    name = "bare_metal_atmega_328_toolchain_config_info",
+    tool_paths = [
+        "@mplab_xc8_compiler//:xc8_compiler",
+    ]
+)
+
+filegroup(
+    name = "all_files",
+    srcs = [
+        "@mplab_xc8_compiler//:xc8_compiler",
+        "@mplab_xc8_compiler//:ar",
+        "@mplab_xc8_compiler//:ccov",
+        "@mplab_xc8_compiler//:lm",
+        "@mplab_xc8_compiler//:objcopy",
+        "@mplab_xc8_compiler//:objdump",
+        "@mplab_xc8_compiler//:gcov",
+        "@mplab_xc8_compiler//:nm",
+        "@mplab_xc8_compiler//:strip",
+        "@mplab_xc8_compiler//:ld",
+        "@mplab_xc8_compiler//:cpp",
+    ]
+)
+
+
+cc_toolchain(
+    name = "bare_metal_atmega_328_toolchain",
+    toolchain_identifier = "bare_metal_atmega_328_toolchain",
+    toolchain_config = ":bare_metal_atmega_328_toolchain_config_info",
+    all_files = ":all_files",
+    compiler_files = "@mplab_xc8_compiler//:xc8_compiler",
+    dwp_files = ":empty",
+    linker_files = "@mplab_xc8_compiler//:ld",
+    objcopy_files = "@mplab_xc8_compiler//:objcopy",
+    strip_files = "@mplab_xc8_compiler//:strip",
+    coverage_files = "@mplab_xc8_compiler//:gcov",
+    ar_files = "@mplab_xc8_compiler//:ar"
+)
+
+toolchain(
+    name = "bare_metal_atmega_328_cc_toolchain",
+    toolchain = "bare_metal_atmega_328_toolchain",
+    toolchain_type = "@bazel_tools//tools/cpp:toolchain_type",
+    exec_compatible_with = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64"
+    ],
+    target_compatible_with = [
+        ":atmega-328",
+        ":bare_metal"
+    ]
+)
