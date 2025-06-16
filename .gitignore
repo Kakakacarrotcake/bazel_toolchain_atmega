@@ -2,3 +2,4 @@ bazel-bin
 bazel-gtest_atmega_328
 bazel-out
 bazel-testlogs
+mplab_xc8_compiler/v3.00
