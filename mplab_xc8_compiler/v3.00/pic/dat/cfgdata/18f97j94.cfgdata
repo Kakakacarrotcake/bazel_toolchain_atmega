@@ -1,0 +1,521 @@
+# Generated 05/12/2024 GMT
+
+# Copyright © 2024, Microchip Technology Inc. and its subsidiaries ("Microchip")
+# All rights reserved.
+# 
+# This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
+# 
+# Redistribution and use in source and binary forms, with or without modification, are
+# permitted provided that the following conditions are met:
+# 
+#     1. Redistributions of source code must retain the above copyright notice, this list of
+#        conditions and the following disclaimer.
+# 
+#     2. Redistributions in binary form must reproduce the above copyright notice, this list
+#        of conditions and the following disclaimer in the documentation and/or other
+#        materials provided with the distribution. Publication is not required when
+#        this file is used in an embedded application.
+# 
+#     3. Microchip's name may not be used to endorse or promote products derived from this
+#        software without specific prior written permission.
+# 
+# THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+# PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+# THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Microchip PIC18F97J94 Configuration Word Definitions
+
+# File Syntax:
+# Each configuration register is given as:
+# 
+#     CWORD:<address>:<mask>:<default value>[:<name>[,<alias list>]]
+# 
+# for each CWORD the configuration settings are listed as
+# 
+#     CSETTING:<mask>:<name>[,<alias list>]:<description>
+# 
+# lastly for each CSETTING all possible values are listed as
+# 
+#     CVALUE:<value>:<name>[,<alias list>]:<description>
+# 
+# All numerical values are given in unqualified hex.  In terms of
+# #pragma config, note the following correspondence:
+# 
+#    #pragma config CSETTING<name> = CVALUE<name>
+# 
+# The compiler may also emit a message when it detects certain programming.
+# This behaviour is defined by the following record
+# 
+#     CMSG:<CSETTING name>=<CVALUE name>[,...]:<message number>
+# 
+# If the compiler encounters the given programming then it will emit the
+# with the corresponding numnber.  Note that these records must appear last
+# in the file.
+# 
+# Comments are also permitted.  Any line beginning with a '#'
+# character will be treated as a comment.
+
+CWORD:1FFF0:E0:E0:CONFIG1L
+CSETTING:20:STVREN:Stack Overflow/Underflow Reset
+CVALUE:20:ON:Enabled
+CVALUE:0:OFF:Disabled
+CSETTING:40:XINST:Extended Instruction Set
+CVALUE:40:ON:Enabled
+CVALUE:0:OFF:Disabled
+CWORD:1FFF1:FF:F7:CONFIG1H
+CSETTING:1:BOREN:Brown-Out Reset Enable
+CVALUE:1:ON:Controlled with SBOREN bit, disabled in Deep Sleep
+CVALUE:0:OFF:Disabled in hardware
+CSETTING:2:BORV:Brown-out Reset Voltage
+CVALUE:2:1:1.8V
+CVALUE:0:0:2.0V
+CSETTING:4:CP0:Code Protect
+CVALUE:4:OFF:Program memory is not code-protected
+CVALUE:0:ON:Program memory is code-protected
+CWORD:1FFF2:AF:AF:CONFIG2L
+CSETTING:7:FOSC:Oscillator
+CVALUE:7:FRCDIV:Fast RC Oscillator with Postscaler (FRCDIV)
+CVALUE:6:FRC500KHZ:Fast RC Oscillator divided by 16 (500 kHz)
+CVALUE:5:LPRC:Low-Power RC Oscillator (LPRC)
+CVALUE:4:SOSC:Secondary Oscillator (SOSC)
+CVALUE:3:PRIPLL:Primary Oscillator with PLL module (XTPLL,HSPLL,ECPLL)
+CVALUE:2:PRI:Primary Oscillator (XT, HS, EC)
+CVALUE:1:FRCPLL:Fast RC Oscillator with PLL module (FRCPLL)
+CVALUE:0:FRC:Fast RC Oscillator (FRC)
+CSETTING:8:SOSCSEL:T1OSC/SOSC Power Selection Bits
+CVALUE:8:LOW:Low Power T1OSC/SOSC circuit selected
+CVALUE:0:DIG:Digital (SCLKI) mode
+CSETTING:20:CLKOEN:Clock Out Enable Bit
+CVALUE:20:ON:CLKO output enabled on the RA6 pin
+CVALUE:0:OFF:CLKO output disabled on the RA6 pin
+CSETTING:80:IESO:Internal External Oscillator Switch Over Mode
+CVALUE:80:ON:Enabled
+CVALUE:0:OFF:Disabled
+CWORD:1FFF3:FF:FF:CONFIG2H
+CSETTING:F:PLLDIV:PLL Frequency Multiplier Select bits
+CVALUE:F:NOPLL:No PLL used - PLLGO bit not available to user
+CVALUE:E:PLL8X:8x PLL selected
+CVALUE:D:PLL6X:6x PLL selected
+CVALUE:C:PLL4X:4x PLL selected
+CVALUE:7:DIV12:96 MHz PLL selected; Oscillator divided by 12 (48 MHz input)
+CVALUE:6:DIV10:96 MHz PLL selected; Oscillator divided by 10 (40 MHz input)
+CVALUE:5:DIV6:96 MHz PLL selected; Oscillator divided by 6 (24 MHz input)
+CVALUE:4:DIV5:96 MHz PLL selected; Oscillator divided by 5 (20 MHz input)
+CVALUE:3:DIV4:96 MHz PLL selected; Oscillator divided by 4 (16 MHz input)
+CVALUE:2:DIV3:96 MHz PLL selected; Oscillator divided by 3 (12 MHz input)
+CVALUE:1:DIV2:96 MHz PLL selected; Oscillator divided by 2 (8 MHz input)
+CVALUE:0:NODIV:96 MHz PLL selected; No divide - Oscillator used directly (4 MHz input)
+CWORD:1FFF4:33:33:CONFIG3L
+CSETTING:3:POSCMD:Primary Oscillator Select
+CVALUE:3:NONE:Primary oscillator disabled
+CVALUE:2:HS:HS oscillator mode selected(10 MHz - 40 MHz)
+CVALUE:1:MS:MS oscillator mode selected(3.5 MHz -10 MHz)
+CVALUE:0:EC:External clock mode selected
+CSETTING:30:FSCM:Clock Switching and Monitor Selection Configuration bits
+CVALUE:20:CSDCMD:Clock switching is disabled, fail safe clock monitor is disabled
+CVALUE:10:CSECMD:Clock switching is enabled, fail safe clock monitor is disabled
+CVALUE:0:CSECME:Clock switching is enabled, fail safe clock monitor is enabled
+CWORD:1FFF5:F0:F0:CONFIG3H
+CWORD:1FFF6:FF:FF:CONFIG4L
+CSETTING:FF:WPFP:Write/Erase Protect Page Start/End Boundary
+CVALUE:0:WPFP0:Write Protect Program Flash Page 0
+CVALUE:1:WPFP1:Write Protect Program Flash Page 1
+CVALUE:2:WPFP2:Write Protect Program Flash Page 2
+CVALUE:3:WPFP3:Write Protect Program Flash Page 3
+CVALUE:4:WPFP4:Write Protect Program Flash Page 4
+CVALUE:5:WPFP5:Write Protect Program Flash Page 5
+CVALUE:6:WPFP6:Write Protect Program Flash Page 6
+CVALUE:7:WPFP7:Write Protect Program Flash Page 7
+CVALUE:8:WPFP8:Write Protect Program Flash Page 8
+CVALUE:9:WPFP9:Write Protect Program Flash Page 9
+CVALUE:A:WPFP10:Write Protect Program Flash Page 10
+CVALUE:B:WPFP11:Write Protect Program Flash Page 11
+CVALUE:C:WPFP12:Write Protect Program Flash Page 12
+CVALUE:D:WPFP13:Write Protect Program Flash Page 13
+CVALUE:E:WPFP14:Write Protect Program Flash Page 14
+CVALUE:F:WPFP15:Write Protect Program Flash Page 15
+CVALUE:10:WPFP16:Write Protect Program Flash Page 16
+CVALUE:11:WPFP17:Write Protect Program Flash Page 17
+CVALUE:12:WPFP18:Write Protect Program Flash Page 18
+CVALUE:13:WPFP19:Write Protect Program Flash Page 19
+CVALUE:14:WPFP20:Write Protect Program Flash Page 20
+CVALUE:15:WPFP21:Write Protect Program Flash Page 21
+CVALUE:16:WPFP22:Write Protect Program Flash Page 22
+CVALUE:17:WPFP23:Write Protect Program Flash Page 23
+CVALUE:18:WPFP24:Write Protect Program Flash Page 24
+CVALUE:19:WPFP25:Write Protect Program Flash Page 25
+CVALUE:1A:WPFP26:Write Protect Program Flash Page 26
+CVALUE:1B:WPFP27:Write Protect Program Flash Page 27
+CVALUE:1C:WPFP28:Write Protect Program Flash Page 28
+CVALUE:1D:WPFP29:Write Protect Program Flash Page 29
+CVALUE:1E:WPFP30:Write Protect Program Flash Page 30
+CVALUE:1F:WPFP31:Write Protect Program Flash Page 31
+CVALUE:20:WPFP32:Write Protect Program Flash Page 32
+CVALUE:21:WPFP33:Write Protect Program Flash Page 33
+CVALUE:22:WPFP34:Write Protect Program Flash Page 34
+CVALUE:23:WPFP35:Write Protect Program Flash Page 35
+CVALUE:24:WPFP36:Write Protect Program Flash Page 36
+CVALUE:25:WPFP37:Write Protect Program Flash Page 37
+CVALUE:26:WPFP38:Write Protect Program Flash Page 38
+CVALUE:27:WPFP39:Write Protect Program Flash Page 39
+CVALUE:28:WPFP40:Write Protect Program Flash Page 40
+CVALUE:29:WPFP41:Write Protect Program Flash Page 41
+CVALUE:2A:WPFP42:Write Protect Program Flash Page 42
+CVALUE:2B:WPFP43:Write Protect Program Flash Page 43
+CVALUE:2C:WPFP44:Write Protect Program Flash Page 44
+CVALUE:2D:WPFP45:Write Protect Program Flash Page 45
+CVALUE:2E:WPFP46:Write Protect Program Flash Page 46
+CVALUE:2F:WPFP47:Write Protect Program Flash Page 47
+CVALUE:30:WPFP48:Write Protect Program Flash Page 48
+CVALUE:31:WPFP49:Write Protect Program Flash Page 49
+CVALUE:32:WPFP50:Write Protect Program Flash Page 50
+CVALUE:33:WPFP51:Write Protect Program Flash Page 51
+CVALUE:34:WPFP52:Write Protect Program Flash Page 52
+CVALUE:35:WPFP53:Write Protect Program Flash Page 53
+CVALUE:36:WPFP54:Write Protect Program Flash Page 54
+CVALUE:37:WPFP55:Write Protect Program Flash Page 55
+CVALUE:38:WPFP56:Write Protect Program Flash Page 56
+CVALUE:39:WPFP57:Write Protect Program Flash Page 57
+CVALUE:3A:WPFP58:Write Protect Program Flash Page 58
+CVALUE:3B:WPFP59:Write Protect Program Flash Page 59
+CVALUE:3C:WPFP60:Write Protect Program Flash Page 60
+CVALUE:3D:WPFP61:Write Protect Program Flash Page 61
+CVALUE:3E:WPFP62:Write Protect Program Flash Page 62
+CVALUE:3F:WPFP63:Write Protect Program Flash Page 63
+CVALUE:40:WPFP64:Write Protect Program Flash Page 64
+CVALUE:41:WPFP65:Write Protect Program Flash Page 65
+CVALUE:42:WPFP66:Write Protect Program Flash Page 66
+CVALUE:43:WPFP67:Write Protect Program Flash Page 67
+CVALUE:44:WPFP68:Write Protect Program Flash Page 68
+CVALUE:45:WPFP69:Write Protect Program Flash Page 69
+CVALUE:46:WPFP70:Write Protect Program Flash Page 70
+CVALUE:47:WPFP71:Write Protect Program Flash Page 71
+CVALUE:48:WPFP72:Write Protect Program Flash Page 72
+CVALUE:49:WPFP73:Write Protect Program Flash Page 73
+CVALUE:4A:WPFP74:Write Protect Program Flash Page 74
+CVALUE:4B:WPFP75:Write Protect Program Flash Page 75
+CVALUE:4C:WPFP76:Write Protect Program Flash Page 76
+CVALUE:4D:WPFP77:Write Protect Program Flash Page 77
+CVALUE:4E:WPFP78:Write Protect Program Flash Page 78
+CVALUE:4F:WPFP79:Write Protect Program Flash Page 79
+CVALUE:50:WPFP80:Write Protect Program Flash Page 80
+CVALUE:51:WPFP81:Write Protect Program Flash Page 81
+CVALUE:52:WPFP82:Write Protect Program Flash Page 82
+CVALUE:53:WPFP83:Write Protect Program Flash Page 83
+CVALUE:54:WPFP84:Write Protect Program Flash Page 84
+CVALUE:55:WPFP85:Write Protect Program Flash Page 85
+CVALUE:56:WPFP86:Write Protect Program Flash Page 86
+CVALUE:57:WPFP87:Write Protect Program Flash Page 87
+CVALUE:58:WPFP88:Write Protect Program Flash Page 88
+CVALUE:59:WPFP89:Write Protect Program Flash Page 89
+CVALUE:5A:WPFP90:Write Protect Program Flash Page 90
+CVALUE:5B:WPFP91:Write Protect Program Flash Page 91
+CVALUE:5C:WPFP92:Write Protect Program Flash Page 92
+CVALUE:5D:WPFP93:Write Protect Program Flash Page 93
+CVALUE:5E:WPFP94:Write Protect Program Flash Page 94
+CVALUE:5F:WPFP95:Write Protect Program Flash Page 95
+CVALUE:60:WPFP96:Write Protect Program Flash Page 96
+CVALUE:61:WPFP97:Write Protect Program Flash Page 97
+CVALUE:62:WPFP98:Write Protect Program Flash Page 98
+CVALUE:63:WPFP99:Write Protect Program Flash Page 99
+CVALUE:64:WPFP100:Write Protect Program Flash Page 100
+CVALUE:65:WPFP101:Write Protect Program Flash Page 101
+CVALUE:66:WPFP102:Write Protect Program Flash Page 102
+CVALUE:67:WPFP103:Write Protect Program Flash Page 103
+CVALUE:68:WPFP104:Write Protect Program Flash Page 104
+CVALUE:69:WPFP105:Write Protect Program Flash Page 105
+CVALUE:6A:WPFP106:Write Protect Program Flash Page 106
+CVALUE:6B:WPFP107:Write Protect Program Flash Page 107
+CVALUE:6C:WPFP108:Write Protect Program Flash Page 108
+CVALUE:6D:WPFP109:Write Protect Program Flash Page 109
+CVALUE:6E:WPFP110:Write Protect Program Flash Page 110
+CVALUE:6F:WPFP111:Write Protect Program Flash Page 111
+CVALUE:70:WPFP112:Write Protect Program Flash Page 112
+CVALUE:71:WPFP113:Write Protect Program Flash Page 113
+CVALUE:72:WPFP114:Write Protect Program Flash Page 114
+CVALUE:73:WPFP115:Write Protect Program Flash Page 115
+CVALUE:74:WPFP116:Write Protect Program Flash Page 116
+CVALUE:75:WPFP117:Write Protect Program Flash Page 117
+CVALUE:76:WPFP118:Write Protect Program Flash Page 118
+CVALUE:77:WPFP119:Write Protect Program Flash Page 119
+CVALUE:78:WPFP120:Write Protect Program Flash Page 120
+CVALUE:79:WPFP121:Write Protect Program Flash Page 121
+CVALUE:7A:WPFP122:Write Protect Program Flash Page 122
+CVALUE:7B:WPFP123:Write Protect Program Flash Page 123
+CVALUE:7C:WPFP124:Write Protect Program Flash Page 124
+CVALUE:7D:WPFP125:Write Protect Program Flash Page 125
+CVALUE:7E:WPFP126:Write Protect Program Flash Page 126
+CVALUE:7F:WPFP127:Write Protect Program Flash Page 127
+CVALUE:80:WPFP128:Write Protect Program Flash Page 128
+CVALUE:81:WPFP129:Write Protect Program Flash Page 129
+CVALUE:82:WPFP130:Write Protect Program Flash Page 130
+CVALUE:83:WPFP131:Write Protect Program Flash Page 131
+CVALUE:84:WPFP132:Write Protect Program Flash Page 132
+CVALUE:85:WPFP133:Write Protect Program Flash Page 133
+CVALUE:86:WPFP134:Write Protect Program Flash Page 134
+CVALUE:87:WPFP135:Write Protect Program Flash Page 135
+CVALUE:88:WPFP136:Write Protect Program Flash Page 136
+CVALUE:89:WPFP137:Write Protect Program Flash Page 137
+CVALUE:8A:WPFP138:Write Protect Program Flash Page 138
+CVALUE:8B:WPFP139:Write Protect Program Flash Page 139
+CVALUE:8C:WPFP140:Write Protect Program Flash Page 140
+CVALUE:8D:WPFP141:Write Protect Program Flash Page 141
+CVALUE:8E:WPFP142:Write Protect Program Flash Page 142
+CVALUE:8F:WPFP143:Write Protect Program Flash Page 143
+CVALUE:90:WPFP144:Write Protect Program Flash Page 144
+CVALUE:91:WPFP145:Write Protect Program Flash Page 145
+CVALUE:92:WPFP146:Write Protect Program Flash Page 146
+CVALUE:93:WPFP147:Write Protect Program Flash Page 147
+CVALUE:94:WPFP148:Write Protect Program Flash Page 148
+CVALUE:95:WPFP149:Write Protect Program Flash Page 149
+CVALUE:96:WPFP150:Write Protect Program Flash Page 150
+CVALUE:97:WPFP151:Write Protect Program Flash Page 151
+CVALUE:98:WPFP152:Write Protect Program Flash Page 152
+CVALUE:99:WPFP153:Write Protect Program Flash Page 153
+CVALUE:9A:WPFP154:Write Protect Program Flash Page 154
+CVALUE:9B:WPFP155:Write Protect Program Flash Page 155
+CVALUE:9C:WPFP156:Write Protect Program Flash Page 156
+CVALUE:9D:WPFP157:Write Protect Program Flash Page 157
+CVALUE:9E:WPFP158:Write Protect Program Flash Page 158
+CVALUE:9F:WPFP159:Write Protect Program Flash Page 159
+CVALUE:A0:WPFP160:Write Protect Program Flash Page 160
+CVALUE:A1:WPFP161:Write Protect Program Flash Page 161
+CVALUE:A2:WPFP162:Write Protect Program Flash Page 162
+CVALUE:A3:WPFP163:Write Protect Program Flash Page 163
+CVALUE:A4:WPFP164:Write Protect Program Flash Page 164
+CVALUE:A5:WPFP165:Write Protect Program Flash Page 165
+CVALUE:A6:WPFP166:Write Protect Program Flash Page 166
+CVALUE:A7:WPFP167:Write Protect Program Flash Page 167
+CVALUE:A8:WPFP168:Write Protect Program Flash Page 168
+CVALUE:A9:WPFP169:Write Protect Program Flash Page 169
+CVALUE:AA:WPFP170:Write Protect Program Flash Page 170
+CVALUE:AB:WPFP171:Write Protect Program Flash Page 171
+CVALUE:AC:WPFP172:Write Protect Program Flash Page 172
+CVALUE:AD:WPFP173:Write Protect Program Flash Page 173
+CVALUE:AE:WPFP174:Write Protect Program Flash Page 174
+CVALUE:AF:WPFP175:Write Protect Program Flash Page 175
+CVALUE:B0:WPFP176:Write Protect Program Flash Page 176
+CVALUE:B1:WPFP177:Write Protect Program Flash Page 177
+CVALUE:B2:WPFP178:Write Protect Program Flash Page 178
+CVALUE:B3:WPFP179:Write Protect Program Flash Page 179
+CVALUE:B4:WPFP180:Write Protect Program Flash Page 180
+CVALUE:B5:WPFP181:Write Protect Program Flash Page 181
+CVALUE:B6:WPFP182:Write Protect Program Flash Page 182
+CVALUE:B7:WPFP183:Write Protect Program Flash Page 183
+CVALUE:B8:WPFP184:Write Protect Program Flash Page 184
+CVALUE:B9:WPFP185:Write Protect Program Flash Page 185
+CVALUE:BA:WPFP186:Write Protect Program Flash Page 186
+CVALUE:BB:WPFP187:Write Protect Program Flash Page 187
+CVALUE:BC:WPFP188:Write Protect Program Flash Page 188
+CVALUE:BD:WPFP189:Write Protect Program Flash Page 189
+CVALUE:BE:WPFP190:Write Protect Program Flash Page 190
+CVALUE:BF:WPFP191:Write Protect Program Flash Page 191
+CVALUE:C0:WPFP192:Write Protect Program Flash Page 192
+CVALUE:C1:WPFP193:Write Protect Program Flash Page 193
+CVALUE:C2:WPFP194:Write Protect Program Flash Page 194
+CVALUE:C3:WPFP195:Write Protect Program Flash Page 195
+CVALUE:C4:WPFP196:Write Protect Program Flash Page 196
+CVALUE:C5:WPFP197:Write Protect Program Flash Page 197
+CVALUE:C6:WPFP198:Write Protect Program Flash Page 198
+CVALUE:C7:WPFP199:Write Protect Program Flash Page 199
+CVALUE:C8:WPFP200:Write Protect Program Flash Page 200
+CVALUE:C9:WPFP201:Write Protect Program Flash Page 201
+CVALUE:CA:WPFP202:Write Protect Program Flash Page 202
+CVALUE:CB:WPFP203:Write Protect Program Flash Page 203
+CVALUE:CC:WPFP204:Write Protect Program Flash Page 204
+CVALUE:CD:WPFP205:Write Protect Program Flash Page 205
+CVALUE:CE:WPFP206:Write Protect Program Flash Page 206
+CVALUE:CF:WPFP207:Write Protect Program Flash Page 207
+CVALUE:D0:WPFP208:Write Protect Program Flash Page 208
+CVALUE:D1:WPFP209:Write Protect Program Flash Page 209
+CVALUE:D2:WPFP210:Write Protect Program Flash Page 210
+CVALUE:D3:WPFP211:Write Protect Program Flash Page 211
+CVALUE:D4:WPFP212:Write Protect Program Flash Page 212
+CVALUE:D5:WPFP213:Write Protect Program Flash Page 213
+CVALUE:D6:WPFP214:Write Protect Program Flash Page 214
+CVALUE:D7:WPFP215:Write Protect Program Flash Page 215
+CVALUE:D8:WPFP216:Write Protect Program Flash Page 216
+CVALUE:D9:WPFP217:Write Protect Program Flash Page 217
+CVALUE:DA:WPFP218:Write Protect Program Flash Page 218
+CVALUE:DB:WPFP219:Write Protect Program Flash Page 219
+CVALUE:DC:WPFP220:Write Protect Program Flash Page 220
+CVALUE:DD:WPFP221:Write Protect Program Flash Page 221
+CVALUE:DE:WPFP222:Write Protect Program Flash Page 222
+CVALUE:DF:WPFP223:Write Protect Program Flash Page 223
+CVALUE:E0:WPFP224:Write Protect Program Flash Page 224
+CVALUE:E1:WPFP225:Write Protect Program Flash Page 225
+CVALUE:E2:WPFP226:Write Protect Program Flash Page 226
+CVALUE:E3:WPFP227:Write Protect Program Flash Page 227
+CVALUE:E4:WPFP228:Write Protect Program Flash Page 228
+CVALUE:E5:WPFP229:Write Protect Program Flash Page 229
+CVALUE:E6:WPFP230:Write Protect Program Flash Page 230
+CVALUE:E7:WPFP231:Write Protect Program Flash Page 231
+CVALUE:E8:WPFP232:Write Protect Program Flash Page 232
+CVALUE:E9:WPFP233:Write Protect Program Flash Page 233
+CVALUE:EA:WPFP234:Write Protect Program Flash Page 234
+CVALUE:EB:WPFP235:Write Protect Program Flash Page 235
+CVALUE:EC:WPFP236:Write Protect Program Flash Page 236
+CVALUE:ED:WPFP237:Write Protect Program Flash Page 237
+CVALUE:EE:WPFP238:Write Protect Program Flash Page 238
+CVALUE:EF:WPFP239:Write Protect Program Flash Page 239
+CVALUE:F0:WPFP240:Write Protect Program Flash Page 240
+CVALUE:F1:WPFP241:Write Protect Program Flash Page 241
+CVALUE:F2:WPFP242:Write Protect Program Flash Page 242
+CVALUE:F3:WPFP243:Write Protect Program Flash Page 243
+CVALUE:F4:WPFP244:Write Protect Program Flash Page 244
+CVALUE:F5:WPFP245:Write Protect Program Flash Page 245
+CVALUE:F6:WPFP246:Write Protect Program Flash Page 246
+CVALUE:F7:WPFP247:Write Protect Program Flash Page 247
+CVALUE:F8:WPFP248:Write Protect Program Flash Page 248
+CVALUE:F9:WPFP249:Write Protect Program Flash Page 249
+CVALUE:FA:WPFP250:Write Protect Program Flash Page 250
+CVALUE:FB:WPFP251:Write Protect Program Flash Page 251
+CVALUE:FC:WPFP252:Write Protect Program Flash Page 252
+CVALUE:FD:WPFP253:Write Protect Program Flash Page 253
+CVALUE:FE:WPFP254:Write Protect Program Flash Page 254
+CVALUE:FF:WPFP255:Write Protect Program Flash Page 255
+CWORD:1FFF7:F7:F7:CONFIG4H
+CSETTING:1:WPDIS:Segment Write Protection Disable
+CVALUE:1:WPDIS:Disabled
+CVALUE:0:WPEN:Enabled
+CSETTING:2:WPEND:Segment Write Protection End Page Select
+CVALUE:2:WPENDMEM:Write Protect from WPFP to the last page of memory
+CVALUE:0:WPSTARTMEM:write Protect from page 0 to WPFP
+CSETTING:4:WPCFG:Write Protect Configuration Page Select
+CVALUE:4:WPCFGDIS:Disabled
+CVALUE:0:WPCFGEN:Enabled
+CWORD:1FFF8:FB:FB:CONFIG5L
+CSETTING:1:T5GSEL:TMR5 Gate Select bit
+CVALUE:1:T5G:TMR5 Gate is driven by the T5G input
+CVALUE:0:T3G:TMR5 Gate is driven by the T3G input
+CSETTING:2:CINASEL:CxINA Gate Select bit
+CVALUE:2:DEFAULT:C1INA and C3INA are on their default pin locations
+CVALUE:0:RA5:C1INA and C3INA are all re-mapped to pin RA5
+CSETTING:8:EASHFT:External Address Shift bit
+CVALUE:8:ON:Address Shifting enabled
+CVALUE:0:OFF:Address Shifting disabled
+CSETTING:30:ABW:Address Bus Width Select bits
+CVALUE:30:MM:8-bit address bus
+CVALUE:20:XM12:12-bit address bus
+CVALUE:10:XM16:16-bit address bus
+CVALUE:0:XM20:20-bit address bus
+CSETTING:40:BW:Data Bus Width
+CVALUE:40:16:16-bit external bus mode
+CVALUE:0:8:8-bit external bus mode
+CSETTING:80:WAIT:External Bus Wait
+CVALUE:80:OFF:Disabled
+CVALUE:0:ON:Enabled
+CWORD:1FFF9:FF:FF:CONFIG5H
+CSETTING:1:IOL1WAY:IOLOCK One-Way Set Enable bit
+CVALUE:1:ON:Once set, the IOLOCK bit cannot be cleared
+CVALUE:0:OFF:the IOLOCK bit can be set and cleared using the unlock sequence
+CSETTING:2:LS48MHZ:USB Low Speed Clock Select bit
+CVALUE:2:SYSX2:Divide-by-2 (System clock must be 12 MHz)
+CVALUE:0:SYSX1:Divide-by-1 (System clock must be 6 MHz)
+CSETTING:4:MSSPMSK2:MSSP2 7-Bit Address Masking Mode Enable bit
+CVALUE:4:MSK7:7 Bit address masking mode
+CVALUE:0:MSK5:5 Bit address masking mode
+CSETTING:8:MSSPMSK1:MSSP1 7-Bit Address Masking Mode Enable bit
+CVALUE:8:MSK7:7 Bit address masking mode
+CVALUE:0:MSK5:5 bit address masking mode
+CWORD:1FFFA:FF:FF:CONFIG6L
+CSETTING:3:WDTWIN:Watch Dog Timer Window
+CVALUE:3:PS25_0:Watch Dog Timer Window Width is 25 percent
+CVALUE:2:PS37_5:Watch Dog Timer Window Width is 37.5 percent
+CVALUE:1:PS50_0:Watch Dog Timer Window Width is 50 percent
+CVALUE:0:PS75_0:Watch Dog Timer Window Width is 75 percent
+CSETTING:C:WDTCLK:Watch Dog Timer Clock Source
+CVALUE:C:FRC:Use FRC when WINDIS = 0, system clock is not INTOSC/LPRC and device is not in Sleep; otherwise, use INTOSC/LPRC
+CVALUE:8:LPRC:Always use INTOSC/LPRC
+CVALUE:4:SOSC:Always use SOSC
+CVALUE:0:SYS:Use FOSC/4 when system clock is not INTOSC/LPRC and device is not in Sleep; otherwise, use INTOSC/LPRC
+CSETTING:F0:WDTPS:Watchdog Timer Postscale
+CVALUE:F0:32768:1:32768
+CVALUE:E0:16384:1:16384
+CVALUE:D0:8192:1:8192
+CVALUE:C0:4096:1:4096
+CVALUE:B0:2048:1:2048
+CVALUE:A0:1024:1:1024
+CVALUE:90:512:1:512
+CVALUE:80:256:1:256
+CVALUE:70:128:1:128
+CVALUE:60:64:1:64
+CVALUE:50:32:1:32
+CVALUE:40:16:1:16
+CVALUE:30:8:1:8
+CVALUE:20:4:1:4
+CVALUE:10:2:1:2
+CVALUE:0:1:1:1
+CWORD:1FFFB:FF:FF:CONFIG6H
+CSETTING:3:WDTEN:Watchdog Timer Enable
+CVALUE:3:SWDTDIS:WDT enabled in hardware; SWDTEN bit disabled
+CVALUE:2:ON:WDT controlled by SWDTEN bit setting
+CVALUE:1:NOSLP:WDT enabled only while device is active and disabled in Sleep mode; SWDTEN bit disabled
+CVALUE:0:OFF:WDT disabled in hardware; SWDTEN bit disabled
+CSETTING:4:WINDIS:Windowed Watchdog Timer Disable
+CVALUE:4:WDTSTD:Standard WDT selected; windowed WDT disabled
+CVALUE:0:WDTWIN:Windowed WDT enabled
+CSETTING:8:WPSA:WDT Prescaler
+CVALUE:8:128:WDT prescaler ratio of 1:128
+CVALUE:0:32:WDT prescaler ratio of 1:32
+CWORD:1FFFC:1D:1D:CONFIG7L
+CSETTING:1:RETEN:Retention Voltage Regulator Control Enable
+CVALUE:1:OFF:Retention not available
+CVALUE:0:ON:Retention controlled by SRETEN during Sleep
+CSETTING:4:VBTBOR:VBAT BOR Enable
+CVALUE:4:ON:VBAT BOR is enabled
+CVALUE:0:OFF:VBAT BOR is disabled
+CSETTING:8:DSBOREN:Deep Sleep BOR Enable
+CVALUE:8:ON:BOR enabled in Deep Sleep
+CVALUE:0:OFF:BOR disabled in Deep Sleep (does not affect operation in non-Deep Sleep modes)
+CSETTING:10:DSBITEN:DSEN Bit Enable bit
+CVALUE:10:ON:Deep Sleep is controlled by the register bit DSEN
+CVALUE:0:OFF:Deep Sleep operation is always disabled
+CWORD:1FFFD:F0:F0:CONFIG7H
+CWORD:1FFFE:F8:F8:CONFIG8L
+CSETTING:F8:DSWDTPS:Deep Sleep Watchdog Timer Postscale Select
+CVALUE:F8:DSWDTPS1F:1:68719476736 (25.7 Days)
+CVALUE:F0:DSWDTPS1E:1:34359738368 (12.8  Days)
+CVALUE:E8:DSWDTPS1D:1:17179869184 (6.4 Days)
+CVALUE:E0:DSWDTPS1C:1:8589934592 (77 Hours)
+CVALUE:D8:DSWDTPS1B:1:4294967296 (38.5 Hours)
+CVALUE:D0:DSWDTPS1A:1:2147483648 (19.2 Hours)
+CVALUE:C8:DSWDTPS19:1:1073741824 (9.6 Hours)
+CVALUE:C0:DSWDTPS18:1:536870912 (4.8 Hours)
+CVALUE:B8:DSWDTPS17:1:268435456 (2.4 Hours)
+CVALUE:B0:DSWDTPS16:1:134217728 (72.2 Minutes)
+CVALUE:A8:DSWDTPS15:1:67108864 (36.1 Minutes)
+CVALUE:A0:DSWDTPS14:1:33554432 (18 Minutes)
+CVALUE:98:DSWDTPS13:1:16777216 (9 Minutes)
+CVALUE:90:DSWDTPS12:1:8388608 (4.5 Minutes)
+CVALUE:88:DSWDTPS11:1:4194304 (135.3 Secs)
+CVALUE:80:DSWDTPS10:1:2097152 (67.7 Secs)
+CVALUE:78:DSWDTPSF:1:1048576 (33.825 Secs)
+CVALUE:70:DSWDTPSE:1:524288 (16.912 Secs)
+CVALUE:68:DSWDTPSD:1:262114 (8.456 Secs)
+CVALUE:60:DSWDTPSC:1:131072 (4.228 Secs)
+CVALUE:58:DSWDTPSB:1:65536 (2.114 Secs)
+CVALUE:50:DSWDTPSA:1:32768 (1.057 Secs)
+CVALUE:48:DSWDTPS9:1:16384 (528.5 mS)
+CVALUE:40:DSWDTPS8:1:8192 (264.3 mS)
+CVALUE:38:DSWDTPS7:1:4096 (132.1 mS)
+CVALUE:30:DSWDTPS6:1:2048 (66.1 mS)
+CVALUE:28:DSWDTPS5:1:1024 (33 mS)
+CVALUE:20:DSWDTPS4:1:512 (16.5 mS)
+CVALUE:18:DSWDTPS3:1: 256 (8.3 mS)
+CVALUE:10:DSWDTPS2:1:128 (4.1 mS)
+CVALUE:8:DSWDTPS1:1:64 (2.1 mS)
+CVALUE:0:DSWDTPS0:1:32 (1 mS)
+CWORD:1FFFF:F3:F3:CONFIG8H
+CSETTING:1:DSWDTEN:Deep Sleep Watchdog Timer Enable
+CVALUE:1:ON:DSWDT Enabled
+CVALUE:0:OFF:DSWDT Disabled
+CSETTING:2:DSWDTOSC:DSWDT Reference Clock Select
+CVALUE:2:LPRC:DSWDT uses LPRC as reference clock
+CVALUE:0:SOSC:DSWDT uses SOSC as reference clock
+CMSG:XINST=ON:1504

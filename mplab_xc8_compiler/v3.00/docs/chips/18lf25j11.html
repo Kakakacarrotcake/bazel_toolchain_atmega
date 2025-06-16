@@ -1,0 +1,668 @@
+<!-- Generated 05/12/2024 GMT -->
+
+<!--
+ Copyright © 2024, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ All rights reserved.
+ 
+ This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
+ 
+ Redistribution and use in source and binary forms, with or without modification, are
+ permitted provided that the following conditions are met:
+ 
+     1. Redistributions of source code must retain the above copyright notice, this list of
+        conditions and the following disclaimer.
+ 
+     2. Redistributions in binary form must reproduce the above copyright notice, this list
+        of conditions and the following disclaimer in the documentation and/or other
+        materials provided with the distribution. Publication is not required when
+        this file is used in an embedded application.
+ 
+     3. Microchip's name may not be used to endorse or promote products derived from this
+        software without specific prior written permission.
+ 
+ THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Microchip MPLAB XC8 C Compiler: 18LF25J11 Support Information</TITLE>
+</HEAD>
+<BODY>
+<h2>18LF25J11 Support Information</h2>
+<h3>XC8-CC #pragma config Usage</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;setting&gt;=&lt;named value&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Watchdog Timer : Enabled<br/>// Stack Overflow/Underflow Reset : Enabled<br/>// Extended Instruction Set : Enabled<br/>// Background Debug : Disabled<br/>#pragma config WDTEN = ON, STVREN = ON, XINST = ON, DEBUG = OFF</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;setting&gt;=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Watchdog Timer : Enabled<br/>// Stack Overflow/Underflow Reset : Enabled<br/>// Extended Instruction Set : Enabled<br/>// Background Debug : Disabled<br/>#pragma config WDTEN = 0x1, STVREN = 0x1, XINST = 0x1, DEBUG = 0x1</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;register&gt;=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Watchdog Timer : Enabled<br/>// Stack Overflow/Underflow Reset : Enabled<br/>// Extended Instruction Set : Enabled<br/>// Background Debug : Disabled<br/>#pragma config CONFIG1L = 0xE1</code></td>
+</tr>
+</tbody></table>
+<br/>
+<h3>PIC-AS config Usage</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;setting&gt;"="&lt;named value&gt;"</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Watchdog Timer : Enabled<br/>; Stack Overflow/Underflow Reset : Enabled<br/>; Extended Instruction Set : Enabled<br/>; Background Debug : Disabled<br/>config "WDTEN" = "ON", "STVREN" = "ON", "XINST" = "ON", "DEBUG" = "OFF"</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;setting&gt;"=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Watchdog Timer : Enabled<br/>; Stack Overflow/Underflow Reset : Enabled<br/>; Extended Instruction Set : Enabled<br/>; Background Debug : Disabled<br/>config "WDTEN" = 0x1, "STVREN" = 0x1, "XINST" = 0x1, "DEBUG" = 0x1</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;register&gt;"=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Watchdog Timer : Enabled<br/>; Stack Overflow/Underflow Reset : Enabled<br/>; Extended Instruction Set : Enabled<br/>; Background Debug : Disabled<br/>config "CONFIG1L" = 0xE1</code></td>
+</tr>
+</tbody></table>
+<br/>
+<h3>Configuration Registers & Settings</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG1L @ 0x7FF8</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDTEN</tt></b></td>
+<td><b>Watchdog Timer</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Disabled - Controlled by SWDTEN bit</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>STVREN</tt></b></td>
+<td><b>Stack Overflow/Underflow Reset</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>XINST</tt></b></td>
+<td><b>Extended Instruction Set</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>DEBUG</tt></b></td>
+<td><b>Background Debug</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Enabled</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG1H @ 0x7FF9</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>CP0</tt></b></td>
+<td><b>Code Protect</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Program memory is not code-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Program memory is code-protected</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG2L @ 0x7FFA</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>OSC</tt></b></td>
+<td><b>Oscillator</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ECPLL</tt></td>
+<td>EC+PLL (CLKO-RA6)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>EC</tt></td>
+<td>EC (CLKO-RA6)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>HSPLL</tt></td>
+<td>HS+PLL</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>HS</tt></td>
+<td>HS</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>INTOSCPLLO</tt></td>
+<td>INTOSCPLLO (CLKO-RA6)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>INTOSCPLL</tt></td>
+<td>INTOSCPLL</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>INTOSCO</tt></td>
+<td>INTOSCO (CLKO-RA6)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>INTOSC</tt></td>
+<td>INTOSC</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>T1DIG</tt></b></td>
+<td><b>T1OSCEN Enforcement</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Secondary Oscillator clock source may be selected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Secondary Oscillator clock source may not be selected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>LPT1OSC</tt></b></td>
+<td><b>Low-Power Timer1 Oscillator</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>High-power operation</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Low-power operation</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>FCMEN</tt></b></td>
+<td><b>Fail-Safe Clock Monitor</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>IESO</tt></b></td>
+<td><b>Internal External Oscillator Switch Over Mode</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Enabled</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG2H @ 0x7FFB</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDTPS</tt></b></td>
+<td><b>Watchdog Postscaler</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>32768</tt></td>
+<td>1:32768</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>16384</tt></td>
+<td>1:16384</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>8192</tt></td>
+<td>1:8192</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>4096</tt></td>
+<td>1:4096</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>2048</tt></td>
+<td>1:2048</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>1024</tt></td>
+<td>1:1024</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>512</tt></td>
+<td>1:512</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>256</tt></td>
+<td>1:256</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>128</tt></td>
+<td>1:128</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>64</tt></td>
+<td>1:64</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>32</tt></td>
+<td>1:32</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>16</tt></td>
+<td>1:16</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>8</tt></td>
+<td>1:8</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>4</tt></td>
+<td>1:4</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>2</tt></td>
+<td>1:2</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>1</tt></td>
+<td>1:1</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG3L @ 0x7FFC</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>DSWDTOSC</tt></b></td>
+<td><b>DSWDT Clock Select</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>INTOSCREF</tt></td>
+<td>DSWDT uses INTRC</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>T1OSCREF</tt></td>
+<td>DSWDT uses T1OSC/T1CKI</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>RTCOSC</tt></b></td>
+<td><b>RTCC Clock Select</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>T1OSCREF</tt></td>
+<td>RTCC uses T1OSC/T1CKI</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>INTOSCREF</tt></td>
+<td>RTCC uses INTRC</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>DSBOREN</tt></b></td>
+<td><b>Deep Sleep BOR</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>DSWDTEN</tt></b></td>
+<td><b>Deep Sleep Watchdog Timer</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>DSWDTPS</tt></b></td>
+<td><b>Deep Sleep Watchdog Postscaler</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>G2</tt></td>
+<td>1:2,147,483,648 (25.7 days)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>M536</tt></td>
+<td>1:536,870,912 (6.4 days)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>M134</tt></td>
+<td>1:134,217,728 (38.5 hours)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>M33</tt></td>
+<td>1:33,554,432 (9.6 hours)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>M8</tt></td>
+<td>1:8,388,608 (2.4 hours)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>M2</tt></td>
+<td>1:2,097,152 (36 minutes)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>K524</tt></td>
+<td>1:524,288 (9 minutes)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>K131</tt></td>
+<td>1:131,072 (135 seconds)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>K32</tt></td>
+<td>1:32,768 (34 seconds)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>8192</tt></td>
+<td>1:8,192 (8.5 seconds)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>2048</tt></td>
+<td>1:2,048 (2.1 seconds)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>512</tt></td>
+<td>1:512 (528 ms)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>128</tt></td>
+<td>1:128 (132 ms)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>32</tt></td>
+<td>1:32 (33 ms)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>8</tt></td>
+<td>1:8 (8.3 ms)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>2</tt></td>
+<td>1:2 (2.1 ms)</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG3H @ 0x7FFD</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>IOL1WAY</tt></b></td>
+<td><b>IOLOCK One-Way Set Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>The IOLOCK bit (PPSCON<0>) can be set once</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>The IOLOCK bit (PPSCON<0>) can be set and cleared as needed</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>MSSP7B_EN</tt></b></td>
+<td><b>MSSP address masking</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>MSK7</tt></td>
+<td>7 Bit address masking mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>MSK5</tt></td>
+<td>5 Bit address masking mode</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG4L @ 0x7FFE</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WPFP</tt></b></td>
+<td><b>Write/Erase Protect Page Start/End Location</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_0</tt></td>
+<td>Write Protect Program Flash Page 0</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_1</tt></td>
+<td>Write Protect Program Flash Page 1</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_2</tt></td>
+<td>Write Protect Program Flash Page 2</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_3</tt></td>
+<td>Write Protect Program Flash Page 3</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_4</tt></td>
+<td>Write Protect Program Flash Page 4</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_5</tt></td>
+<td>Write Protect Program Flash Page 5</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_6</tt></td>
+<td>Write Protect Program Flash Page 6</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_7</tt></td>
+<td>Write Protect Program Flash Page 7</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_8</tt></td>
+<td>Write Protect Program Flash Page 8</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_9</tt></td>
+<td>Write Protect Program Flash Page 9</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_10</tt></td>
+<td>Write Protect Program Flash Page 10</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_11</tt></td>
+<td>Write Protect Program Flash Page 11</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_12</tt></td>
+<td>Write Protect Program Flash Page 12</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_13</tt></td>
+<td>Write Protect Program Flash Page 13</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_14</tt></td>
+<td>Write Protect Program Flash Page 14</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_15</tt></td>
+<td>Write Protect Program Flash Page 15</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_16</tt></td>
+<td>Write Protect Program Flash Page 16</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_17</tt></td>
+<td>Write Protect Program Flash Page 17</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_18</tt></td>
+<td>Write Protect Program Flash Page 18</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_19</tt></td>
+<td>Write Protect Program Flash Page 19</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_20</tt></td>
+<td>Write Protect Program Flash Page 20</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_21</tt></td>
+<td>Write Protect Program Flash Page 21</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_22</tt></td>
+<td>Write Protect Program Flash Page 22</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_23</tt></td>
+<td>Write Protect Program Flash Page 23</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_24</tt></td>
+<td>Write Protect Program Flash Page 24</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_25</tt></td>
+<td>Write Protect Program Flash Page 25</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_26</tt></td>
+<td>Write Protect Program Flash Page 26</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_27</tt></td>
+<td>Write Protect Program Flash Page 27</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_28</tt></td>
+<td>Write Protect Program Flash Page 28</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_29</tt></td>
+<td>Write Protect Program Flash Page 29</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_30</tt></td>
+<td>Write Protect Program Flash Page 30</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_31</tt></td>
+<td>Write Protect Program Flash Page 31</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WPEND</tt></b></td>
+<td><b>Write/Erase Protect Region Select (valid when WPDIS = 0)</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_WPFP</tt></td>
+<td>Page WPFP<5:0> through Configuration Words erase/write protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PAGE_0</tt></td>
+<td>Page 0 through WPFP<5:0> erase/write protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WPCFG</tt></b></td>
+<td><b>Write/Erase Protect Configuration Region</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Configuration Words page not erase/write-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Configuration Words page erase/write-protected</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG4H @ 0x7FFF</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WPDIS</tt></b></td>
+<td><b>Write Protect Disable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>WPFP<5:0>/WPEND region ignored</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>WPFP<5:0>/WPEND region erase/write protected</td>
+</tr>
+</tbody></table>
+<br/>
+</BODY>
+</HTML>

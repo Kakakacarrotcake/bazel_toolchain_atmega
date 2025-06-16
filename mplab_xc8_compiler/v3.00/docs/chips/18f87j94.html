@@ -1,0 +1,1964 @@
+<!-- Generated 05/12/2024 GMT -->
+
+<!--
+ Copyright © 2024, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ All rights reserved.
+ 
+ This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
+ 
+ Redistribution and use in source and binary forms, with or without modification, are
+ permitted provided that the following conditions are met:
+ 
+     1. Redistributions of source code must retain the above copyright notice, this list of
+        conditions and the following disclaimer.
+ 
+     2. Redistributions in binary form must reproduce the above copyright notice, this list
+        of conditions and the following disclaimer in the documentation and/or other
+        materials provided with the distribution. Publication is not required when
+        this file is used in an embedded application.
+ 
+     3. Microchip's name may not be used to endorse or promote products derived from this
+        software without specific prior written permission.
+ 
+ THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Microchip MPLAB XC8 C Compiler: 18F87J94 Support Information</TITLE>
+</HEAD>
+<BODY>
+<h2>18F87J94 Support Information</h2>
+<h3>XC8-CC #pragma config Usage</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;setting&gt;=&lt;named value&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Stack Overflow/Underflow Reset : Enabled<br/>// Extended Instruction Set : Enabled<br/>#pragma config STVREN = ON, XINST = ON</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;setting&gt;=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Stack Overflow/Underflow Reset : Enabled<br/>// Extended Instruction Set : Enabled<br/>#pragma config STVREN = 0x1, XINST = 0x1</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;register&gt;=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Stack Overflow/Underflow Reset : Enabled<br/>// Extended Instruction Set : Enabled<br/>#pragma config CONFIG1L = 0xE0</code></td>
+</tr>
+</tbody></table>
+<br/>
+<h3>PIC-AS config Usage</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;setting&gt;"="&lt;named value&gt;"</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Stack Overflow/Underflow Reset : Enabled<br/>; Extended Instruction Set : Enabled<br/>config "STVREN" = "ON", "XINST" = "ON"</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;setting&gt;"=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Stack Overflow/Underflow Reset : Enabled<br/>; Extended Instruction Set : Enabled<br/>config "STVREN" = 0x1, "XINST" = 0x1</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;register&gt;"=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Stack Overflow/Underflow Reset : Enabled<br/>; Extended Instruction Set : Enabled<br/>config "CONFIG1L" = 0xE0</code></td>
+</tr>
+</tbody></table>
+<br/>
+<h3>Configuration Registers & Settings</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG1L @ 0x1FFF0</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>STVREN</tt></b></td>
+<td><b>Stack Overflow/Underflow Reset</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>XINST</tt></b></td>
+<td><b>Extended Instruction Set</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Disabled</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG1H @ 0x1FFF1</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BOREN</tt></b></td>
+<td><b>Brown-Out Reset Enable</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Controlled with SBOREN bit, disabled in Deep Sleep</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Disabled in hardware</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BORV</tt></b></td>
+<td><b>Brown-out Reset Voltage</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>1</tt></td>
+<td>1.8V</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>0</tt></td>
+<td>2.0V</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>CP0</tt></b></td>
+<td><b>Code Protect</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Program memory is not code-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Program memory is code-protected</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG2L @ 0x1FFF2</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>FOSC</tt></b></td>
+<td><b>Oscillator</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>FRCDIV</tt></td>
+<td>Fast RC Oscillator with Postscaler (FRCDIV)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>FRC500KHZ</tt></td>
+<td>Fast RC Oscillator divided by 16 (500 kHz)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>LPRC</tt></td>
+<td>Low-Power RC Oscillator (LPRC)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>SOSC</tt></td>
+<td>Secondary Oscillator (SOSC)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PRIPLL</tt></td>
+<td>Primary Oscillator with PLL module (XTPLL,HSPLL,ECPLL)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PRI</tt></td>
+<td>Primary Oscillator (XT, HS, EC)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>FRCPLL</tt></td>
+<td>Fast RC Oscillator with PLL module (FRCPLL)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>FRC</tt></td>
+<td>Fast RC Oscillator (FRC)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>SOSCSEL</tt></b></td>
+<td><b>T1OSC/SOSC Power Selection Bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>LOW</tt></td>
+<td>Low Power T1OSC/SOSC circuit selected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DIG</tt></td>
+<td>Digital (SCLKI) mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>CLKOEN</tt></b></td>
+<td><b>Clock Out Enable Bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>CLKO output enabled on the RA6 pin</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>CLKO output disabled on the RA6 pin</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>IESO</tt></b></td>
+<td><b>Internal External Oscillator Switch Over Mode</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Disabled</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG2H @ 0x1FFF3</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>PLLDIV</tt></b></td>
+<td><b>PLL Frequency Multiplier Select bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>NOPLL</tt></td>
+<td>No PLL used - PLLGO bit not available to user</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PLL8X</tt></td>
+<td>8x PLL selected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PLL6X</tt></td>
+<td>6x PLL selected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PLL4X</tt></td>
+<td>4x PLL selected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DIV12</tt></td>
+<td>96 MHz PLL selected; Oscillator divided by 12 (48 MHz input)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DIV10</tt></td>
+<td>96 MHz PLL selected; Oscillator divided by 10 (40 MHz input)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DIV6</tt></td>
+<td>96 MHz PLL selected; Oscillator divided by 6 (24 MHz input)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DIV5</tt></td>
+<td>96 MHz PLL selected; Oscillator divided by 5 (20 MHz input)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DIV4</tt></td>
+<td>96 MHz PLL selected; Oscillator divided by 4 (16 MHz input)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DIV3</tt></td>
+<td>96 MHz PLL selected; Oscillator divided by 3 (12 MHz input)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DIV2</tt></td>
+<td>96 MHz PLL selected; Oscillator divided by 2 (8 MHz input)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>NODIV</tt></td>
+<td>96 MHz PLL selected; No divide - Oscillator used directly (4 MHz input)</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG3L @ 0x1FFF4</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>POSCMD</tt></b></td>
+<td><b>Primary Oscillator Select</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>NONE</tt></td>
+<td>Primary oscillator disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>HS</tt></td>
+<td>HS oscillator mode selected(10 MHz - 40 MHz)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>MS</tt></td>
+<td>MS oscillator mode selected(3.5 MHz -10 MHz)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>EC</tt></td>
+<td>External clock mode selected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>FSCM</tt></b></td>
+<td><b>Clock Switching and Monitor Selection Configuration bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>CSDCMD</tt></td>
+<td>Clock switching is disabled, fail safe clock monitor is disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>CSECMD</tt></td>
+<td>Clock switching is enabled, fail safe clock monitor is disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>CSECME</tt></td>
+<td>Clock switching is enabled, fail safe clock monitor is enabled</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG3H @ 0x1FFF5</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG4L @ 0x1FFF6</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WPFP</tt></b></td>
+<td><b>Write/Erase Protect Page Start/End Boundary</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP0</tt></td>
+<td>Write Protect Program Flash Page 0</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP1</tt></td>
+<td>Write Protect Program Flash Page 1</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP2</tt></td>
+<td>Write Protect Program Flash Page 2</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP3</tt></td>
+<td>Write Protect Program Flash Page 3</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP4</tt></td>
+<td>Write Protect Program Flash Page 4</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP5</tt></td>
+<td>Write Protect Program Flash Page 5</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP6</tt></td>
+<td>Write Protect Program Flash Page 6</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP7</tt></td>
+<td>Write Protect Program Flash Page 7</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP8</tt></td>
+<td>Write Protect Program Flash Page 8</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP9</tt></td>
+<td>Write Protect Program Flash Page 9</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP10</tt></td>
+<td>Write Protect Program Flash Page 10</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP11</tt></td>
+<td>Write Protect Program Flash Page 11</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP12</tt></td>
+<td>Write Protect Program Flash Page 12</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP13</tt></td>
+<td>Write Protect Program Flash Page 13</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP14</tt></td>
+<td>Write Protect Program Flash Page 14</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP15</tt></td>
+<td>Write Protect Program Flash Page 15</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP16</tt></td>
+<td>Write Protect Program Flash Page 16</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP17</tt></td>
+<td>Write Protect Program Flash Page 17</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP18</tt></td>
+<td>Write Protect Program Flash Page 18</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP19</tt></td>
+<td>Write Protect Program Flash Page 19</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP20</tt></td>
+<td>Write Protect Program Flash Page 20</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP21</tt></td>
+<td>Write Protect Program Flash Page 21</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP22</tt></td>
+<td>Write Protect Program Flash Page 22</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP23</tt></td>
+<td>Write Protect Program Flash Page 23</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP24</tt></td>
+<td>Write Protect Program Flash Page 24</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP25</tt></td>
+<td>Write Protect Program Flash Page 25</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP26</tt></td>
+<td>Write Protect Program Flash Page 26</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP27</tt></td>
+<td>Write Protect Program Flash Page 27</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP28</tt></td>
+<td>Write Protect Program Flash Page 28</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP29</tt></td>
+<td>Write Protect Program Flash Page 29</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP30</tt></td>
+<td>Write Protect Program Flash Page 30</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP31</tt></td>
+<td>Write Protect Program Flash Page 31</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP32</tt></td>
+<td>Write Protect Program Flash Page 32</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP33</tt></td>
+<td>Write Protect Program Flash Page 33</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP34</tt></td>
+<td>Write Protect Program Flash Page 34</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP35</tt></td>
+<td>Write Protect Program Flash Page 35</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP36</tt></td>
+<td>Write Protect Program Flash Page 36</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP37</tt></td>
+<td>Write Protect Program Flash Page 37</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP38</tt></td>
+<td>Write Protect Program Flash Page 38</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP39</tt></td>
+<td>Write Protect Program Flash Page 39</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP40</tt></td>
+<td>Write Protect Program Flash Page 40</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP41</tt></td>
+<td>Write Protect Program Flash Page 41</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP42</tt></td>
+<td>Write Protect Program Flash Page 42</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP43</tt></td>
+<td>Write Protect Program Flash Page 43</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP44</tt></td>
+<td>Write Protect Program Flash Page 44</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP45</tt></td>
+<td>Write Protect Program Flash Page 45</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP46</tt></td>
+<td>Write Protect Program Flash Page 46</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP47</tt></td>
+<td>Write Protect Program Flash Page 47</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP48</tt></td>
+<td>Write Protect Program Flash Page 48</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP49</tt></td>
+<td>Write Protect Program Flash Page 49</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP50</tt></td>
+<td>Write Protect Program Flash Page 50</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP51</tt></td>
+<td>Write Protect Program Flash Page 51</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP52</tt></td>
+<td>Write Protect Program Flash Page 52</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP53</tt></td>
+<td>Write Protect Program Flash Page 53</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP54</tt></td>
+<td>Write Protect Program Flash Page 54</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP55</tt></td>
+<td>Write Protect Program Flash Page 55</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP56</tt></td>
+<td>Write Protect Program Flash Page 56</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP57</tt></td>
+<td>Write Protect Program Flash Page 57</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP58</tt></td>
+<td>Write Protect Program Flash Page 58</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP59</tt></td>
+<td>Write Protect Program Flash Page 59</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP60</tt></td>
+<td>Write Protect Program Flash Page 60</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP61</tt></td>
+<td>Write Protect Program Flash Page 61</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP62</tt></td>
+<td>Write Protect Program Flash Page 62</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP63</tt></td>
+<td>Write Protect Program Flash Page 63</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP64</tt></td>
+<td>Write Protect Program Flash Page 64</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP65</tt></td>
+<td>Write Protect Program Flash Page 65</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP66</tt></td>
+<td>Write Protect Program Flash Page 66</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP67</tt></td>
+<td>Write Protect Program Flash Page 67</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP68</tt></td>
+<td>Write Protect Program Flash Page 68</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP69</tt></td>
+<td>Write Protect Program Flash Page 69</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP70</tt></td>
+<td>Write Protect Program Flash Page 70</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP71</tt></td>
+<td>Write Protect Program Flash Page 71</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP72</tt></td>
+<td>Write Protect Program Flash Page 72</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP73</tt></td>
+<td>Write Protect Program Flash Page 73</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP74</tt></td>
+<td>Write Protect Program Flash Page 74</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP75</tt></td>
+<td>Write Protect Program Flash Page 75</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP76</tt></td>
+<td>Write Protect Program Flash Page 76</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP77</tt></td>
+<td>Write Protect Program Flash Page 77</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP78</tt></td>
+<td>Write Protect Program Flash Page 78</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP79</tt></td>
+<td>Write Protect Program Flash Page 79</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP80</tt></td>
+<td>Write Protect Program Flash Page 80</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP81</tt></td>
+<td>Write Protect Program Flash Page 81</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP82</tt></td>
+<td>Write Protect Program Flash Page 82</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP83</tt></td>
+<td>Write Protect Program Flash Page 83</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP84</tt></td>
+<td>Write Protect Program Flash Page 84</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP85</tt></td>
+<td>Write Protect Program Flash Page 85</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP86</tt></td>
+<td>Write Protect Program Flash Page 86</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP87</tt></td>
+<td>Write Protect Program Flash Page 87</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP88</tt></td>
+<td>Write Protect Program Flash Page 88</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP89</tt></td>
+<td>Write Protect Program Flash Page 89</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP90</tt></td>
+<td>Write Protect Program Flash Page 90</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP91</tt></td>
+<td>Write Protect Program Flash Page 91</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP92</tt></td>
+<td>Write Protect Program Flash Page 92</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP93</tt></td>
+<td>Write Protect Program Flash Page 93</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP94</tt></td>
+<td>Write Protect Program Flash Page 94</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP95</tt></td>
+<td>Write Protect Program Flash Page 95</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP96</tt></td>
+<td>Write Protect Program Flash Page 96</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP97</tt></td>
+<td>Write Protect Program Flash Page 97</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP98</tt></td>
+<td>Write Protect Program Flash Page 98</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP99</tt></td>
+<td>Write Protect Program Flash Page 99</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP100</tt></td>
+<td>Write Protect Program Flash Page 100</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP101</tt></td>
+<td>Write Protect Program Flash Page 101</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP102</tt></td>
+<td>Write Protect Program Flash Page 102</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP103</tt></td>
+<td>Write Protect Program Flash Page 103</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP104</tt></td>
+<td>Write Protect Program Flash Page 104</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP105</tt></td>
+<td>Write Protect Program Flash Page 105</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP106</tt></td>
+<td>Write Protect Program Flash Page 106</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP107</tt></td>
+<td>Write Protect Program Flash Page 107</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP108</tt></td>
+<td>Write Protect Program Flash Page 108</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP109</tt></td>
+<td>Write Protect Program Flash Page 109</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP110</tt></td>
+<td>Write Protect Program Flash Page 110</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP111</tt></td>
+<td>Write Protect Program Flash Page 111</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP112</tt></td>
+<td>Write Protect Program Flash Page 112</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP113</tt></td>
+<td>Write Protect Program Flash Page 113</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP114</tt></td>
+<td>Write Protect Program Flash Page 114</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP115</tt></td>
+<td>Write Protect Program Flash Page 115</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP116</tt></td>
+<td>Write Protect Program Flash Page 116</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP117</tt></td>
+<td>Write Protect Program Flash Page 117</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP118</tt></td>
+<td>Write Protect Program Flash Page 118</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP119</tt></td>
+<td>Write Protect Program Flash Page 119</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP120</tt></td>
+<td>Write Protect Program Flash Page 120</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP121</tt></td>
+<td>Write Protect Program Flash Page 121</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP122</tt></td>
+<td>Write Protect Program Flash Page 122</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP123</tt></td>
+<td>Write Protect Program Flash Page 123</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP124</tt></td>
+<td>Write Protect Program Flash Page 124</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP125</tt></td>
+<td>Write Protect Program Flash Page 125</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP126</tt></td>
+<td>Write Protect Program Flash Page 126</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP127</tt></td>
+<td>Write Protect Program Flash Page 127</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP128</tt></td>
+<td>Write Protect Program Flash Page 128</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP129</tt></td>
+<td>Write Protect Program Flash Page 129</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP130</tt></td>
+<td>Write Protect Program Flash Page 130</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP131</tt></td>
+<td>Write Protect Program Flash Page 131</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP132</tt></td>
+<td>Write Protect Program Flash Page 132</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP133</tt></td>
+<td>Write Protect Program Flash Page 133</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP134</tt></td>
+<td>Write Protect Program Flash Page 134</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP135</tt></td>
+<td>Write Protect Program Flash Page 135</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP136</tt></td>
+<td>Write Protect Program Flash Page 136</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP137</tt></td>
+<td>Write Protect Program Flash Page 137</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP138</tt></td>
+<td>Write Protect Program Flash Page 138</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP139</tt></td>
+<td>Write Protect Program Flash Page 139</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP140</tt></td>
+<td>Write Protect Program Flash Page 140</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP141</tt></td>
+<td>Write Protect Program Flash Page 141</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP142</tt></td>
+<td>Write Protect Program Flash Page 142</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP143</tt></td>
+<td>Write Protect Program Flash Page 143</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP144</tt></td>
+<td>Write Protect Program Flash Page 144</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP145</tt></td>
+<td>Write Protect Program Flash Page 145</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP146</tt></td>
+<td>Write Protect Program Flash Page 146</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP147</tt></td>
+<td>Write Protect Program Flash Page 147</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP148</tt></td>
+<td>Write Protect Program Flash Page 148</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP149</tt></td>
+<td>Write Protect Program Flash Page 149</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP150</tt></td>
+<td>Write Protect Program Flash Page 150</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP151</tt></td>
+<td>Write Protect Program Flash Page 151</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP152</tt></td>
+<td>Write Protect Program Flash Page 152</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP153</tt></td>
+<td>Write Protect Program Flash Page 153</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP154</tt></td>
+<td>Write Protect Program Flash Page 154</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP155</tt></td>
+<td>Write Protect Program Flash Page 155</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP156</tt></td>
+<td>Write Protect Program Flash Page 156</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP157</tt></td>
+<td>Write Protect Program Flash Page 157</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP158</tt></td>
+<td>Write Protect Program Flash Page 158</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP159</tt></td>
+<td>Write Protect Program Flash Page 159</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP160</tt></td>
+<td>Write Protect Program Flash Page 160</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP161</tt></td>
+<td>Write Protect Program Flash Page 161</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP162</tt></td>
+<td>Write Protect Program Flash Page 162</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP163</tt></td>
+<td>Write Protect Program Flash Page 163</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP164</tt></td>
+<td>Write Protect Program Flash Page 164</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP165</tt></td>
+<td>Write Protect Program Flash Page 165</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP166</tt></td>
+<td>Write Protect Program Flash Page 166</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP167</tt></td>
+<td>Write Protect Program Flash Page 167</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP168</tt></td>
+<td>Write Protect Program Flash Page 168</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP169</tt></td>
+<td>Write Protect Program Flash Page 169</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP170</tt></td>
+<td>Write Protect Program Flash Page 170</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP171</tt></td>
+<td>Write Protect Program Flash Page 171</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP172</tt></td>
+<td>Write Protect Program Flash Page 172</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP173</tt></td>
+<td>Write Protect Program Flash Page 173</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP174</tt></td>
+<td>Write Protect Program Flash Page 174</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP175</tt></td>
+<td>Write Protect Program Flash Page 175</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP176</tt></td>
+<td>Write Protect Program Flash Page 176</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP177</tt></td>
+<td>Write Protect Program Flash Page 177</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP178</tt></td>
+<td>Write Protect Program Flash Page 178</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP179</tt></td>
+<td>Write Protect Program Flash Page 179</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP180</tt></td>
+<td>Write Protect Program Flash Page 180</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP181</tt></td>
+<td>Write Protect Program Flash Page 181</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP182</tt></td>
+<td>Write Protect Program Flash Page 182</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP183</tt></td>
+<td>Write Protect Program Flash Page 183</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP184</tt></td>
+<td>Write Protect Program Flash Page 184</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP185</tt></td>
+<td>Write Protect Program Flash Page 185</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP186</tt></td>
+<td>Write Protect Program Flash Page 186</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP187</tt></td>
+<td>Write Protect Program Flash Page 187</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP188</tt></td>
+<td>Write Protect Program Flash Page 188</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP189</tt></td>
+<td>Write Protect Program Flash Page 189</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP190</tt></td>
+<td>Write Protect Program Flash Page 190</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP191</tt></td>
+<td>Write Protect Program Flash Page 191</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP192</tt></td>
+<td>Write Protect Program Flash Page 192</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP193</tt></td>
+<td>Write Protect Program Flash Page 193</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP194</tt></td>
+<td>Write Protect Program Flash Page 194</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP195</tt></td>
+<td>Write Protect Program Flash Page 195</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP196</tt></td>
+<td>Write Protect Program Flash Page 196</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP197</tt></td>
+<td>Write Protect Program Flash Page 197</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP198</tt></td>
+<td>Write Protect Program Flash Page 198</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP199</tt></td>
+<td>Write Protect Program Flash Page 199</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP200</tt></td>
+<td>Write Protect Program Flash Page 200</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP201</tt></td>
+<td>Write Protect Program Flash Page 201</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP202</tt></td>
+<td>Write Protect Program Flash Page 202</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP203</tt></td>
+<td>Write Protect Program Flash Page 203</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP204</tt></td>
+<td>Write Protect Program Flash Page 204</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP205</tt></td>
+<td>Write Protect Program Flash Page 205</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP206</tt></td>
+<td>Write Protect Program Flash Page 206</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP207</tt></td>
+<td>Write Protect Program Flash Page 207</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP208</tt></td>
+<td>Write Protect Program Flash Page 208</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP209</tt></td>
+<td>Write Protect Program Flash Page 209</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP210</tt></td>
+<td>Write Protect Program Flash Page 210</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP211</tt></td>
+<td>Write Protect Program Flash Page 211</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP212</tt></td>
+<td>Write Protect Program Flash Page 212</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP213</tt></td>
+<td>Write Protect Program Flash Page 213</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP214</tt></td>
+<td>Write Protect Program Flash Page 214</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP215</tt></td>
+<td>Write Protect Program Flash Page 215</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP216</tt></td>
+<td>Write Protect Program Flash Page 216</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP217</tt></td>
+<td>Write Protect Program Flash Page 217</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP218</tt></td>
+<td>Write Protect Program Flash Page 218</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP219</tt></td>
+<td>Write Protect Program Flash Page 219</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP220</tt></td>
+<td>Write Protect Program Flash Page 220</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP221</tt></td>
+<td>Write Protect Program Flash Page 221</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP222</tt></td>
+<td>Write Protect Program Flash Page 222</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP223</tt></td>
+<td>Write Protect Program Flash Page 223</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP224</tt></td>
+<td>Write Protect Program Flash Page 224</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP225</tt></td>
+<td>Write Protect Program Flash Page 225</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP226</tt></td>
+<td>Write Protect Program Flash Page 226</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP227</tt></td>
+<td>Write Protect Program Flash Page 227</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP228</tt></td>
+<td>Write Protect Program Flash Page 228</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP229</tt></td>
+<td>Write Protect Program Flash Page 229</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP230</tt></td>
+<td>Write Protect Program Flash Page 230</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP231</tt></td>
+<td>Write Protect Program Flash Page 231</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP232</tt></td>
+<td>Write Protect Program Flash Page 232</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP233</tt></td>
+<td>Write Protect Program Flash Page 233</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP234</tt></td>
+<td>Write Protect Program Flash Page 234</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP235</tt></td>
+<td>Write Protect Program Flash Page 235</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP236</tt></td>
+<td>Write Protect Program Flash Page 236</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP237</tt></td>
+<td>Write Protect Program Flash Page 237</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP238</tt></td>
+<td>Write Protect Program Flash Page 238</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP239</tt></td>
+<td>Write Protect Program Flash Page 239</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP240</tt></td>
+<td>Write Protect Program Flash Page 240</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP241</tt></td>
+<td>Write Protect Program Flash Page 241</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP242</tt></td>
+<td>Write Protect Program Flash Page 242</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP243</tt></td>
+<td>Write Protect Program Flash Page 243</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP244</tt></td>
+<td>Write Protect Program Flash Page 244</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP245</tt></td>
+<td>Write Protect Program Flash Page 245</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP246</tt></td>
+<td>Write Protect Program Flash Page 246</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP247</tt></td>
+<td>Write Protect Program Flash Page 247</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP248</tt></td>
+<td>Write Protect Program Flash Page 248</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP249</tt></td>
+<td>Write Protect Program Flash Page 249</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP250</tt></td>
+<td>Write Protect Program Flash Page 250</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP251</tt></td>
+<td>Write Protect Program Flash Page 251</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP252</tt></td>
+<td>Write Protect Program Flash Page 252</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP253</tt></td>
+<td>Write Protect Program Flash Page 253</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP254</tt></td>
+<td>Write Protect Program Flash Page 254</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPFP255</tt></td>
+<td>Write Protect Program Flash Page 255</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG4H @ 0x1FFF7</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WPDIS</tt></b></td>
+<td><b>Segment Write Protection Disable</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPDIS</tt></td>
+<td>Disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPEN</tt></td>
+<td>Enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WPEND</tt></b></td>
+<td><b>Segment Write Protection End Page Select</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPENDMEM</tt></td>
+<td>Write Protect from WPFP to the last page of memory</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPSTARTMEM</tt></td>
+<td>write Protect from page 0 to WPFP</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WPCFG</tt></b></td>
+<td><b>Write Protect Configuration Page Select</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPCFGDIS</tt></td>
+<td>Disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WPCFGEN</tt></td>
+<td>Enabled</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG5L @ 0x1FFF8</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>T5GSEL</tt></b></td>
+<td><b>TMR5 Gate Select bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>T5G</tt></td>
+<td>TMR5 Gate is driven by the T5G input</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>T3G</tt></td>
+<td>TMR5 Gate is driven by the T3G input</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>CINASEL</tt></b></td>
+<td><b>CxINA Gate Select bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DEFAULT</tt></td>
+<td>C1INA and C3INA are on their default pin locations</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>RA5</tt></td>
+<td>C1INA and C3INA are all re-mapped to pin RA5</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>EASHFT</tt></b></td>
+<td><b>External Address Shift bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Address Shifting enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Address Shifting disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>ABW</tt></b></td>
+<td><b>Address Bus Width Select bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>MM</tt></td>
+<td>8-bit address bus</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>XM12</tt></td>
+<td>12-bit address bus</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>XM16</tt></td>
+<td>16-bit address bus</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>XM20</tt></td>
+<td>20-bit address bus</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BW</tt></b></td>
+<td><b>Data Bus Width</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>16</tt></td>
+<td>16-bit external bus mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>8</tt></td>
+<td>8-bit external bus mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WAIT</tt></b></td>
+<td><b>External Bus Wait</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Enabled</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG5H @ 0x1FFF9</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>IOL1WAY</tt></b></td>
+<td><b>IOLOCK One-Way Set Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Once set, the IOLOCK bit cannot be cleared</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>the IOLOCK bit can be set and cleared using the unlock sequence</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>LS48MHZ</tt></b></td>
+<td><b>USB Low Speed Clock Select bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>SYSX2</tt></td>
+<td>Divide-by-2 (System clock must be 12 MHz)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>SYSX1</tt></td>
+<td>Divide-by-1 (System clock must be 6 MHz)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>MSSPMSK2</tt></b></td>
+<td><b>MSSP2 7-Bit Address Masking Mode Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>MSK7</tt></td>
+<td>7 Bit address masking mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>MSK5</tt></td>
+<td>5 Bit address masking mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>MSSPMSK1</tt></b></td>
+<td><b>MSSP1 7-Bit Address Masking Mode Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>MSK7</tt></td>
+<td>7 Bit address masking mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>MSK5</tt></td>
+<td>5 bit address masking mode</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG6L @ 0x1FFFA</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDTWIN</tt></b></td>
+<td><b>Watch Dog Timer Window</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PS25_0</tt></td>
+<td>Watch Dog Timer Window Width is 25 percent</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PS37_5</tt></td>
+<td>Watch Dog Timer Window Width is 37.5 percent</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PS50_0</tt></td>
+<td>Watch Dog Timer Window Width is 50 percent</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PS75_0</tt></td>
+<td>Watch Dog Timer Window Width is 75 percent</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDTCLK</tt></b></td>
+<td><b>Watch Dog Timer Clock Source</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>FRC</tt></td>
+<td>Use FRC when WINDIS = 0, system clock is not INTOSC/LPRC and device is not in Sleep; otherwise, use INTOSC/LPRC</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>LPRC</tt></td>
+<td>Always use INTOSC/LPRC</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>SOSC</tt></td>
+<td>Always use SOSC</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>SYS</tt></td>
+<td>Use FOSC/4 when system clock is not INTOSC/LPRC and device is not in Sleep; otherwise, use INTOSC/LPRC</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDTPS</tt></b></td>
+<td><b>Watchdog Timer Postscale</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>32768</tt></td>
+<td>1:32768</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>16384</tt></td>
+<td>1:16384</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>8192</tt></td>
+<td>1:8192</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>4096</tt></td>
+<td>1:4096</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>2048</tt></td>
+<td>1:2048</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>1024</tt></td>
+<td>1:1024</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>512</tt></td>
+<td>1:512</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>256</tt></td>
+<td>1:256</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>128</tt></td>
+<td>1:128</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>64</tt></td>
+<td>1:64</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>32</tt></td>
+<td>1:32</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>16</tt></td>
+<td>1:16</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>8</tt></td>
+<td>1:8</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>4</tt></td>
+<td>1:4</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>2</tt></td>
+<td>1:2</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>1</tt></td>
+<td>1:1</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG6H @ 0x1FFFB</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDTEN</tt></b></td>
+<td><b>Watchdog Timer Enable</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>SWDTDIS</tt></td>
+<td>WDT enabled in hardware; SWDTEN bit disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>WDT controlled by SWDTEN bit setting</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>NOSLP</tt></td>
+<td>WDT enabled only while device is active and disabled in Sleep mode; SWDTEN bit disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>WDT disabled in hardware; SWDTEN bit disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WINDIS</tt></b></td>
+<td><b>Windowed Watchdog Timer Disable</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDTSTD</tt></td>
+<td>Standard WDT selected; windowed WDT disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDTWIN</tt></td>
+<td>Windowed WDT enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WPSA</tt></b></td>
+<td><b>WDT Prescaler</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>128</tt></td>
+<td>WDT prescaler ratio of 1:128</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>32</tt></td>
+<td>WDT prescaler ratio of 1:32</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG7L @ 0x1FFFC</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>RETEN</tt></b></td>
+<td><b>Retention Voltage Regulator Control Enable</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Retention not available</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Retention controlled by SRETEN during Sleep</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>VBTBOR</tt></b></td>
+<td><b>VBAT BOR Enable</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>VBAT BOR is enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>VBAT BOR is disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>DSBOREN</tt></b></td>
+<td><b>Deep Sleep BOR Enable</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>BOR enabled in Deep Sleep</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>BOR disabled in Deep Sleep (does not affect operation in non-Deep Sleep modes)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>DSBITEN</tt></b></td>
+<td><b>DSEN Bit Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Deep Sleep is controlled by the register bit DSEN</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Deep Sleep operation is always disabled</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG7H @ 0x1FFFD</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG8L @ 0x1FFFE</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>DSWDTPS</tt></b></td>
+<td><b>Deep Sleep Watchdog Timer Postscale Select</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS1F</tt></td>
+<td>1:68719476736 (25.7 Days)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS1E</tt></td>
+<td>1:34359738368 (12.8  Days)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS1D</tt></td>
+<td>1:17179869184 (6.4 Days)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS1C</tt></td>
+<td>1:8589934592 (77 Hours)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS1B</tt></td>
+<td>1:4294967296 (38.5 Hours)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS1A</tt></td>
+<td>1:2147483648 (19.2 Hours)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS19</tt></td>
+<td>1:1073741824 (9.6 Hours)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS18</tt></td>
+<td>1:536870912 (4.8 Hours)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS17</tt></td>
+<td>1:268435456 (2.4 Hours)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS16</tt></td>
+<td>1:134217728 (72.2 Minutes)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS15</tt></td>
+<td>1:67108864 (36.1 Minutes)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS14</tt></td>
+<td>1:33554432 (18 Minutes)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS13</tt></td>
+<td>1:16777216 (9 Minutes)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS12</tt></td>
+<td>1:8388608 (4.5 Minutes)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS11</tt></td>
+<td>1:4194304 (135.3 Secs)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS10</tt></td>
+<td>1:2097152 (67.7 Secs)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPSF</tt></td>
+<td>1:1048576 (33.825 Secs)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPSE</tt></td>
+<td>1:524288 (16.912 Secs)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPSD</tt></td>
+<td>1:262114 (8.456 Secs)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPSC</tt></td>
+<td>1:131072 (4.228 Secs)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPSB</tt></td>
+<td>1:65536 (2.114 Secs)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPSA</tt></td>
+<td>1:32768 (1.057 Secs)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS9</tt></td>
+<td>1:16384 (528.5 mS)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS8</tt></td>
+<td>1:8192 (264.3 mS)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS7</tt></td>
+<td>1:4096 (132.1 mS)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS6</tt></td>
+<td>1:2048 (66.1 mS)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS5</tt></td>
+<td>1:1024 (33 mS)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS4</tt></td>
+<td>1:512 (16.5 mS)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS3</tt></td>
+<td>1: 256 (8.3 mS)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS2</tt></td>
+<td>1:128 (4.1 mS)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS1</tt></td>
+<td>1:64 (2.1 mS)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DSWDTPS0</tt></td>
+<td>1:32 (1 mS)</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG8H @ 0x1FFFF</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>DSWDTEN</tt></b></td>
+<td><b>Deep Sleep Watchdog Timer Enable</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>DSWDT Enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>DSWDT Disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>DSWDTOSC</tt></b></td>
+<td><b>DSWDT Reference Clock Select</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>LPRC</tt></td>
+<td>DSWDT uses LPRC as reference clock</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>SOSC</tt></td>
+<td>DSWDT uses SOSC as reference clock</td>
+</tr>
+</tbody></table>
+<br/>
+</BODY>
+</HTML>

@@ -1,0 +1,233 @@
+# Generated 05/12/2024 GMT
+
+# Copyright © 2024, Microchip Technology Inc. and its subsidiaries ("Microchip")
+# All rights reserved.
+# 
+# This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
+# 
+# Redistribution and use in source and binary forms, with or without modification, are
+# permitted provided that the following conditions are met:
+# 
+#     1. Redistributions of source code must retain the above copyright notice, this list of
+#        conditions and the following disclaimer.
+# 
+#     2. Redistributions in binary form must reproduce the above copyright notice, this list
+#        of conditions and the following disclaimer in the documentation and/or other
+#        materials provided with the distribution. Publication is not required when
+#        this file is used in an embedded application.
+# 
+#     3. Microchip's name may not be used to endorse or promote products derived from this
+#        software without specific prior written permission.
+# 
+# THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+# PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+# THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Microchip PIC18LF46J11 Configuration Word Definitions
+
+# File Syntax:
+# Each configuration register is given as:
+# 
+#     CWORD:<address>:<mask>:<default value>[:<name>[,<alias list>]]
+# 
+# for each CWORD the configuration settings are listed as
+# 
+#     CSETTING:<mask>:<name>[,<alias list>]:<description>
+# 
+# lastly for each CSETTING all possible values are listed as
+# 
+#     CVALUE:<value>:<name>[,<alias list>]:<description>
+# 
+# All numerical values are given in unqualified hex.  In terms of
+# #pragma config, note the following correspondence:
+# 
+#    #pragma config CSETTING<name> = CVALUE<name>
+# 
+# The compiler may also emit a message when it detects certain programming.
+# This behaviour is defined by the following record
+# 
+#     CMSG:<CSETTING name>=<CVALUE name>[,...]:<message number>
+# 
+# If the compiler encounters the given programming then it will emit the
+# with the corresponding numnber.  Note that these records must appear last
+# in the file.
+# 
+# Comments are also permitted.  Any line beginning with a '#'
+# character will be treated as a comment.
+
+CWORD:FFF8:E1:E1:CONFIG1L
+CSETTING:1:WDTEN:Watchdog Timer
+CVALUE:1:ON:Enabled
+CVALUE:0:OFF:Disabled - Controlled by SWDTEN bit
+CSETTING:20:STVREN:Stack Overflow/Underflow Reset
+CVALUE:20:ON:Enabled
+CVALUE:0:OFF:Disabled
+CSETTING:40:XINST:Extended Instruction Set
+CVALUE:40:ON:Enabled
+CVALUE:0:OFF:Disabled
+CSETTING:80:DEBUG:Background Debug
+CVALUE:80:OFF:Disabled
+CVALUE:0:ON:Enabled
+CWORD:FFF9:C:F4:CONFIG1H
+CSETTING:4:CP0:Code Protect
+CVALUE:4:OFF:Program memory is not code-protected
+CVALUE:0:ON:Program memory is code-protected
+CWORD:FFFA:DF:DF:CONFIG2L
+CSETTING:7:OSC:Oscillator
+CVALUE:7:ECPLL:EC+PLL (CLKO-RA6)
+CVALUE:6:EC:EC (CLKO-RA6)
+CVALUE:5:HSPLL:HS+PLL
+CVALUE:4:HS:HS
+CVALUE:3:INTOSCPLLO:INTOSCPLLO (CLKO-RA6)
+CVALUE:2:INTOSCPLL:INTOSCPLL
+CVALUE:1:INTOSCO:INTOSCO (CLKO-RA6)
+CVALUE:0:INTOSC:INTOSC
+CSETTING:8:T1DIG:T1OSCEN Enforcement
+CVALUE:8:ON:Secondary Oscillator clock source may be selected
+CVALUE:0:OFF:Secondary Oscillator clock source may not be selected
+CSETTING:10:LPT1OSC:Low-Power Timer1 Oscillator
+CVALUE:10:OFF:High-power operation
+CVALUE:0:ON:Low-power operation
+CSETTING:40:FCMEN:Fail-Safe Clock Monitor
+CVALUE:0:OFF:Disabled
+CVALUE:40:ON:Enabled
+CSETTING:80:IESO:Internal External Oscillator Switch Over Mode
+CVALUE:0:OFF:Disabled
+CVALUE:80:ON:Enabled
+CWORD:FFFB:F:FF:CONFIG2H
+CSETTING:F:WDTPS:Watchdog Postscaler
+CVALUE:F:32768:1:32768
+CVALUE:E:16384:1:16384
+CVALUE:D:8192:1:8192
+CVALUE:C:4096:1:4096
+CVALUE:B:2048:1:2048
+CVALUE:A:1024:1:1024
+CVALUE:9:512:1:512
+CVALUE:8:256:1:256
+CVALUE:7:128:1:128
+CVALUE:6:64:1:64
+CVALUE:5:32:1:32
+CVALUE:4:16:1:16
+CVALUE:3:8:1:8
+CVALUE:2:4:1:4
+CVALUE:1:2:1:2
+CVALUE:0:1:1:1
+CWORD:FFFC:FF:FF:CONFIG3L
+CSETTING:1:DSWDTOSC:DSWDT Clock Select
+CVALUE:1:INTOSCREF:DSWDT uses INTRC
+CVALUE:0:T1OSCREF:DSWDT uses T1OSC/T1CKI
+CSETTING:2:RTCOSC:RTCC Clock Select
+CVALUE:2:T1OSCREF:RTCC uses T1OSC/T1CKI
+CVALUE:0:INTOSCREF:RTCC uses INTRC
+CSETTING:4:DSBOREN:Deep Sleep BOR
+CVALUE:4:ON:Enabled
+CVALUE:0:OFF:Disabled
+CSETTING:8:DSWDTEN:Deep Sleep Watchdog Timer
+CVALUE:8:ON:Enabled
+CVALUE:0:OFF:Disabled
+CSETTING:F0:DSWDTPS:Deep Sleep Watchdog Postscaler
+CVALUE:F0:G2:1:2,147,483,648 (25.7 days)
+CVALUE:E0:M536:1:536,870,912 (6.4 days)
+CVALUE:D0:M134:1:134,217,728 (38.5 hours)
+CVALUE:C0:M33:1:33,554,432 (9.6 hours)
+CVALUE:B0:M8:1:8,388,608 (2.4 hours)
+CVALUE:A0:M2:1:2,097,152 (36 minutes)
+CVALUE:90:K524:1:524,288 (9 minutes)
+CVALUE:80:K131:1:131,072 (135 seconds)
+CVALUE:70:K32:1:32,768 (34 seconds)
+CVALUE:60:8192:1:8,192 (8.5 seconds)
+CVALUE:50:2048:1:2,048 (2.1 seconds)
+CVALUE:40:512:1:512 (528 ms)
+CVALUE:30:128:1:128 (132 ms)
+CVALUE:20:32:1:32 (33 ms)
+CVALUE:10:8:1:8 (8.3 ms)
+CVALUE:0:2:1:2 (2.1 ms)
+CWORD:FFFD:F9:F9:CONFIG3H
+CSETTING:1:IOL1WAY:IOLOCK One-Way Set Enable bit
+CVALUE:1:ON:The IOLOCK bit (PPSCON<0>) can be set once
+CVALUE:0:OFF:The IOLOCK bit (PPSCON<0>) can be set and cleared as needed
+CSETTING:8:MSSP7B_EN:MSSP address masking
+CVALUE:8:MSK7:7 Bit address masking mode
+CVALUE:0:MSK5:5 Bit address masking mode
+CWORD:FFFE:FF:FF:CONFIG4L
+CSETTING:3F:WPFP:Write/Erase Protect Page Start/End Location
+CVALUE:0:PAGE_0:Write Protect Program Flash Page 0
+CVALUE:1:PAGE_1:Write Protect Program Flash Page 1
+CVALUE:2:PAGE_2:Write Protect Program Flash Page 2
+CVALUE:3:PAGE_3:Write Protect Program Flash Page 3
+CVALUE:4:PAGE_4:Write Protect Program Flash Page 4
+CVALUE:5:PAGE_5:Write Protect Program Flash Page 5
+CVALUE:6:PAGE_6:Write Protect Program Flash Page 6
+CVALUE:7:PAGE_7:Write Protect Program Flash Page 7
+CVALUE:8:PAGE_8:Write Protect Program Flash Page 8
+CVALUE:9:PAGE_9:Write Protect Program Flash Page 9
+CVALUE:A:PAGE_10:Write Protect Program Flash Page 10
+CVALUE:B:PAGE_11:Write Protect Program Flash Page 11
+CVALUE:C:PAGE_12:Write Protect Program Flash Page 12
+CVALUE:D:PAGE_13:Write Protect Program Flash Page 13
+CVALUE:E:PAGE_14:Write Protect Program Flash Page 14
+CVALUE:F:PAGE_15:Write Protect Program Flash Page 15
+CVALUE:10:PAGE_16:Write Protect Program Flash Page 16
+CVALUE:11:PAGE_17:Write Protect Program Flash Page 17
+CVALUE:12:PAGE_18:Write Protect Program Flash Page 18
+CVALUE:13:PAGE_19:Write Protect Program Flash Page 19
+CVALUE:14:PAGE_20:Write Protect Program Flash Page 20
+CVALUE:15:PAGE_21:Write Protect Program Flash Page 21
+CVALUE:16:PAGE_22:Write Protect Program Flash Page 22
+CVALUE:17:PAGE_23:Write Protect Program Flash Page 23
+CVALUE:18:PAGE_24:Write Protect Program Flash Page 24
+CVALUE:19:PAGE_25:Write Protect Program Flash Page 25
+CVALUE:1A:PAGE_26:Write Protect Program Flash Page 26
+CVALUE:1B:PAGE_27:Write Protect Program Flash Page 27
+CVALUE:1C:PAGE_28:Write Protect Program Flash Page 28
+CVALUE:1D:PAGE_29:Write Protect Program Flash Page 29
+CVALUE:1E:PAGE_30:Write Protect Program Flash Page 30
+CVALUE:1F:PAGE_31:Write Protect Program Flash Page 31
+CVALUE:20:PAGE_32:Write Protect Program Flash Page 32
+CVALUE:21:PAGE_33:Write Protect Program Flash Page 33
+CVALUE:22:PAGE_34:Write Protect Program Flash Page 34
+CVALUE:23:PAGE_35:Write Protect Program Flash Page 35
+CVALUE:24:PAGE_36:Write Protect Program Flash Page 36
+CVALUE:25:PAGE_37:Write Protect Program Flash Page 37
+CVALUE:26:PAGE_38:Write Protect Program Flash Page 38
+CVALUE:27:PAGE_39:Write Protect Program Flash Page 39
+CVALUE:28:PAGE_40:Write Protect Program Flash Page 40
+CVALUE:29:PAGE_41:Write Protect Program Flash Page 41
+CVALUE:2A:PAGE_42:Write Protect Program Flash Page 42
+CVALUE:2B:PAGE_43:Write Protect Program Flash Page 43
+CVALUE:2C:PAGE_44:Write Protect Program Flash Page 44
+CVALUE:2D:PAGE_45:Write Protect Program Flash Page 45
+CVALUE:2E:PAGE_46:Write Protect Program Flash Page 46
+CVALUE:2F:PAGE_47:Write Protect Program Flash Page 47
+CVALUE:30:PAGE_48:Write Protect Program Flash Page 48
+CVALUE:31:PAGE_49:Write Protect Program Flash Page 49
+CVALUE:32:PAGE_50:Write Protect Program Flash Page 50
+CVALUE:33:PAGE_51:Write Protect Program Flash Page 51
+CVALUE:34:PAGE_52:Write Protect Program Flash Page 52
+CVALUE:35:PAGE_53:Write Protect Program Flash Page 53
+CVALUE:36:PAGE_54:Write Protect Program Flash Page 54
+CVALUE:37:PAGE_55:Write Protect Program Flash Page 55
+CVALUE:38:PAGE_56:Write Protect Program Flash Page 56
+CVALUE:39:PAGE_57:Write Protect Program Flash Page 57
+CVALUE:3A:PAGE_58:Write Protect Program Flash Page 58
+CVALUE:3B:PAGE_59:Write Protect Program Flash Page 59
+CVALUE:3C:PAGE_60:Write Protect Program Flash Page 60
+CVALUE:3D:PAGE_61:Write Protect Program Flash Page 61
+CVALUE:3E:PAGE_62:Write Protect Program Flash Page 62
+CVALUE:3F:PAGE_63:Write Protect Program Flash Page 63
+CSETTING:40:WPEND:Write/Erase Protect Region Select (valid when WPDIS = 0)
+CVALUE:40:PAGE_WPFP:Page WPFP<5:0> through Configuration Words erase/write protected
+CVALUE:0:PAGE_0:Page 0 through WPFP<5:0> erase/write protected
+CSETTING:80:WPCFG:Write/Erase Protect Configuration Region
+CVALUE:80:OFF:Configuration Words page not erase/write-protected
+CVALUE:0:ON:Configuration Words page erase/write-protected
+CWORD:FFFF:1:F1:CONFIG4H
+CSETTING:1:WPDIS:Write Protect Disable bit
+CVALUE:1:OFF:WPFP<5:0>/WPEND region ignored
+CVALUE:0:ON:WPFP<5:0>/WPEND region erase/write protected
+CMSG:XINST=ON:1504

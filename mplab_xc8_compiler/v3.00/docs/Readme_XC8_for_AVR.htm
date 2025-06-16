@@ -1,0 +1,3043 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>MPLABÂ&#x0151; XC8 C Compiler
+Version 3.00Â&#x0103;Release Notes
+for AVRÂ&#x0151; MCU</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="Readme_XC8_for_AVR.tex"> 
+<link rel="stylesheet" type="text/css" href="Readme_XC8_for_AVR.html.dat/Readme_XC8_for_AVR.css"> 
+</head><body 
+>
+<div class="maketitle">
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+
+<h2 class="titleHead">MPLAB<sup class="textsuperscript">®</sup>  XC8 C Compiler<br />
+Version 3.00&#x00A0;Release Notes<br />
+for AVR<sup class="textsuperscript">®</sup>  MCU</h2>
+ <div class="author" ></div>
+<br />
+<div class="date" ></div>
+</div>
+<div class="center" 
+>
+<!--l. 108--><p class="noindent" >
+<!--l. 109--><p class="noindent" ><span 
+class="ec-lmcsc-10">This document contains important information</span><br />
+ <span 
+class="ec-lmcsc-10">relating to the MPLAB XC8 C compiler when targeting microchip AVR</span>
+<span 
+class="ec-lmcsc-10">devices.</span><br />
+ <span 
+class="ec-lmcsc-10">Please read it before running this software.</span>
+</div>
+<div class="center" 
+>
+<!--l. 116--><p class="noindent" >
+<!--l. 117--><p class="noindent" ><span 
+class="ec-lmcsc-10">See the</span><br />
+ <span 
+class="ec-lmcsc-10">MPLAB XC8 C compiler release notes for PIC document</span><br />
+ <span 
+class="ec-lmcsc-10">if you are using the compiler for 8-bit PIC devices.</span>
+</div>
+<h3 class="likesectionHead"><a 
+ id="x1-1000"></a>Contents</h3>
+<div class="tableofcontents">
+                                                                               
+                                                                               
+<span class="sectionToc" >1 <a 
+href="#x1-20001" id="QQ2-1-2">Overview</a></span>
+<br /><span class="sectionToc" >2 <a 
+href="#x1-150002" id="QQ2-1-16">Documentation Updates</a></span>
+<br /><span class="sectionToc" >3 <a 
+href="#x1-160003" id="QQ2-1-17">What&#8217;s New</a></span>
+<br /><span class="sectionToc" >4 <a 
+href="#x1-360004" id="QQ2-1-37">Migration Issues</a></span>
+<br /><span class="sectionToc" >5 <a 
+href="#x1-560005" id="QQ2-1-57">Fixed Issues</a></span>
+<br /><span class="sectionToc" >6 <a 
+href="#x1-760006" id="QQ2-1-77">Known Issues</a></span>
+</div>
+                                                                               
+                                                                               
+<!--l. 125--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-20001"></a>Overview</h3>
+<!--l. 127--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x1-30001.1"></a>Introduction</h4>
+<!--l. 129--><p class="noindent" >This release of the Microchip MPLAB<sup class="textsuperscript"><span 
+class="ec-lmr-9">®</span></sup> XC8 C compiler is a minor update that contains several new
+features, bug fixes, and new device support.
+<!--l. 133--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.2   </span> <a 
+ id="x1-40001.2"></a>Build Date</h4>
+<!--l. 135--><p class="noindent" >The official build date of this compiler version is December 4, 2024.
+<!--l. 137--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.3   </span> <a 
+ id="x1-50001.3"></a>Previous Version</h4>
+<!--l. 139--><p class="noindent" >The previous MPLAB XC8 C compiler version was 2.50, built on July 26, 2024.
+<!--l. 142--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.4   </span> <a 
+ id="x1-60001.4"></a>Functional Safety Manual</h4>
+<!--l. 144--><p class="noindent" >A Functional Safety Manual for the MPLAB XC compilers is available in the documentation package
+when you purchase a functional safety license.
+<!--l. 148--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.5   </span> <a 
+ id="x1-70001.5"></a>Component Licenses and Versions</h4>
+<!--l. 150--><p class="noindent" >The MPLAB XC8 C Compiler for AVR MCUs tools are written and distributed under the GNU
+General Public License (GPL) which means that its source code is freely distributed and available to
+the public.
+<!--l. 154--><p class="noindent" >The source code for tools under the GNU GPL may be downloaded separately from Microchip&#8217;s
+website. You may read the GNU GPL in the file named <span 
+class="ec-lmtt-10">license.txt </span>located the <span 
+class="ec-lmtt-10">avr/doc</span>
+subdirectory of your install directory. A general discussion of principles underlying the GPL may be
+found  <a 
+href="http://www.gnu.org/copyleft" ><span class="textul">here</span></a>.
+<!--l. 160--><p class="noindent" >Support code provided for the header files, linker scripts, and runtime libraries are proprietary code
+and not covered under the GPL.
+<!--l. 163--><p class="noindent" >This compiler is an implementation of GCC version 5.4.0, binutils version 2.26, and uses avr-libc
+version 2.0.0.
+                                                                               
+                                                                               
+<!--l. 166--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.6   </span> <a 
+ id="x1-80001.6"></a>System Requirements</h4>
+<!--l. 168--><p class="noindent" >The MPLAB XC8 C compiler and the licensing software it utilizes are available for a variety of
+operating systems, including 64-bit versions of the following: Professional editions of Microsoft<sup class="textsuperscript"><span 
+class="ec-lmr-9">®</span></sup>
+Windows<sup class="textsuperscript"><span 
+class="ec-lmr-9">®</span></sup> 10 and 11, Ubuntu<sup class="textsuperscript"><span 
+class="ec-lmr-9">®</span></sup> 20.04, macOS<sup class="textsuperscript"><span 
+class="ec-lmr-9">®</span></sup> 13.2 (Ventura) and 12.5 (Monterey), and Fedora 34.
+Binaries for Windows have been code-signed. Binaries for macOS have been code-signed and
+notarized.
+<!--l. 176--><p class="noindent" >The MPLAB XC Network License Server is available for a variety of 64-bit operating systems,
+including Microsoft Windows 10 and above; Ubuntu 20.04 and above; or macOS<sup class="textsuperscript"><span 
+class="ec-lmr-9">®</span></sup> 13.2 (Ventura) and
+above. The server may also run on various other operating systems including Windows Server, Linux
+distributions, such as Oracle<sup class="textsuperscript"><span 
+class="ec-lmr-9">®</span></sup> Enterprise Linux<sup class="textsuperscript"><span 
+class="ec-lmr-9">®</span></sup> and Red Hat<sup class="textsuperscript"><span 
+class="ec-lmr-9">®</span></sup> Enterprise Linux as well as older
+versions of supported operating systems. However, the MPLAB XC Network License Server is not
+tested on these operating systems. The MPLAB XC Network License Server can be run on Virtual
+Machines of the supported OS using a virtual machine license for network licenses (SW006021-VM).
+All 32-bit versions of the MPLAB XC Network Server are discontinued starting from version
+3.00.
+<!--l. 190--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.7   </span> <a 
+ id="x1-90001.7"></a>Devices Supported</h4>
+<!--l. 192--><p class="noindent" >This compiler supports all available 8-bit AVR MCU devices at the time of release. See
+<span 
+class="ec-lmtt-10">avr_chipinfo.html </span>(in the compiler&#8217;s <span 
+class="ec-lmtt-10">doc </span>directory) for a list of all supported devices. These files also
+list configuration bit settings for each device.
+<!--l. 197--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.8   </span> <a 
+ id="x1-100001.8"></a>Editions and License Upgrades</h4>
+<!--l. 199--><p class="noindent" >The MPLAB XC8 compiler can be activated as a licensed (PRO) or unlicensed (Free) product. You
+need to purchase an activation key to license your compiler. A license allows for a higher level of
+optimization compared to the Free product. An unlicensed compiler can be operated indefinitely
+without a license.
+<!--l. 205--><p class="noindent" >An MPLAB XC8 Functional Safety compiler must be activated with a functional safety license
+purchased from Microchip. The compiler will not operate without this license. Once activated, you can
+select any optimization level and use all the compiler features. This release of the MPLAB XC
+Functional Safety Compiler supports the Network Server License.
+<!--l. 211--><p class="noindent" >See the <span 
+class="ec-lmri-10">Installing and Licensing MPLAB XC C Compilers </span>(DS50002059) document for information on
+license types and installation of the compiler with a license.
+<!--l. 215--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.9   </span> <a 
+ id="x1-110001.9"></a>Installation and Activation</h4>
+<!--l. 218--><p class="noindent" ><span 
+class="ec-lmri-10">See also the Migration Issues and Limitations sections for important information about the latest</span>
+<span 
+class="ec-lmri-10">license manager included with this compiler.</span>
+<!--l. 220--><p class="noindent" >If using MPLAB IDE, be sure to install the latest MPLAB X IDE version 5.0 or later before installing
+this tool. Quit the IDE before installing the compiler. Run the <span 
+class="ec-lmtt-10">.exe </span>(Windows), <span 
+class="ec-lmtt-10">.run </span>(Linux) or <span 
+class="ec-lmtt-10">.app</span>
+(macOS) compiler installer application, e.g. <span 
+class="ec-lmtt-10">XC8-1.00.11403-windows.exe </span>and follow the directions
+                                                                               
+                                                                               
+on the screen. The default installation directory is recommended. If you are using Linux, you must
+install the compiler using a terminal and from a root account. Install using a macOS account with
+administrator privileges.
+<!--l. 229--><p class="noindent" >Activation is now carried out separately to installation. See the document <span 
+class="ec-lmri-10">License Manager for</span>
+<span 
+class="ec-lmri-10">MPLAB</span><sup class="textsuperscript"><span 
+class="ec-lmri-9">®</span></sup> <span 
+class="ec-lmri-10">XC C Compilers </span>(DS52059) for more information.
+<!--l. 233--><p class="noindent" >If you choose to run the compiler under the evaluation license, you will now get a warning during
+compilation when you are within 14 days of the end of your evaluation period. The same warning is
+issued if you are within 14 days of the end of your HPA subscription.
+<!--l. 238--><p class="noindent" >The XC Network License Server is a separate installer and is not included in the single-user compiler
+installer.
+<!--l. 241--><p class="noindent" >The XC License Manager now supports roaming of floating network licenses. Aimed at mobile users,
+this feature allows a floating license to go off network for a short period of time. Using this feature, you
+can disconnect from the network and still use your MPLAB XC compiler. See the doc folder of the
+XCLM install for more on this feature.<br 
+class="newline" />MPLAB X IDE includes a Licenses window (Tools &#x003E; Licenses) to visually manage roaming.
+<!--l. 249--><p class="noindent" >
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-12000"></a>Resolving Installation Issues</h5>
+<!--l. 251--><p class="noindent" >If you experience difficulties installing the compiler under any of the Windows operating systems, try
+the following suggestions.
+     <ul class="itemize1">
+     <li class="itemize">
+     <!--l. 254--><p class="noindent" >Run the install as an administrator.
+     </li>
+     <li class="itemize">
+     <!--l. 255--><p class="noindent" >Set the permissions of the installer application to &#8217;Full control&#8217;. (Right-click the file, select
+     Properties, Security tab, select user, edit.)
+     </li>
+     <li class="itemize">
+     <!--l. 258--><p class="noindent" >Set permissions of the temp folder to &#8217;Full Control&#8217;.</li></ul>
+<!--l. 260--><p class="noindent" >To determine the location of the temp folder, type <span 
+class="ec-lmtt-10">%temp% </span>into the Run command (Windows logo key
++ R). This will open a file explorer dialog showing that directory and will allow you to determine the
+path of that folder.
+<!--l. 265--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.10   </span> <a 
+ id="x1-130001.10"></a>Compiler Documentation</h4>
+<!--l. 267--><p class="noindent" >There are several user&#8217;s guides shipped with the compiler. These can be opened from links in the
+HTML page that opens in your browser when clicking the blue help button in MPLAB X IDE
+dashboard, as indicated in the screenshot.
+<!--l. 272--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                                                               
+                                                                               
+<a 
+ id="x1-130011"></a>
+                                                                               
+                                                                               
+<!--l. 274--><p class="noindent" ><img 
+src="Readme_XC8_for_AVR.html.dat/0_opt_developer_svcjenkins_agent_workspace_C_XC____manual_xc8_readme_diagrams_ide_help_button.png" alt="PIC"  
+width="111" height="103" >
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1: </span><span  
+class="content">Where to access documentation from within the MPLAB X IDE</span></div><!--tex4ht:label?: x1-130011 -->
+                                                                               
+                                                                               
+<!--l. 277--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 279--><p class="noindent" >If you are building for 8-bit AVR targets, the MPLAB<sup class="textsuperscript"><span 
+class="ec-lmr-9">®</span></sup> XC8 C Compiler User&#8217;s Guide for AVR<sup class="textsuperscript"><span 
+class="ec-lmr-9">®</span></sup> MCU
+contains information on those compiler options and features that are applicable to this
+architecture.
+<h4 class="subsectionHead"><span class="titlemark">1.11   </span> <a 
+ id="x1-140001.11"></a>Customer Support</h4>
+<!--l. 286--><p class="noindent" >You can ask questions of other users of this product in the  <a 
+href="https://forum.microchip.com/s/sub-forums?forumId=a553l000000J2pvAAC&forumName=Development%5C%20Tools&subForumId=a553l000000J2rAAAS&subForumName=MPLAB%5C%20XC8" ><span class="textul">XC8 Forum</span></a>.
+<!--l. 288--><p class="noindent" >Microchip welcomes bug reports, suggestions or comments regarding this compiler version. Please
+direct any bug reports or feature requests via the  <a 
+href="https://www.microchip.com/en-us/support" ><span class="textul">Support System</span></a>.
+<!--l. 292--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-150002"></a>Documentation Updates</h3>
+<!--l. 294--><p class="noindent" >For on-line and up-to-date versions of MPLAB XC8 documentation, please visit Microchip&#8217;s  <a 
+href="https://onlinedocs.microchip.com" ><span class="textul">Online
+Technical Documentation</span></a> website.
+<!--l. 298--><p class="noindent" >This release includes the following new or updated AVR documentation:
+     <ul class="itemize1">
+     <li class="itemize">
+     <!--l. 300--><p class="noindent" ><span 
+class="ec-lmri-10">Microchip Unified Standard Library Reference Guide </span>(revision D)
+     </li>
+     <li class="itemize">
+     <!--l. 302--><p class="noindent" ><span 
+class="ec-lmri-10">MPLAB</span><sup class="textsuperscript"><span 
+class="ec-lmri-9">®</span></sup> <span 
+class="ec-lmri-10">XC8 C Compiler User&#8217;s Guide for AVR</span><sup class="textsuperscript"><span 
+class="ec-lmri-9">®</span></sup> <span 
+class="ec-lmri-10">MCU </span>(revision J)
+     </li>
+     <li class="itemize">
+     <!--l. 304--><p class="noindent" ><span 
+class="ec-lmri-10">Hexmate User&#8217;s Guide </span>(revision D)</li></ul>
+<!--l. 306--><p class="noindent" >As part of (XC8-3475), the release notes shipped with v3.00 and later versions of this compiler have
+been prepared using new tools. The content should remain unchanged but might be presented
+differently.
+<!--l. 310--><p class="noindent" >The <span 
+class="ec-lmri-10">AVR</span><sup class="textsuperscript"><span 
+class="ec-lmr-9">®</span></sup> <span 
+class="ec-lmri-10">GNU Toolchain to MPLAB</span><sup class="textsuperscript"><span 
+class="ec-lmr-9">®</span></sup> <span 
+class="ec-lmri-10">XC8 Migration Guide </span>describes the changes to source code
+and build options that might be required should you decide to migrate a C-based project from the
+AVR 8-bit GNU Toolchain to the Microchip MPLAB XC8 C Compiler.
+<!--l. 316--><p class="noindent" >The <span 
+class="ec-lmri-10">Microchip Unified Standard Library Reference Guide </span>describes the behavior of and interface to the
+functions defined by the Microchip Unified Standard Library, as well as the intended use of the library
+types and macros. Some of this information was formerly contained in the <span 
+class="ec-lmri-10">MPLAB</span><sup class="textsuperscript"><span 
+class="ec-lmri-9">®</span></sup> <span 
+class="ec-lmri-10">XC8 C Compiler</span>
+<span 
+class="ec-lmri-10">User&#8217;s Guide for AVR</span><sup class="textsuperscript"><span 
+class="ec-lmri-9">®</span></sup> <span 
+class="ec-lmri-10">MCU. </span>Device-specific library information is still contained in this compiler
+guide.
+<!--l. 324--><p class="noindent" >If you are just starting out with 8-bit devices and the MPLAB XC8 C Compiler, the <span 
+class="ec-lmri-10">MPLAB</span><sup class="textsuperscript"><span 
+class="ec-lmri-9">®</span></sup> <span 
+class="ec-lmri-10">XC8</span>
+<span 
+class="ec-lmri-10">User&#8217;s Guide for Embedded Engineers - AVR</span><sup class="textsuperscript"><span 
+class="ec-lmri-9">®</span></sup> <span 
+class="ec-lmri-10">MCUs </span>(DS50003108) has information on setting up
+projects in the MPLAB X IDE and writing code for your first MPLAB XC8 C project. This guide is
+now distributed with the compiler.
+<!--l. 331--><p class="noindent" >The <span 
+class="ec-lmri-10">Hexmate User&#8217;s Guide </span>is intended for those running Hexmate as a stand-alone application.
+                                                                               
+                                                                               
+<!--l. 334--><p class="noindent" >The following sections provide corrections and additional information to that found in the user&#8217;s guides
+shipped with the compiler.
+<!--l. 337--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-160003"></a>What&#8217;s New</h3>
+<!--l. 339--><p class="noindent" >The following are new AVR-target features the compiler now supports. The version number in the
+subheadings indicates the first compiler version to support the features that follow.
+<!--l. 343--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-17000"></a>Version 3.00</h4>
+<!--l. 344--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;device</span><span 
+class="ec-lmbx-10">&#x00A0;support</span> </dt><dd 
+class="description">
+     <!--l. 345--><p class="noindent" >Support is now available for the following AVR devices: AVR128DA28S, AVR128DA32S,
+     AVR128DA48S,    AVR128DA64S,    AVR32EB14,    AVR32EB20,    AVR32EB28,    and
+     AVR32EB32.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Shipped</span><span 
+class="ec-lmbx-10">&#x00A0;DFPs</span> </dt><dd 
+class="description">
+     <!--l. 348--><p class="noindent" >The                                                following                                                are
+     the AVR-specific DFP versions that ship with the compiler: ATautomotive_DFP v3.1.73,
+     ATmega_DFP v3.2.269, ATtiny_DFP v3.0.151, AVR-Dx_DFP v2.6.303, AVR-Ex_DFP
+     v2.10.205, XMEGAA_DFP v2.2.54, XMEGAB_DFP v2.3.149, XMEGAC_DFP v2.2.40,
+     XMEGAD_DFP v2.3.50, and XMEGAE_DFP v2.2.47.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;pointer</span><span 
+class="ec-lmbx-10">&#x00A0;diagnostic</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3584,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-3585)</span> </dt><dd 
+class="description">
+     <!--l. 353--><p class="noindent" >The                            compiler                            now                            supports
+     a new diagnostic controlled by <span 
+class="ec-lmtt-10">-Wincompatible-function-pointer-types </span>that triggers
+     an error when the address of an incompatible function is assigned to a function pointer.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Illegal</span><span 
+class="ec-lmbx-10">&#x00A0;opcode</span><span 
+class="ec-lmbx-10">&#x00A0;detection</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3508)</span> </dt><dd 
+class="description">
+     <!--l. 357--><p class="noindent" >The compiler will now detect if the illegal opcode detection security feature has been
+     enabled via the <span 
+class="ec-lmtt-10">CPUMON </span>configuration fuse and adjust the generated code to ensure this
+     feature operates properly.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">LSP</span><span 
+class="ec-lmbx-10">&#x00A0;at</span><span 
+class="ec-lmbx-10">&#x00A0;your</span><span 
+class="ec-lmbx-10">&#x00A0;service</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3466)</span> </dt><dd 
+class="description">
+     <!--l. 361--><p class="noindent" >The compiler now provides an implementation of a server conforming to the Language
+     Server Protocol (LSP) using clangd. This server can be used by IDEs to obtain some
+     intelligence regarding XC8 source code.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Faster</span><span 
+class="ec-lmbx-10">&#x00A0;division</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3465)</span> </dt><dd 
+class="description">
+     <!--l. 365--><p class="noindent" >The  compiler  now  uses  the  32-bit  Divide  Accelerator  (DIVA)  module  to  accelerate
+     floating-point division for AVR EC devices.
+                                                                               
+                                                                               
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">A</span><span 
+class="ec-lmbx-10">&#x00A0;wide</span><span 
+class="ec-lmbx-10">&#x00A0;divide</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3463)</span> </dt><dd 
+class="description">
+     <!--l. 368--><p class="noindent" >Some  divide  and  modulus  operations  with  8-bit  operands  were  performed  as  16-bit
+     operations, even when an 8-bit result was required. The compiler now performs 8-bit
+     operations when possible.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">XCLM</span><span 
+class="ec-lmbx-10">&#x00A0;update</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3479)</span> </dt><dd 
+class="description">
+     <!--l. 372--><p class="noindent" >The XCLM license manager has been updated to version 3.22.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">DIVA</span><span 
+class="ec-lmbx-10">&#x00A0;control</span><span 
+class="ec-lmbx-10">&#x00A0;attribute</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3464)</span> </dt><dd 
+class="description">
+     <!--l. 374--><p class="noindent" >A new <span 
+class="ec-lmtt-10">__nodiva </span>function attribute has been introduced to prevent code generated for the
+     attributed function from using the DIVA module.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Compact</span><span 
+class="ec-lmbx-10">&#x00A0;vector</span><span 
+class="ec-lmbx-10">&#x00A0;table</span><span 
+class="ec-lmbx-10">&#x00A0;support</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3459)</span> </dt><dd 
+class="description">
+     <!--l. 377--><p class="noindent" >The  compiler  now  supports  compact  interrupt  vector  tables  for  those  devices  that
+     implement  this  feature.  Compact  vector  tables  have  a  significantly  reduced  memory
+     footprint and are useful when a program does not need to handle a large number of
+     interrupt sources. This feature is enabled by using the <span 
+class="ec-lmtt-10">-mcvt </span>option.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Better</span><span 
+class="ec-lmbx-10">&#x00A0;cost</span><span 
+class="ec-lmbx-10">&#x00A0;modeling</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3003)</span> </dt><dd 
+class="description">
+     <!--l. 383--><p class="noindent" >The optimization cost modeling in the GCC backend on which MPLAB XC8 is based has
+     been improved to better determine if an optimization is beneficial for AVR architectures.
+     This change is largely transparent, but it might prevent cases where the compiler applied
+     optimizations that actually reduced the performance of a project.</dd></dl>
+<!--l. 391--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-18000"></a>Version 2.50</h4>
+<!--l. 392--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;Device</span><span 
+class="ec-lmbx-10">&#x00A0;Support</span> </dt><dd 
+class="description">
+     <!--l. 393--><p class="noindent" >Support  is  now  available  for  the  following  AVR  devices:  AVR16DU14,  AVR16DU20,
+     AVR16DU28,  AVR16DU32,  AVR32DU14,  AVR32DU20,  AVR32DU28,  AVR32DU32,
+     AVR64DU28 and AVR64DU32.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Shipped</span><span 
+class="ec-lmbx-10">&#x00A0;DFPs</span> </dt><dd 
+class="description">
+     <!--l. 396--><p class="noindent" >The                                                following                                                are
+     the AVR-specific DFP versions that ship with the compiler: ATautomotive_DFP v3.1.73,
+     ATmega_DFP v3.0.158, ATtiny_DFP v3.0.151, AVR-Dx_DFP v2.5.294, AVR-Ex_DFP
+     v2.9.197, XMEGAA_DFP v2.2.54, XMEGAB_DFP v2.3.149, XMEGAC_DFP v2.2.40,
+     XMEGAD_DFP v2.3.50, and XMEGAE_DFP v2.2.47
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">DIVA</span><span 
+class="ec-lmbx-10">&#x00A0;module</span><span 
+class="ec-lmbx-10">&#x00A0;support</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3321)</span> </dt><dd 
+class="description">
+     <!--l. 401--><p class="noindent" >For AVR devices that implement a 32-bit Divide Accelerator (DIVA) module, which can
+     perform 32-bit signed or unsigned integer hardware divisions and 32-bit shifts and rotates
+                                                                               
+                                                                               
+     in hardware, the compiler can employ routines which set up, initiate, and obtain results
+     from this module. The DIVA feature is automatically enabled when available, so that C
+     division, shift and modulo expressions will invoke the DIVA routines. The <span 
+class="ec-lmtt-10">-mdiva </span>driver
+     option makes this action explicit. The <span 
+class="ec-lmtt-10">-mno-diva </span>option can be used to disable this feature,
+     having these operations instead performed by conventional library routines that will be
+     larger and slower than the DIVA routines.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Disable</span><span 
+class="ec-lmbx-10">&#x00A0;warnings</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3308)</span> </dt><dd 
+class="description">
+     <!--l. 412--><p class="noindent" >A new <span 
+class="ec-lmtt-10">xc8-cc </span>driver option can be used to enable and disable warning and advisory
+     messages. The <span 
+class="ec-lmtt-10">-Wno-</span><span 
+class="ec-lmtti-10">msg </span>form of the option disables the message. The <span 
+class="ec-lmtt-10">-W</span><span 
+class="ec-lmtto-10">msg </span>form of the
+     option enables the indicated message. The special message argument <span 
+class="ec-lmtt-10">all </span>indicates that
+     all messages should be enabled or disabled. See the Documentation Updates section for
+     more information.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Keep</span><span 
+class="ec-lmbx-10">&#x00A0;attribute</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2648,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-3346)</span> </dt><dd 
+class="description">
+     <!--l. 419--><p class="noindent" >The  compiler  now  implements  a  <span 
+class="ec-lmtt-10">keep </span>attribute  that  can  be  used  with  variables  and
+     functions to ensure that they are not removed from the output, even if they have not been
+     referenced in the program.</dd></dl>
+<!--l. 425--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-19000"></a>Version 2.49 (Functional Safety Release)</h4>
+<!--l. 426--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Disabled</span><span 
+class="ec-lmbx-10">&#x00A0;dongle</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3312)</span> </dt><dd 
+class="description">
+     <!--l. 427--><p class="noindent" >To improve compile times, the functional safety compiler installer instructs the installed
+     license manager to omit the check for a dongle license. Dongle licenses are not available
+     with functional safety compilers, so this does not impact on the compiler&#8217;s usability.</dd></dl>
+<!--l. 434--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-20000"></a>Version 2.46</h4>
+<!--l. 435--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;Device</span><span 
+class="ec-lmbx-10">&#x00A0;Support</span> </dt><dd 
+class="description">
+     <!--l. 436--><p class="noindent" >Support is now available for the following AVR devices:
+     <!--l. 439--><p class="noindent" >None.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Shipped</span><span 
+class="ec-lmbx-10">&#x00A0;DFPs</span> </dt><dd 
+class="description">
+     <!--l. 440--><p class="noindent" >The                                                following                                                are
+     the AVR-specific DFP versions that ship with the compiler: ATautomotive_DFP v3.1.73,
+     ATmega_DFP v3.0.158, ATtiny_DFP v3.0.151, AVR-Dx_DFP v2.3.272, AVR-Ex_DFP
+     v2.8.189, XMEGAA_DFP v2.2.54, XMEGAB_DFP v2.3.149, XMEGAC_DFP v2.2.40,
+     XMEGAD_DFP v2.3.50, and XMEGAE_DFP v2.2.47.
+                                                                               
+                                                                               
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Dongle</span><span 
+class="ec-lmbx-10">&#x00A0;license</span><span 
+class="ec-lmbx-10">&#x00A0;option</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3281)</span> </dt><dd 
+class="description">
+     <!--l. 445--><p class="noindent" >The compiler installer now provides an option to control whether checks are made for
+     a USB dongle when the compiler operates. When not using a dongle license, ensure the
+     dongle  license  option  is  disabled  when  installing  the  compiler,  as  this  might  improve
+     compile times.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">MISRA-compliant</span><span 
+class="ec-lmbx-10">&#x00A0;headers</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3279)</span> </dt><dd 
+class="description">
+     <!--l. 450--><p class="noindent" >To  ensure  that  the  compiler  can  conform  to  language  specifications  such  as  MISRA,
+     the  headers  of  the  non-functional  safety  compiler  have  been  updated  to  ensure
+     that   the   <span 
+class="ec-lmtt-10">&#x003C;builtins.h&#x003E;  </span>header   file   is   automatically   included   by   <span 
+class="ec-lmtt-10">&#x003C;xc.h</span>&#x003E;,   that
+     <span 
+class="ec-lmtt-10">builtin_avr_flash_segments </span>is defined only on architectures that support <span 
+class="ec-lmtt-10">__memx </span>(that
+     is, all architectures except avrtiny), and that declarations of the builtins are provided in
+     avr-libc.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">XCLM</span><span 
+class="ec-lmbx-10">&#x00A0;Upgrade</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3259)</span> </dt><dd 
+class="description">
+     <!--l. 458--><p class="noindent" >The XCLM license manager has been upgraded to version 3.20.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Memory</span> </dt><dd 
+class="description">
+     <!--l. 460--><p class="noindent" >configuration based on fuse settings (XC8-3240) The toolchain is now aware of certain fuse
+     settings specified in source code and automatically configures the available device memory
+     (flash regions and RAM) based on these fuse values. The <span 
+class="ec-lmtt-10">-mfuse-action </span>option controls
+     this action.</dd></dl>
+<!--l. 467--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-21000"></a>Version 2.45</h4>
+<!--l. 468--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Universal</span><span 
+class="ec-lmbx-10">&#x00A0;license</span><span 
+class="ec-lmbx-10">&#x00A0;manager</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3175,</span> </dt><dd 
+class="description">
+     <!--l. 469--><p class="noindent" >XCLM-224) The macOS version of the license manager used with the compiler is now
+     universal,  offering  native  support  for  both  Intel-  and  M1-based  machines.  The  Linux
+     version of the license manager now requires at least version 2.25 of glibc.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Mac</span><span 
+class="ec-lmbx-10">&#x00A0;universal</span><span 
+class="ec-lmbx-10">&#x00A0;binaries</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3168,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-2951)</span> </dt><dd 
+class="description">
+     <!--l. 473--><p class="noindent" >The compiler binary files for macOS are now universal, offering native support for both
+     Intel- and M1-based machines.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Reduced</span><span 
+class="ec-lmbx-10">&#x00A0;floating-point</span><span 
+class="ec-lmbx-10">&#x00A0;library</span><span 
+class="ec-lmbx-10">&#x00A0;sizes</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3112,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-3071)</span> </dt><dd 
+class="description">
+     <!--l. 476--><p class="noindent" >Improvements  have  been  made  to  floating-point  library  functions,  including  <span 
+class="ec-lmtt-10">sinf()</span>,
+     <span 
+class="ec-lmtt-10">cosf()</span>,  <span 
+class="ec-lmtt-10">tanf()</span>,  <span 
+class="ec-lmtt-10">pow()</span>,  <span 
+class="ec-lmtt-10">sqrt()</span>,  <span 
+class="ec-lmtt-10">expf()</span>,  <span 
+class="ec-lmtt-10">log1fp()</span>,  and  <span 
+class="ec-lmtt-10">nextafterf()</span>,  which  see  a
+     reduction in code size for these routines.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;device</span><span 
+class="ec-lmbx-10">&#x00A0;support</span> </dt><dd 
+class="description">
+                                                                               
+                                                                               
+     <!--l. 481--><p class="noindent" >Support  is  now  available  for  the  following  AVR  parts:  AVR16EA28,  AVR16EA32,
+     AVR16EA48,  AVR32EA28,  AVR32EA32,  AVR32EA48,  AVR16EB14,  AVR16EB20,
+     AVR16EB28, and AVR16EB32.</dd></dl>
+<!--l. 486--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-22000"></a>Version 2.41</h4>
+<!--l. 487--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Bootrow</span><span 
+class="ec-lmbx-10">&#x00A0;support</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3053)</span> </dt><dd 
+class="description">
+     <!--l. 488--><p class="noindent" >The compiler will place the content of any sections with a <span 
+class="ec-lmtt-10">.bootrow </span>prefix at address
+     0x860000 in the HEX file. These sections are used for BOOTROW memory, which is
+     designed for the storage of keys and other secure information that should only be accessible
+     to a bootloader.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Redundant</span><span 
+class="ec-lmbx-10">&#x00A0;return</span><span 
+class="ec-lmbx-10">&#x00A0;elimination</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3048)</span> </dt><dd 
+class="description">
+     <!--l. 493--><p class="noindent" >The compiler will now eliminate redundant <span 
+class="ec-lmtt-10">ret </span>instructions in functions with a tail jump
+     when custom linker scripts are used. This is a similar optimization to that performed
+     previously, but it is now performed on all orphaned sections, even if a custom linker script
+     is used and the best fit allocation scheme is not in play.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Time</span><span 
+class="ec-lmbx-10">&#x00A0;type</span><span 
+class="ec-lmbx-10">&#x00A0;change</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2982,</span><span 
+class="ec-lmbx-10">&#x00A0;2932)</span> </dt><dd 
+class="description">
+     <!--l. 499--><p class="noindent" >The  C99  standard  library  type,  time_t&#x00A0;has  been  changed  from  a  <span 
+class="ec-lmtt-10">long</span><span 
+class="ec-lmtt-10">&#x00A0;long </span>to  an
+     <span 
+class="ec-lmtt-10">unsigned</span><span 
+class="ec-lmtt-10">&#x00A0;long </span>type, which gives code-size improvements in some time-related functions,
+     such as <span 
+class="ec-lmtt-10">mktime()</span>.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;nop</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2946,</span><span 
+class="ec-lmbx-10">&#x00A0;2945)</span> </dt><dd 
+class="description">
+     <!--l. 503--><p class="noindent" >The  macro  <span 
+class="ec-lmtt-10">NOP() </span>has  been  added  to  <span 
+class="ec-lmtt-10">&#x003C;xc.h&#x003E;</span>.  This  macro  inserts  a  <span 
+class="ec-lmtt-10">nop </span>no-operation
+     instruction into the output.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Update</span><span 
+class="ec-lmbx-10">&#x00A0;to</span><span 
+class="ec-lmbx-10">&#x00A0;XCLM</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2944)</span> </dt><dd 
+class="description">
+     <!--l. 506--><p class="noindent" >The license manager used with the compiler has been updated and is now more responsive
+     when checking the compiler&#8217;s license details.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Trampolined</span><span 
+class="ec-lmbx-10">&#x00A0;calls</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2760)</span> </dt><dd 
+class="description">
+     <!--l. 509--><p class="noindent" >The compiler can now perform replacement of long-form call instructions with shorter
+     relative calls when the relative forms of the instructions would normally be out of range of
+     their destination. In this situation, the compiler will attempt to replace <span 
+class="ec-lmtt-10">call </span>with <span 
+class="ec-lmtt-10">rcall</span>
+     instructions to a <span 
+class="ec-lmtt-10">jmp </span>instruction that will &#8217;trampoline&#8217; execution to the required address.
+     This optimization, along with similar program flow optimizations, is controlled by the
+     <span 
+class="ec-lmtt-10">-mrelax </span>option. In the below example, there are two calls to <span 
+class="ec-lmtt-10">foo() </span>that end up relaxed
+     to relative calls.</dd></dl>
+<!--l. 520--><p class="noindent" >
+                                                                               
+                                                                               
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 520--><p class="noindent" ><span 
+class="ec-lmtt-10">rcall</span><span 
+class="ec-lmtt-10">&#x00A0;tramp_foo</span><span 
+class="ec-lmtt-10">&#x00A0;;was</span><span 
+class="ec-lmtt-10">&#x00A0;call</span><span 
+class="ec-lmtt-10">&#x00A0;foo</span>
+     <!--l. 523--><p class="noindent" ><span 
+class="ec-lmtt-10">...</span>
+     <!--l. 525--><p class="noindent" ><span 
+class="ec-lmtt-10">rcall</span><span 
+class="ec-lmtt-10">&#x00A0;tramp_foo</span>
+     <!--l. 527--><p class="noindent" ><span 
+class="ec-lmtt-10">...</span>
+     <!--l. 529--><p class="noindent" ><span 
+class="ec-lmtt-10">tramp_foo:</span>
+     <!--l. 531--><p class="noindent" ><span 
+class="ec-lmtt-10">jmp</span><span 
+class="ec-lmtt-10">&#x00A0;foo</span></dd></dl>
+<!--l. 534--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-23000"></a>Version 2.40</h4>
+<!--l. 535--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;device</span><span 
+class="ec-lmbx-10">&#x00A0;support</span> </dt><dd 
+class="description">
+     <!--l. 536--><p class="noindent" >Support  is  now  available  for  the  following  AVR  parts:  AT90PWM3,  AVR16DD14,
+     AVR16DD20,  AVR16DD28,  AVR16DD32,  AVR32DD14,  AVR32DD20,  AVR32DD28,
+     AVR32DD32, AVR64EA28, AVR64EA32, and AVR64EA48.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Improved</span><span 
+class="ec-lmbx-10">&#x00A0;procedural</span><span 
+class="ec-lmbx-10">&#x00A0;abstraction</span> </dt><dd 
+class="description">
+     <!--l. 539--><p class="noindent" >The  procedural  abstraction  (PA)  optimization  tool  has  been  improved  so  that  code
+     containing a function call instruction (<span 
+class="ec-lmtt-10">call</span>/<span 
+class="ec-lmtt-10">rcall</span>) can be outlined. This will only take
+     place if the stack is not used to pass arguments to nor obtain return value from the
+     function.  The  stack  is  used  when  calling  a  function  with  a  variable  argument  list  or
+     when calling a function that takes more arguments than there are registers designated for
+     this purpose. This feature can be disabled using the <span 
+class="ec-lmtt-10">-mno-pa-outline-calls </span>option, or
+     procedural abstraction can be disabled entirely for an object file or function by using the
+     <span 
+class="ec-lmtt-10">-mno-pa-on-file </span>and <span 
+class="ec-lmtt-10">-mno-pa-on-function</span>, respectively, or by using the <span 
+class="ec-lmtt-10">nopa </span>attribute
+     (<span 
+class="ec-lmtt-10">__nopa </span>specifier) selectively with functions.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Code</span><span 
+class="ec-lmbx-10">&#x00A0;coverage</span><span 
+class="ec-lmbx-10">&#x00A0;macro</span> </dt><dd 
+class="description">
+     <!--l. 551--><p class="noindent" >The compiler now defines the macro <span 
+class="ec-lmtt-10">__CODECOV </span>if a valid <span 
+class="ec-lmtt-10">-mcodecov </span>option is specified.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Memory</span><span 
+class="ec-lmbx-10">&#x00A0;reservation</span><span 
+class="ec-lmbx-10">&#x00A0;option</span> </dt><dd 
+class="description">
+     <!--l. 553--><p class="noindent" >The compiler now accepts the <span 
+class="ec-lmtt-10">-mreserve=</span><span 
+class="ec-lmtti-10">space</span><span 
+class="ec-lmtt-10">@</span><span 
+class="ec-lmtti-10">start</span><span 
+class="ec-lmtt-10">:</span><span 
+class="ec-lmtti-10">end</span><span 
+class="ec-lmtt-10">&#x00A0;</span>option when building for
+     AVR targets. This option reserves the specified memory range in the either the data or
+     program memory space, preventing the linker from populating code or objects in this area.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Smarter</span><span 
+class="ec-lmbx-10">&#x00A0;smart</span><span 
+class="ec-lmbx-10">&#x00A0;IO</span> </dt><dd 
+class="description">
+     <!--l. 557--><p class="noindent" >Several improvements have been made to the Smart IO functions, including general tweaks
+     to the printf core code, treating the <span 
+class="ec-lmtt-10">%n </span>conversion specifier as an independent variant,
+     linking in vararg pop routines on demand, using shorter data types where possible for
+     handling IO function arguments, and factoring common code in field width and precision
+     handling. This can result in significant code and data savings, as well as increase the
+     execution speed of IO.</dd></dl>
+                                                                               
+                                                                               
+<!--l. 567--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-24000"></a>Version 2.39 (Functional Safety Release)</h4>
+<!--l. 568--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Network</span><span 
+class="ec-lmbx-10">&#x00A0;Server</span><span 
+class="ec-lmbx-10">&#x00A0;License</span> </dt><dd 
+class="description">
+     <!--l. 569--><p class="noindent" >This release of the MPLAB XC8 Functional Safety Compiler supports the Network Server
+     License.</dd></dl>
+<!--l. 573--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-25000"></a>Version 2.36</h4>
+<!--l. 575--><p class="noindent" >None.
+<!--l. 577--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-26000"></a>Version 2.35</h4>
+<!--l. 578--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;device</span><span 
+class="ec-lmbx-10">&#x00A0;support</span> </dt><dd 
+class="description">
+     <!--l. 579--><p class="noindent" >Support  is  available  for  the  following  AVR  parts:  ATTINY3224,  ATTINY3226,
+     ATTINY3227, AVR64DD14, AVR64DD20, AVR64DD28, and AVR64DD32.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Improved</span><span 
+class="ec-lmbx-10">&#x00A0;context</span><span 
+class="ec-lmbx-10">&#x00A0;switching</span> </dt><dd 
+class="description">
+     <!--l. 582--><p class="noindent" >The new <span 
+class="ec-lmtt-10">-mcall-isr-prologues </span>option changes how interrupt functions save registers on
+     entry and how those registers are restored when the interrupt routine terminates. It works
+     in a similar way to the <span 
+class="ec-lmtt-10">-mcall-prologues </span>option, but only affects interrupt functions
+     (ISRs).
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Even</span><span 
+class="ec-lmbx-10">&#x00A0;more</span><span 
+class="ec-lmbx-10">&#x00A0;improved</span><span 
+class="ec-lmbx-10">&#x00A0;context</span><span 
+class="ec-lmbx-10">&#x00A0;switching</span> </dt><dd 
+class="description">
+     <!--l. 587--><p class="noindent" >The new <span 
+class="ec-lmtt-10">-mgas-isr-prologues </span>option controls the context switch code generated for
+     small interrupt service routines. When enabled, this feature will have the assembler scan
+     the ISR for register usage and only save these used registers if required.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Configurable</span><span 
+class="ec-lmbx-10">&#x00A0;flash</span><span 
+class="ec-lmbx-10">&#x00A0;mapping</span> </dt><dd 
+class="description">
+     <!--l. 592--><p class="noindent" >Some devices in the AVR DA and AVR DB family have an SFR (e.g. FLMAP) that
+     specifies which 32k section of program memory will be mapped into the data memory. The
+     new <span 
+class="ec-lmtt-10">-mconst-data-in-config-mapped-progmem </span>option can be used to have the linker
+     place all <span 
+class="ec-lmtt-10">const</span>-qualified data in one 32k section and automatically initialize the relevant
+     SFR register to ensure that this data is mapped into the data memory space, where it will
+     be accessed more effectively.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Microchip</span><span 
+class="ec-lmbx-10">&#x00A0;Unified</span><span 
+class="ec-lmbx-10">&#x00A0;Standard</span><span 
+class="ec-lmbx-10">&#x00A0;Libraries</span> </dt><dd 
+class="description">
+                                                                               
+                                                                               
+     <!--l. 599--><p class="noindent" >All MPLAB XC compilers will share a Microchip Unified Standard Library, which is now
+     available with this release of MPLAB XC8. The <span 
+class="ec-lmri-10">MPLAB</span><sup class="textsuperscript"><span 
+class="ec-lmri-9">®</span></sup> <span 
+class="ec-lmri-10">XC8 C Compiler User&#8217;s Guide</span>
+     <span 
+class="ec-lmri-10">for AVR</span><sup class="textsuperscript"><span 
+class="ec-lmri-9">®</span></sup> <span 
+class="ec-lmri-10">MCU </span>no longer includes the documentation for these standard functions. This
+     information can now be found in the <span 
+class="ec-lmri-10">Microchip Unified Standard Library Reference Guide</span>.
+     Note that some functionality previously defined by avr-libc is no longer available. (See
+     <a 
+href="#x1-46000doc">Version 2.35<!--tex4ht:ref: Libraryfunctionality-The-code --></a>.)
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Smart</span><span 
+class="ec-lmbx-10">&#x00A0;IO</span> </dt><dd 
+class="description">
+     <!--l. 607--><p class="noindent" >As part of the new unified libraries, IO functions in the printf and scanf families are now
+     custom-generated on each build, based on how these functions are used in the program.
+     This can substantially reduce the resources used by a program.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Smart</span><span 
+class="ec-lmbx-10">&#x00A0;IO</span><span 
+class="ec-lmbx-10">&#x00A0;assistance</span><span 
+class="ec-lmbx-10">&#x00A0;option</span> </dt><dd 
+class="description">
+     <!--l. 611--><p class="noindent" >When analyzing calls to smart IO functions (such as <span 
+class="ec-lmtt-10">printf() </span>or <span 
+class="ec-lmtt-10">scanf()</span>), the compiler
+     cannot  always  determine  from  the  format  string  or  infer  from  the  arguments  those
+     conversion specifiers required by the call. Previously, the compiler would always make
+     no assumptions and ensure that fully functional IO functions were linked into the final
+     program  image.  A  new  <span 
+class="ec-lmtt-10">-msmart-io-format=</span><span 
+class="ec-lmri-10">fmt  </span>option  has  been  added  so  that  the
+     compiler can instead be informed by the user of the conversion specifiers used by smart IO
+     functions whose usage is ambiguous, preventing excessively long IO routines from being
+     linked.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Placing</span><span 
+class="ec-lmbx-10">&#x00A0;custom</span><span 
+class="ec-lmbx-10">&#x00A0;sections</span> </dt><dd 
+class="description">
+     <!--l. 621--><p class="noindent" >Previously,  the  <span 
+class="ec-lmtt-10">-Wl,--section-start </span>option  only  placed  the  specified  section  at  the
+     requested address when the linker script defined an output section with the same name.
+     When that was not the case, the section was placed at an address chosen by the linker and
+     the option was essentially ignored. Now the option will be honoured for all custom sections,
+     even if the linker script does not define the section. Note, however, that for standard
+     sections, such <span 
+class="ec-lmtt-10">.text</span>, <span 
+class="ec-lmtt-10">.bss </span>or <span 
+class="ec-lmtt-10">.data</span>, the best fit allocator will still have complete control
+     over their placement, and the option will have no effect. Use the <span 
+class="ec-lmtt-10">-Wl,-T</span><span 
+class="ec-lmtti-10">section</span><span 
+class="ec-lmtt-10">=</span><span 
+class="ec-lmtti-10">addr</span>
+     option, as described in the user&#8217;s guide.</dd></dl>
+<!--l. 634--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-27000"></a>Version 2.32</h4>
+<!--l. 635--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Stack</span><span 
+class="ec-lmbx-10">&#x00A0;Guidance</span> </dt><dd 
+class="description">
+     <!--l. 636--><p class="noindent" >Available with a PRO compiler license, the compiler&#8217;s stack guidance feature can be used
+     to estimate the maximum depth of any stack used by a program. It constructs and analyzes
+     the call graph of a program, determines the stack usage of each function, and produces a
+     report, from which the depth of stacks used by the program can be inferred.
+     <!--l. 643--><p class="noindent" >This feature is enabled through the <span 
+class="ec-lmtt-10">-mchp-stack-usage </span>command-line option. A summary
+     of stack usage is printed after execution. A detailed stack report is available in the map
+     file, which can be requested in the usual way.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;device</span><span 
+class="ec-lmbx-10">&#x00A0;support</span> </dt><dd 
+class="description">
+                                                                               
+                                                                               
+     <!--l. 647--><p class="noindent" >Support is available for the following AVR parts: ATTINY427, ATTINY424, ATTINY426,
+     ATTINY827,  ATTINY824,  ATTINY826,  AVR32DB32,  AVR64DB48,  AVR64DB64,
+     AVR64DB28, AVR32DB28, AVR64DB32, and AVR32DB48.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Retracted</span><span 
+class="ec-lmbx-10">&#x00A0;device</span><span 
+class="ec-lmbx-10">&#x00A0;support</span> </dt><dd 
+class="description">
+     <!--l. 651--><p class="noindent" >Support is no longer available for the following AVR parts: AVR16DA28, AVR16DA32
+     and, AVR16DA48.</dd></dl>
+<!--l. 655--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-28000"></a>Version 2.31</h4>
+<!--l. 657--><p class="noindent" >None.
+<!--l. 659--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-29000"></a>Version 2.30</h4>
+<!--l. 660--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;option</span><span 
+class="ec-lmbx-10">&#x00A0;to</span><span 
+class="ec-lmbx-10">&#x00A0;prevent</span><span 
+class="ec-lmbx-10">&#x00A0;data</span><span 
+class="ec-lmbx-10">&#x00A0;initialisation</span> </dt><dd 
+class="description">
+     <!--l. 661--><p class="noindent" >A new <span 
+class="ec-lmtt-10">-mno-data-init </span>driver option prevents the initialisation of data and the clearing of
+     bss sections. It works by suppressing the output of the <span 
+class="ec-lmtt-10">do_copy_data </span>and <span 
+class="ec-lmtt-10">do_clear_bss</span>
+     symbols in assembly files, which will in turn prevent the inclusion of those routines by the
+     linker.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Enhanced</span><span 
+class="ec-lmbx-10">&#x00A0;optimizations</span> </dt><dd 
+class="description">
+     <!--l. 666--><p class="noindent" >A  number  of  optimization  improvements  have  been  made,  including  the  removal  of
+     redundant  return  instructions,  the  removal  of  some  jumps  following  a  skip-if-bit-is
+     instruction, and improved procedural abstraction and the ability to iterate this process.
+     <!--l. 672--><p class="noindent" >Additional options are now available to control some of these optimizations, specifically
+     <span 
+class="ec-lmtt-10">-fsection-anchors</span>, which allows access of static objects to be performed relative to
+     one  symbol;  <span 
+class="ec-lmtt-10">-mpa-iterations=</span><span 
+class="ec-lmtti-10">n </span>,  which  allows  the  number  of  procedural  abstraction
+     iterations to be changed from the default of 2; and, <span 
+class="ec-lmtt-10">-mpa-callcost-shortcall</span>, which
+     performs more aggressive procedural abstraction, in the hope that the linker can relax
+     long calls. This last option can increase code size if the underlying&#x00A0;assumptions are not
+     realized.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;device</span><span 
+class="ec-lmbx-10">&#x00A0;support</span> </dt><dd 
+class="description">
+     <!--l. 680--><p class="noindent" >Support is available for the following AVR parts: AVR16DA28, AVR16DA32, AVR16DA48,
+     AVR32DA28,  AVR32DA32,  AVR32DA48,  AVR64DA28,  AVR64DA32,  AVR64DA48,
+     AVR64DA64, AVR128DB28, AVR128DB32, AVR128DB48, and AVR128DB64.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Retracted</span><span 
+class="ec-lmbx-10">&#x00A0;device</span> </dt><dd 
+class="description">
+     <!--l. 684--><p class="noindent" >Support  Support  is  no  longer  available  for  the  following  AVR  parts:  ATA5272,
+     ATA5790, ATA5790N, ATA5791, ATA5795, ATA6285, ATA6286, ATA6612C, ATA6613C,
+     ATA6614Q, ATA6616C, ATA6617C, and ATA664251.</dd></dl>
+                                                                               
+                                                                               
+<!--l. 690--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-30000"></a>Version 2.29 (Functional Safety Release)</h4>
+<!--l. 691--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Header</span><span 
+class="ec-lmbx-10">&#x00A0;file</span><span 
+class="ec-lmbx-10">&#x00A0;for</span><span 
+class="ec-lmbx-10">&#x00A0;compiler</span><span 
+class="ec-lmbx-10">&#x00A0;built-ins</span> </dt><dd 
+class="description">
+     <!--l. 692--><p class="noindent" >To  ensure  that  the  compiler  can  conform  to  language  specifications  such  as  MISRA,
+     the  <span 
+class="ec-lmtt-10">&#x003C;builtins.h&#x003E; </span>header  file,  which  is  automatically  included  by  <span 
+class="ec-lmtt-10">&#x003C;xc.h</span>&#x003E;,  has  been
+     updated.  This  header  contains  the  prototypes  for  all  in-built  functions,  such  as
+     <span 
+class="ec-lmtt-10">__builtin_avr_nop() </span>and <span 
+class="ec-lmtt-10">__builtin_avr_delay_cycles()</span>. Some built-ins may not be
+     MISRA compliant; these can be omitted by adding the define <span 
+class="ec-lmtt-10">__XC_STRICT_MISRA </span>to the
+     compiler command line. The built-ins and their declarations have been updated to use
+     fixed-width types.</dd></dl>
+<!--l. 703--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-31000"></a>Version 2.20</h4>
+<!--l. 704--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;device</span><span 
+class="ec-lmbx-10">&#x00A0;support</span> </dt><dd 
+class="description">
+     <!--l. 705--><p class="noindent" >Support  is  available  for  the  following  AVR  parts:  ATTINY1624,  ATTINY1626,  and
+     ATTINY1627.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Better</span><span 
+class="ec-lmbx-10">&#x00A0;best</span><span 
+class="ec-lmbx-10">&#x00A0;fit</span><span 
+class="ec-lmbx-10">&#x00A0;allocation</span> </dt><dd 
+class="description">
+     <!--l. 707--><p class="noindent" >The  best  fit  allocator  (BFA)  in  the  compiler  has  been  improved  so  that  sections  are
+     allocated  in  an  order  permitting  better  optimization.  The  BFA  now  supports  named
+     address spaces and better handles data initialization.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Improved</span><span 
+class="ec-lmbx-10">&#x00A0;procedural</span><span 
+class="ec-lmbx-10">&#x00A0;abstraction</span> </dt><dd 
+class="description">
+     <!--l. 711--><p class="noindent" >The procedural abstraction optimizations are now performed on more code sequences.
+     Previous situations where this optimization might have increased code size have been
+     addressed by making the optimization code aware of the linker&#8217;s garbage collection process.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Absence</span><span 
+class="ec-lmbx-10">&#x00A0;of</span><span 
+class="ec-lmbx-10">&#x00A0;AVR</span><span 
+class="ec-lmbx-10">&#x00A0;Assembler</span> </dt><dd 
+class="description">
+     <!--l. 716--><p class="noindent" >The AVR Assembler is no longer included with this distribution.</dd></dl>
+<!--l. 720--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-32000"></a>Version 2.19 (Functional Safety Release)</h4>
+<!--l. 722--><p class="noindent" >None.
+                                                                               
+                                                                               
+<!--l. 724--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-33000"></a>Version 2.10</h4>
+<!--l. 725--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Code</span><span 
+class="ec-lmbx-10">&#x00A0;Coverage</span> </dt><dd 
+class="description">
+     <!--l. 726--><p class="noindent" >This release includes a code coverage feature that facilitates analyzis of the extent to
+     which a project&#8217;s source code has been executed. Use the option <span 
+class="ec-lmtt-10">-mcodecov=ram </span>to enable
+     it. After execution of the program on your hardware, code coverage information will be
+     collated in the device, and this can be transferred to and displayed by the MPLAB X IDE
+     via a code coverage plugin. See the IDE documentation for information on this plugin can
+     be obtained.
+     <!--l. 734--><p class="noindent" >The <span 
+class="ec-lmtt-10">#pragma</span><span 
+class="ec-lmtt-10">&#x00A0;nocodecov </span>may be used to exclude subsequent functions from the coverage
+     analyzis. Ideally the pragma should be added at the beginning of the file to exclude that
+     entire file from the coverage analyzis. Alternatively, the <span 
+class="ec-lmtt-10">__attribute__((nocodecov))</span>
+     may be used to exclude a specific function from the coverage analyzis.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Device</span><span 
+class="ec-lmbx-10">&#x00A0;description</span><span 
+class="ec-lmbx-10">&#x00A0;files</span> </dt><dd 
+class="description">
+     <!--l. 739--><p class="noindent" >A new device file called <span 
+class="ec-lmtt-10">avr_chipinfo.html </span>is located in the <span 
+class="ec-lmtt-10">docs </span>directory of the compiler
+     distribution. This file lists all devices supported by the compiler. Click on a device name,
+     and it will open a page showing all the allowable configuration bit setting/value pairs for
+     that device, with examples.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Procedural</span><span 
+class="ec-lmbx-10">&#x00A0;abstraction</span> </dt><dd 
+class="description">
+     <!--l. 744--><p class="noindent" >Procedural abstraction optimizations, which replace common blocks of assembly code with
+     calls to an extracted copy of that block, have been added to the compiler. These are
+     performed by a separate application, which is automatically invoked by the compiler when
+     selecting level <span 
+class="ec-lmtt-10">2</span>, <span 
+class="ec-lmtt-10">3 </span>or <span 
+class="ec-lmtt-10">s </span>optimizations. These optimizations reduce code size, but they may
+     reduce execution speed and code debugability.
+     <!--l. 752--><p class="noindent" >Procedural abstraction can be disabled at higher optimization levels using the option
+     <span 
+class="ec-lmtt-10">-mno-pa</span>, or can be enabled at lower optimization levels (subject to your license) by using
+     <span 
+class="ec-lmtt-10">-mpa</span>. It can be disabled for an object file using <span 
+class="ec-lmtt-10">-mno-pa-on-file=</span><span 
+class="ec-lmtti-10">filename </span>, or disabled
+     for a function by using <span 
+class="ec-lmtt-10">-mno-pa-on-function=</span><span 
+class="ec-lmtti-10">function </span>.<br 
+class="newline" />Inside your source code, procedural abstraction can be disabled for a function by using
+     <span 
+class="ec-lmtt-10">__attribute__((nopa)) </span>with the function&#8217;s definition, or by using <span 
+class="ec-lmtt-10">__nopa</span>, which expands
+     to <span 
+class="ec-lmtt-10">__attribute__((nopa,noinline)) </span>and thus prevents function inlining from taking
+     place and there being abstraction of inlined code.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Lock</span><span 
+class="ec-lmbx-10">&#x00A0;bit</span><span 
+class="ec-lmbx-10">&#x00A0;support</span><span 
+class="ec-lmbx-10">&#x00A0;in</span><span 
+class="ec-lmbx-10">&#x00A0;pragma</span> </dt><dd 
+class="description">
+     <!--l. 762--><p class="noindent" >The  <span 
+class="ec-lmtt-10">#pragma</span><span 
+class="ec-lmtt-10">&#x00A0;config </span>can  now  be  used  to  specify  the  AVR  lock  bits  as  well  as  the
+     other configuration bits. Check the <span 
+class="ec-lmtt-10">avr_chipinfo.html </span>file (mentioned above) for the
+     setting/value pairs to use with this pragma.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;device</span><span 
+class="ec-lmbx-10">&#x00A0;support</span> </dt><dd 
+class="description">
+     <!--l. 766--><p class="noindent" >Support is available for the following parts: AVR28DA128, AVR64DA128, AVR32DA128,
+     and AVR48DA128.</dd></dl>
+                                                                               
+                                                                               
+<!--l. 770--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-34000"></a>Version 2.05</h4>
+<!--l. 771--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">More</span><span 
+class="ec-lmbx-10">&#x00A0;bits</span><span 
+class="ec-lmbx-10">&#x00A0;for</span><span 
+class="ec-lmbx-10">&#x00A0;your</span><span 
+class="ec-lmbx-10">&#x00A0;buck</span> </dt><dd 
+class="description">
+     <!--l. 772--><p class="noindent" >The macOS version of this compiler and license manager is now a 64-bit application. This
+     will ensure that the compiler will install and run without warnings on recent versions of
+     macOS.
+     </dd><dt class="description">
+<a 
+ id="x1-34000doc"></a><span 
+class="ec-lmbx-10">Const</span><span 
+class="ec-lmbx-10">&#x00A0;objects</span><span 
+class="ec-lmbx-10">&#x00A0;in</span><span 
+class="ec-lmbx-10">&#x00A0;program</span><span 
+class="ec-lmbx-10">&#x00A0;memory</span> </dt><dd 
+class="description">
+     <!--l. 776--><p class="noindent" >The compiler can now place <span 
+class="ec-lmtt-10">const</span>-qualified objects in the program Flash memory, rather
+     than having these located in RAM. The compiler has been modified so that <span 
+class="ec-lmtt-10">const</span>-qualified
+     global data is stored in program flash memory and this data can be directly and indirectly
+     accessed using the appropriate program-memory instructions. This new feature is enabled
+     by  default  but  can  be  disabled  using  the  <span 
+class="ec-lmtt-10">-mno-const-data-in-progmem </span>option.  For
+     avrxmega3 and avrtiny architectures, this feature is not required and is always disabled,
+     since program memory is mapped into the data address space for these devices.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Standard</span><span 
+class="ec-lmbx-10">&#x00A0;for</span><span 
+class="ec-lmbx-10">&#x00A0;free</span> </dt><dd 
+class="description">
+     <!--l. 786--><p class="noindent" >Unlicensed (Free) versions of this compiler now allow optimizations up to and including
+     level 2. This will permit a similar, although not identical, output to what was previously
+     possible using a Standard license.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Welcome</span><span 
+class="ec-lmbx-10">&#x00A0;AVRASM2</span> </dt><dd 
+class="description">
+     <!--l. 790--><p class="noindent" >The AVRASM2 assembler for 8-bit devices is now included in the XC8 compiler installer.
+     This assembler is not used by the XC8 compiler, but is available for projects based on
+     hand-written assembly source.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;device</span><span 
+class="ec-lmbx-10">&#x00A0;support</span> </dt><dd 
+class="description">
+     <!--l. 794--><p class="noindent" >Support is available for the following parts: ATMEGA1608, ATMEGA1609, ATMEGA808,
+     and ATMEGA809.</dd></dl>
+<!--l. 798--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-35000"></a>Version 2.00</h4>
+<!--l. 799--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Top-level</span><span 
+class="ec-lmbx-10">&#x00A0;Driver</span> </dt><dd 
+class="description">
+     <!--l. 800--><p class="noindent" >A new driver, called <span 
+class="ec-lmtt-10">xc8-cc</span>, now sits above the previous <span 
+class="ec-lmtt-10">avr-gcc </span>driver and the xc8
+     driver, and it can call the appropriate compiler based on the selection of the target device.
+     This driver accepts GCC-style options, which are either translated for or passed through
+     to the compiler being executed. This driver allows a similar set of options with similar
+     semantics to be used with any AVR or PIC target and is thus the recommended way to
+     invoke the compiler. If required, the old <span 
+class="ec-lmtt-10">avr-gcc </span>driver can be called directly using the
+     old-style options it accepted in earlier compiler versions.
+                                                                               
+                                                                               
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Common</span><span 
+class="ec-lmbx-10">&#x00A0;C</span><span 
+class="ec-lmbx-10">&#x00A0;Interface</span> </dt><dd 
+class="description">
+     <!--l. 810--><p class="noindent" >This compiler can now conform to the MPLAB Common C Interface, allowing source code
+     to be more easily ported across all MPLAB XC compilers. The <span 
+class="ec-lmtt-10">-mext=cci </span>option requests
+     this feature, enabling alternate syntax for many language extensions.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;librarian</span><span 
+class="ec-lmbx-10">&#x00A0;driver</span> </dt><dd 
+class="description">
+     <!--l. 814--><p class="noindent" >A  new  librarian  driver  is  positioned  above  the  previous  PIC  <span 
+class="ec-lmtt-10">libr </span>librarian  and  the
+     AVR <span 
+class="ec-lmtt-10">avr-ar </span>librarian. This driver accepts GCC-archiver-style options, which are either
+     translated for or passed through to the librarian being executed. The new driver allows a
+     similar set of options with similar semantics to be used to create or manipulate any PIC
+     or AVR library file and is thus the recommended way to invoke the librarian. If required
+     for legacy projects, the previous librarian can be called directly using the old-style options
+     it accepted in earlier compiler versions.</dd></dl>
+<!--l. 825--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-360004"></a>Migration Issues</h3>
+<!--l. 827--><p class="noindent" >The following are features that are now handled differently by the compiler. These changes may
+require modification to your source code if porting code to this compiler version. The version
+number in the subheadings indicates the first compiler version to support the changes that
+follow.
+<!--l. 833--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-37000"></a>Version 3.00</h4>
+<!--l. 834--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Changed</span><span 
+class="ec-lmbx-10">&#x00A0;conversion</span><span 
+class="ec-lmbx-10">&#x00A0;diagnostic</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3584,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-3594)</span> </dt><dd 
+class="description">
+     <!--l. 835--><p class="noindent" >The default action of the diagnostic controlled by <span 
+class="ec-lmtt-10">-Wint-conversion </span>has been promoted
+     to an error. Previously, this was a warning.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Changed</span><span 
+class="ec-lmbx-10">&#x00A0;function</span><span 
+class="ec-lmbx-10">&#x00A0;declaration</span><span 
+class="ec-lmbx-10">&#x00A0;diagnostic</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3584,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-3595)</span> </dt><dd 
+class="description">
+     <!--l. 838--><p class="noindent" >The default action of the diagnostics controlled by <span 
+class="ec-lmtt-10">-Wimplicit-function-declaration</span>
+     and <span 
+class="ec-lmtt-10">-Wimplicit-int </span>have been promoted to errors in C99 and later standards. Previously,
+     these were warnings.</dd></dl>
+<!--l. 844--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-38000"></a>Version 2.50</h4>
+<!--l. 846--><p class="noindent" >None.
+                                                                               
+                                                                               
+<!--l. 848--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-39000"></a>Version 2.49 (Functional Safety Release)</h4>
+<!--l. 850--><p class="noindent" >None.
+<!--l. 852--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-40000"></a>Version 2.46</h4>
+<!--l. 854--><p class="noindent" >None.
+<!--l. 856--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-41000"></a>Version 2.45</h4>
+<!--l. 858--><p class="noindent" >None.
+<!--l. 860--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-42000"></a>Version 2.41</h4>
+<!--l. 861--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Inaccurate</span><span 
+class="ec-lmbx-10">&#x00A0;fma</span><span 
+class="ec-lmbx-10">&#x00A0;functions</span><span 
+class="ec-lmbx-10">&#x00A0;removed</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2913)</span> </dt><dd 
+class="description">
+     <!--l. 862--><p class="noindent" >The  C99  standard  library  <span 
+class="ec-lmtt-10">fma()</span>-family  functions  (<span 
+class="ec-lmtt-10">&#x003C;math.h</span>&#x003E;)  did  not  compute  a
+     multiply-add with infinite precision to a single rounding, but instead accumulated rounding
+     errors with each operation. These functions have been removed from the supplied library.</dd></dl>
+<!--l. 869--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-43000"></a>Version 2.40</h4>
+<!--l. 871--><p class="noindent" >None.
+<!--l. 873--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-44000"></a>Version 2.39 (Functional Safety Release)</h4>
+<!--l. 875--><p class="noindent" >None.
+<!--l. 877--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-45000"></a>Version 2.36</h4>
+<!--l. 879--><p class="noindent" >None.
+                                                                               
+                                                                               
+<!--l. 881--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-46000"></a>Version 2.35</h4>
+<!--l. 882--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Handling</span><span 
+class="ec-lmbx-10">&#x00A0;of</span><span 
+class="ec-lmbx-10">&#x00A0;string-to</span><span 
+class="ec-lmbx-10">&#x00A0;bases</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2420)</span> </dt><dd 
+class="description">
+     <!--l. 883--><p class="noindent" >To ensure consistency with other XC compilers, the XC8 string-to functions, like <span 
+class="ec-lmtt-10">strtol()</span>
+     etc., will no longer attempt to convert an input string if the base specified is larger than
+     36 and will instead set <span 
+class="ec-lmtt-10">errno </span>to <span 
+class="ec-lmtt-10">EINVAL</span>. The C standard does not specify the behaviour
+     of the functions when this base value is exceeded.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Inappropriate</span><span 
+class="ec-lmbx-10">&#x00A0;speed</span><span 
+class="ec-lmbx-10">&#x00A0;optimizations</span> </dt><dd 
+class="description">
+     <!--l. 889--><p class="noindent" >Procedural  abstraction  optimizations  were  being  enabled  when  selecting  level  3
+     optimizations (<span 
+class="ec-lmtt-10">-O3</span>). These optimizations reduce code size at the expense of code speed, so
+     should not have been performed. Projects using this optimization level might see differences
+     in code size and execution speed when built with this release.
+     </dd><dt class="description">
+<a 
+ id="x1-46000doc"></a><span 
+class="ec-lmbx-10">Library</span><span 
+class="ec-lmbx-10">&#x00A0;functionality</span> </dt><dd 
+class="description">
+     <!--l. 895--><p class="noindent" >The code for many of the standard C library functions now come from Microchip&#8217;s Unified
+     Standard Library, which might exhibit different behaviour in some circumstances compared
+     to that provided by the former avr-libc library. For example, it is no longer necessary to
+     link in the lprintf_flt library (<span 
+class="ec-lmtt-10">-lprintf_flt </span>option) to turn on formatted IO support for
+     float-format specifiers. The smart IO features of the Microchip Unified Standard Library
+     makes this option redundant. Additionally, the use of _P suffixed routines for string and
+     memory functions (e.g. <span 
+class="ec-lmtt-10">strcpy_P() </span>etc..) that operate on const strings in flash are no
+     longer necessary. The standard C routines (e.g. <span 
+class="ec-lmtt-10">strcpy()</span>) will work correctly with such
+     data when the const-data-in-program-memory feature is enabled.</dd></dl>
+<!--l. 910--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-47000"></a>Version 2.32</h4>
+<!--l. 912--><p class="noindent" >None.
+<!--l. 914--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-48000"></a>Version 2.31</h4>
+<!--l. 916--><p class="noindent" >None.
+<!--l. 918--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-49000"></a>Version 2.30</h4>
+<!--l. 920--><p class="noindent" >None.
+                                                                               
+                                                                               
+<!--l. 922--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-50000"></a>Version 2.29 (Functional Safety Release)</h4>
+<!--l. 924--><p class="noindent" >None.
+<!--l. 926--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-51000"></a>Version 2.20</h4>
+<!--l. 927--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Changed</span><span 
+class="ec-lmbx-10">&#x00A0;DFP</span><span 
+class="ec-lmbx-10">&#x00A0;layout</span> </dt><dd 
+class="description">
+     <!--l. 928--><p class="noindent" >The compiler now assumes a different layout used by DFPs (Device Family Packs). This
+     will mean that an older DFP might no work with this release, and older compilers will not
+     be able to use the latest DFPs.</dd></dl>
+<!--l. 934--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-52000"></a>Version 2.19 (Functional Safety Release)</h4>
+<!--l. 936--><p class="noindent" >None.
+<!--l. 938--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-53000"></a>Version 2.10</h4>
+<!--l. 940--><p class="noindent" >None
+<!--l. 942--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-54000"></a>Version 2.05</h4>
+<!--l. 943--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Const</span><span 
+class="ec-lmbx-10">&#x00A0;objects</span><span 
+class="ec-lmbx-10">&#x00A0;in</span><span 
+class="ec-lmbx-10">&#x00A0;program</span><span 
+class="ec-lmbx-10">&#x00A0;memory</span> </dt><dd 
+class="description">
+     <!--l. 944--><p class="noindent" >Note that the by default, <span 
+class="ec-lmtt-10">const</span>-qualfiied objects will be placed and accessed in program
+     memory (as described in <a 
+href="#x1-34000doc">Version 2.05<!--tex4ht:ref: Constobjectsinprogrammemory-The- --></a>). This will affect the size and execution speed of
+     your project, but should reduce RAM usage. This feature can be disabled, if required,
+     using the <span 
+class="ec-lmtt-10">-mno-const-data-in-progmem </span>option.</dd></dl>
+<!--l. 952--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-55000"></a>Version 2.00</h4>
+<!--l. 953--><p class="noindent" >
+                                                                               
+                                                                               
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Configuration</span><span 
+class="ec-lmbx-10">&#x00A0;fuses</span> </dt><dd 
+class="description">
+     <!--l. 954--><p class="noindent" >The device configuration fuses can now programmed using a <span 
+class="ec-lmtt-10">config </span>pragma followed by
+     setting-value pairs to specify the fuse state, e.g.</dd></dl>
+<!--l. 958--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 958--><p class="noindent" ><span 
+class="ec-lmtt-10">#pragma</span>
+     <span 
+class="ec-lmtt-10">config</span>
+     <span 
+class="ec-lmtt-10">WDTON</span>
+     <span 
+class="ec-lmtt-10">=</span>
+     <span 
+class="ec-lmtt-10">SET</span>
+     <!--l. 961--><p class="noindent" ><span 
+class="ec-lmtt-10">#pragma</span>
+     <span 
+class="ec-lmtt-10">config</span>
+     <span 
+class="ec-lmtt-10">BODLEVEL</span>
+     <span 
+class="ec-lmtt-10">=</span>
+     <span 
+class="ec-lmtt-10">BODLEVEL_4V3</span></dd></dl>
+<!--l. 963--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Absolute</span><span 
+class="ec-lmbx-10">&#x00A0;objects</span><span 
+class="ec-lmbx-10">&#x00A0;and</span><span 
+class="ec-lmbx-10">&#x00A0;functions</span> </dt><dd 
+class="description">
+     <!--l. 964--><p class="noindent" >Objects and functions can now be placed at specific address in memory using the CCI
+     <span 
+class="ec-lmtt-10">__at(</span><span 
+class="ec-lmtti-10">address</span><span 
+class="ec-lmtt-10">) </span>specifier, for example:</dd></dl>
+<!--l. 968--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 968--><p class="noindent" ><span 
+class="ec-lmtt-10">#include</span><span 
+class="ec-lmtt-10">&#x00A0;&#x003C;xc.h&#x003E;</span>
+     <!--l. 971--><p class="noindent" ><span 
+class="ec-lmtt-10">int</span>
+     <span 
+class="ec-lmtt-10">foobar</span>
+     <span 
+class="ec-lmtt-10">__at(0x800100);</span>
+     <!--l. 973--><p class="noindent" ><span 
+class="ec-lmtt-10">char</span>
+     <span 
+class="ec-lmtt-10">__at(0x250)</span>
+     <span 
+class="ec-lmtt-10">getID(int</span>
+     <span 
+class="ec-lmtt-10">offset)</span>
+     <span 
+class="ec-lmtt-10">{</span>
+     <span 
+class="ec-lmtt-10">...</span>
+     <span 
+class="ec-lmtt-10">}</span>
+     <!--l. 978--><p class="noindent" >The
+     argument
+     to
+     this
+     specifier
+     must
+     be
+     a
+     constant
+     that
+                                                                               
+                                                                               
+     represents
+     the
+     address
+     at
+     which
+     the
+     first
+     byte
+     or
+     instruction
+     will
+     be
+     placed.
+     RAM
+     addresses
+     are
+     indicated
+     by
+     using
+     an
+     offset
+     of
+     0x800000.
+     Enable
+     the
+     CCI
+     to
+     use
+     this
+     feature.</dd></dl>
+<!--l. 980--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">New</span><span 
+class="ec-lmbx-10">&#x00A0;interrupt</span><span 
+class="ec-lmbx-10">&#x00A0;function</span><span 
+class="ec-lmbx-10">&#x00A0;syntax</span> </dt><dd 
+class="description">
+     <!--l. 981--><p class="noindent" >The  compiler  now  accepts  the  CCI  <span 
+class="ec-lmtt-10">__interrupt(</span><span 
+class="ec-lmtti-10">num</span><span 
+class="ec-lmtt-10">) </span>specifier  to  indicate  that  C
+     functions are interrupt handlers. The specifier takes an interrupt number, for example:</dd></dl>
+<!--l. 986--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 986--><p class="noindent" ><span 
+class="ec-lmtt-10">#include</span><span 
+class="ec-lmtt-10">&#x00A0;&#x003C;xc.h&#x003E;</span>
+     <!--l. 989--><p class="noindent" ><span 
+class="ec-lmtt-10">void</span>
+     <span 
+class="ec-lmtt-10">__interrupt(SPI_STC_vect_num)</span>
+     <span 
+class="ec-lmtt-10">spi_Isr(void)</span>
+     <span 
+class="ec-lmtt-10">{</span>
+     <span 
+class="ec-lmtt-10">...</span>
+     <span 
+class="ec-lmtt-10">}</span><span 
+class="ec-lmtt-10">&#x00A0;</span><span 
+class="ec-lmtt-10">&#x00A0;</span></dd></dl>
+<!--l. 992--><p class="noindent" >
+                                                                               
+                                                                               
+<h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-560005"></a>Fixed Issues</h3>
+<!--l. 994--><p class="noindent" >The following are corrections that have been made to the compiler. These might fix bugs in the
+generated code or alter the operation of the compiler to that which was intended or specified
+by the user&#8217;s guide. The version number in the subheadings indicates the first compiler
+version to contain fixes for the issues that follow. The bracketed label(s) in the title are that
+issue&#8217;s identification in the tracking database. These may be useful if you need to contact
+support.
+<!--l. 1002--><p class="noindent" >Note that some device-specific issues are corrected in the Device Family Pack (DFP) associated with
+the device. See the MPLAB Pack Manager for information on changes made to DFPs and to download
+the latest packs.
+<!--l. 1007--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-57000"></a>Version 3.00</h4>
+<!--l. 1008--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Operations</span><span 
+class="ec-lmbx-10">&#x00A0;removed</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3579)</span> </dt><dd 
+class="description">
+     <!--l. 1009--><p class="noindent" >The compiler optimizer might have not generated code for some 64- or 32-bit operations
+     at <span 
+class="ec-lmtt-10">-O1 </span>and higher optimization levels, causing incorrect program execution. These code
+     sequences are now generated correctly.</dd></dl>
+<!--l. 1015--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-58000"></a>Version 2.50</h4>
+<!--l. 1016--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Scanf</span><span 
+class="ec-lmbx-10">&#x00A0;return</span><span 
+class="ec-lmbx-10">&#x00A0;value</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3355)</span> </dt><dd 
+class="description">
+     <!--l. 1017--><p class="noindent" >If the <span 
+class="ec-lmtt-10">[ </span>conversion specifier (to match a nonempty sequence of characters from a set of
+     expected characters) is used in format strings with the <span 
+class="ec-lmtt-10">scanf() </span>family of functions, the
+     return value of those functions might be in error.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Printing</span><span 
+class="ec-lmbx-10">&#x00A0;length</span><span 
+class="ec-lmbx-10">&#x00A0;zero</span><span 
+class="ec-lmbx-10">&#x00A0;strings</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3317)</span> </dt><dd 
+class="description">
+     <!--l. 1022--><p class="noindent" >Calls to <span 
+class="ec-lmtt-10">snprintf() </span>with an &#8220;n&#8221; argument of 0 were writing characters to the string array,
+     which should not have occurred. This has been corrected.</dd></dl>
+<!--l. 1027--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-59000"></a>Version 2.49 (Functional Safety Release)</h4>
+<!--l. 1029--><p class="noindent" >None.
+                                                                               
+                                                                               
+<!--l. 1031--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-60000"></a>Version 2.46</h4>
+<!--l. 1032--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Missing</span><span 
+class="ec-lmbx-10">&#x00A0;chip</span><span 
+class="ec-lmbx-10">&#x00A0;information</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3223)</span> </dt><dd 
+class="description">
+     <!--l. 1033--><p class="noindent" >Chipinfo (HTML) files were not being generated for Device Family Packs (DFPs). The
+     chipinfo files shipped with the compiler were present and correct.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">EEPROM</span><span 
+class="ec-lmbx-10">&#x00A0;update</span><span 
+class="ec-lmbx-10">&#x00A0;failure</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3150)</span> </dt><dd 
+class="description">
+     <!--l. 1036--><p class="noindent" >Calls to the <span 
+class="ec-lmtt-10">eeprom_update_byte() </span>routine on AVR EA devices silently failed, leaving
+     the addressed byte unchanged. This routine has now been corrected and the fix ships in
+     the latest DFPs.</dd></dl>
+<!--l. 1042--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-61000"></a>Version 2.45</h4>
+<!--l. 1043--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Roaming</span><span 
+class="ec-lmbx-10">&#x00A0;license</span><span 
+class="ec-lmbx-10">&#x00A0;failure</span><span 
+class="ec-lmbx-10">&#x00A0;(XCLM-235)</span> </dt><dd 
+class="description">
+     <!--l. 1044--><p class="noindent" >Roamed licenses failed to work correctly on Linux platforms using glibc versions later than
+     2.28.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Internal</span><span 
+class="ec-lmbx-10">&#x00A0;error</span><span 
+class="ec-lmbx-10">&#x00A0;with</span><span 
+class="ec-lmbx-10">&#x00A0;arrays</span><span 
+class="ec-lmbx-10">&#x00A0;of</span><span 
+class="ec-lmbx-10">&#x00A0;structures</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3069)</span> </dt><dd 
+class="description">
+     <!--l. 1047--><p class="noindent" >When multi-dimensional array members of a structure were processed, the address space
+     qualifier  was  not  correctly  propagated  to  the  array.  This  led  to  a  mismatch  in  the
+     address space qualifier information and an internal compiler error. This situation has been
+     corrected.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Bad</span><span 
+class="ec-lmbx-10">&#x00A0;writes</span><span 
+class="ec-lmbx-10">&#x00A0;to</span><span 
+class="ec-lmbx-10">&#x00A0;uninitialized</span><span 
+class="ec-lmbx-10">&#x00A0;streams</span><span 
+class="ec-lmbx-10">&#x00A0;(ML-353,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-3100)</span> </dt><dd 
+class="description">
+     <!--l. 1052--><p class="noindent" >If the standard output/error streams were not explicitly setup using <span 
+class="ec-lmtt-10">FDEV_SETUP_STREAM</span>
+     or <span 
+class="ec-lmtt-10">_init_stdout </span>/  <span 
+class="ec-lmtt-10">_init_stderr</span>, attempting to write to them resulted in undefined
+     behavior. This also affected writes from stdlib functions, such as <span 
+class="ec-lmtt-10">perror()</span>. Any writes to
+     these streams before they have been initialized will now be ignored.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Unsupported</span><span 
+class="ec-lmbx-10">&#x00A0;modifier</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2505)</span> </dt><dd 
+class="description">
+     <!--l. 1059--><p class="noindent" >The avr-libc library did not support the <span 
+class="ec-lmtt-10">* </span>modifier in printf-style conversion specifiers,
+     for example <span 
+class="ec-lmtt-10">&#8220;%.*f</span>&#8221;. This is now supported with the introduction of the Microchip Unified
+     Standard Library.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Multiple</span><span 
+class="ec-lmbx-10">&#x00A0;uninitialized</span><span 
+class="ec-lmbx-10">&#x00A0;warnings</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2409)</span> </dt><dd 
+class="description">
+     <!--l. 1063--><p class="noindent" >The compiler was issuing multiple identical warning messages when encountering a <span 
+class="ec-lmtt-10">const</span>
+     array that was not initialized. The message should have been issued just the once, which
+     is now the case when this situation occurs.</dd></dl>
+                                                                               
+                                                                               
+<!--l. 1069--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-62000"></a>Version 2.41</h4>
+<!--l. 1070--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Dongle</span><span 
+class="ec-lmbx-10">&#x00A0;issues</span><span 
+class="ec-lmbx-10">&#x00A0;on</span><span 
+class="ec-lmbx-10">&#x00A0;Ventura</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3088)</span> </dt><dd 
+class="description">
+     <!--l. 1071--><p class="noindent" >Dongles used to license the compiler might not have been properly read on macOS Ventura
+     hosts, resulting in licensing failures. Changes to the XCLM license manager correct this
+     issue.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Incorrect</span><span 
+class="ec-lmbx-10">&#x00A0;indication</span><span 
+class="ec-lmbx-10">&#x00A0;of</span><span 
+class="ec-lmbx-10">&#x00A0;memory</span><span 
+class="ec-lmbx-10">&#x00A0;allocation</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2925)</span> </dt><dd 
+class="description">
+     <!--l. 1075--><p class="noindent" >Attempting to allocate <span 
+class="ec-lmtt-10">SIZE_MAX </span>bytes (or a value close to this) of memory using the
+     standard library memory management functions (<span 
+class="ec-lmtt-10">malloc() </span>et al) incorrectly succeeded. It
+     did not take into account that extra bytes were needed in addition to the block requested
+     when using the simple dynamic memory allocation implementation. A <span 
+class="ec-lmtt-10">NULL </span>pointer will
+     now be returned and <span 
+class="ec-lmtt-10">errno </span>set to <span 
+class="ec-lmtt-10">ENOMEM </span>in such situations.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Inaccurate</span><span 
+class="ec-lmbx-10">&#x00A0;fma</span><span 
+class="ec-lmbx-10">&#x00A0;functions</span><span 
+class="ec-lmbx-10">&#x00A0;removed</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2913)</span> </dt><dd 
+class="description">
+     <!--l. 1083--><p class="noindent" >The  C99  standard  library  <span 
+class="ec-lmtt-10">fma()</span>-family  functions  (<span 
+class="ec-lmtt-10">&#x003C;math.h</span>&#x003E;)  did  not  compute  a
+     multiply-add with infinite precision to a single rounding, but instead accumulated rounding
+     errors with each operation. These functions have been removed from the supplied library.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Bad</span><span 
+class="ec-lmbx-10">&#x00A0;handling</span><span 
+class="ec-lmbx-10">&#x00A0;of</span><span 
+class="ec-lmbx-10">&#x00A0;string</span><span 
+class="ec-lmbx-10">&#x00A0;conversion</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2921,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-2652)</span> </dt><dd 
+class="description">
+     <!--l. 1088--><p class="noindent" >When a &#8217;subject sequence&#8217; for conversion by <span 
+class="ec-lmtt-10">strtod() </span>contained what appeared to be a
+     floating-point number in exponential format and there was an unexpected character after
+     the <span 
+class="ec-lmtt-10">e</span>/<span 
+class="ec-lmtt-10">E </span>character, then where <span 
+class="ec-lmtt-10">endptr </span>had been provided, it was assigned an address that
+     had it point to the character after the <span 
+class="ec-lmtt-10">e</span>/<span 
+class="ec-lmtt-10">E</span>, whereas it should have been pointing to the <span 
+class="ec-lmtt-10">e</span>/<span 
+class="ec-lmtt-10">E</span>
+     character itself, since that had not been converted. For example, <span 
+class="ec-lmtt-10">strtod("100exx",</span><span 
+class="ec-lmtt-10">&#x00A0;&amp;ep)</span>
+     should return 100.00 and set <span 
+class="ec-lmtt-10">ep </span>to point to the <span 
+class="ec-lmtt-10">"exx" </span>part of the string, whereas the
+     function was returning the correct value but setting <span 
+class="ec-lmtt-10">ep </span>to point to the <span 
+class="ec-lmtt-10">"xx" </span>part of the
+     string.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Bad</span><span 
+class="ec-lmbx-10">&#x00A0;conversion</span><span 
+class="ec-lmbx-10">&#x00A0;of</span><span 
+class="ec-lmbx-10">&#x00A0;hexadecimal</span><span 
+class="ec-lmbx-10">&#x00A0;floats</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2626)</span> </dt><dd 
+class="description">
+     <!--l. 1101--><p class="noindent" >Functions in the <span 
+class="ec-lmtt-10">strtof() </span>family and <span 
+class="ec-lmtt-10">scanf() </span>family always converted a hexadecimal
+     floating-point  number  missing  an  exponent  part  to  zero.  So  for  the  statement
+     <span 
+class="ec-lmtt-10">f</span><span 
+class="ec-lmtt-10">&#x00A0;=</span><span 
+class="ec-lmtt-10">&#x00A0;strtof("0x1.1",</span><span 
+class="ec-lmtt-10">&#x00A0;&amp;endptr); </span>instead of assigning  <span 
+class="ec-lmtt-10">f </span>the value 1.062500, it would
+     assign 0. The floating-point formatted input conversions of <span 
+class="ec-lmtt-10">scanf() </span>were similarly affected.</dd></dl>
+<!--l. 1110--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-63000"></a>Version 2.40</h4>
+<!--l. 1111--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Too</span><span 
+class="ec-lmbx-10">&#x00A0;relaxed</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2876)</span> </dt><dd 
+class="description">
+     <!--l. 1112--><p class="noindent" >When using the <span 
+class="ec-lmtt-10">-mrelax </span>option, the compiler was not allocating some sections together,
+     resulting in less optimal code sizes. This might have occurred with code that used the new
+                                                                               
+                                                                               
+     MUSL libraries or with weak symbols.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Mapping</span><span 
+class="ec-lmbx-10">&#x00A0;feature</span><span 
+class="ec-lmbx-10">&#x00A0;not</span><span 
+class="ec-lmbx-10">&#x00A0;disabled</span><span 
+class="ec-lmbx-10">&#x00A0;as</span><span 
+class="ec-lmbx-10">&#x00A0;stated</span><span 
+class="ec-lmbx-10">&#x00A0;in</span><span 
+class="ec-lmbx-10">&#x00A0;warning</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2875)</span> </dt><dd 
+class="description">
+     <!--l. 1116--><p class="noindent" >The
+     const-data-in-config-mapped-progmem  feature  is  reliant  on  the  const-data-in-progmem
+     feature being enabled. If the const-data-in-config-mapped-progmem feature was explicitly
+     enabled using the option and the const-data-in-progmem feature was disabled, the link step
+     failed, despite a warning message stating that the const-data-in-config-mapped-progmem
+     feature   had   been   automatically   disabled,   which   was   not   entirely   correct.   The
+     const-data-in-config-mapped-progmem feature is now fully disabled in this situation.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">DFP</span><span 
+class="ec-lmbx-10">&#x00A0;changes</span><span 
+class="ec-lmbx-10">&#x00A0;to</span><span 
+class="ec-lmbx-10">&#x00A0;correctly</span><span 
+class="ec-lmbx-10">&#x00A0;access</span><span 
+class="ec-lmbx-10">&#x00A0;NVMCTRL</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2848)</span> </dt><dd 
+class="description">
+     <!--l. 1124--><p class="noindent" >The runtime startup code used by AVR64EA devices didn&#8217;t take into account that the
+     NVMCTRL register was under Configuration Change Protection (CCP) and was not able
+     to set the IO SFR to the page used by the const-data-in-config-mapped-progmem compiler
+     feature. Changes made in AVR-Ex_DFP version 2.2.55 will allow the runtime startup
+     code to correctly write to this register.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">DFP</span><span 
+class="ec-lmbx-10">&#x00A0;changes</span><span 
+class="ec-lmbx-10">&#x00A0;to</span><span 
+class="ec-lmbx-10">&#x00A0;avoid</span><span 
+class="ec-lmbx-10">&#x00A0;flash</span><span 
+class="ec-lmbx-10">&#x00A0;mapping</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2847)</span> </dt><dd 
+class="description">
+     <!--l. 1130--><p class="noindent" >A  work-around  for  a  problem  with  the  flash-mapping  device  feature  reported  in
+     the  AVR128DA28/32/48/64  Silicon  Errata  (DS80000882)  has  been  implemented.  The
+     const-data-in-config-mapped-progmem compiler feature will not be applied by default for
+     affected devices, and this change will appear in AVR-Dx_DFP version 2.2.160.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Build</span><span 
+class="ec-lmbx-10">&#x00A0;error</span><span 
+class="ec-lmbx-10">&#x00A0;with</span><span 
+class="ec-lmbx-10">&#x00A0;sinhf</span><span 
+class="ec-lmbx-10">&#x00A0;or</span><span 
+class="ec-lmbx-10">&#x00A0;coshf</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2834)</span> </dt><dd 
+class="description">
+     <!--l. 1136--><p class="noindent" >Attempts  to  use  the  <span 
+class="ec-lmtt-10">sinhf() </span>or  <span 
+class="ec-lmtt-10">coshf() </span>library  functions  resulted  in  a  link  error,
+     describing an undefined reference. The missing function referenced has now been included
+     in the compiler distribution.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Build</span><span 
+class="ec-lmbx-10">&#x00A0;errors</span><span 
+class="ec-lmbx-10">&#x00A0;with</span><span 
+class="ec-lmbx-10">&#x00A0;nopa</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2833)</span> </dt><dd 
+class="description">
+     <!--l. 1140--><p class="noindent" >Using the <span 
+class="ec-lmtt-10">nopa </span>attribute with a function that has had its assembler name specified using
+     <span 
+class="ec-lmtt-10">__asm__() </span>triggered error messages from the assembler. This combination is not possible.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Variadic</span><span 
+class="ec-lmbx-10">&#x00A0;function</span><span 
+class="ec-lmbx-10">&#x00A0;failure</span><span 
+class="ec-lmbx-10">&#x00A0;with</span><span 
+class="ec-lmbx-10">&#x00A0;pointer</span><span 
+class="ec-lmbx-10">&#x00A0;arguments</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2755,</span> </dt><dd 
+class="description">
+     <!--l. 1144--><p class="noindent" >XC8-2731) Functions with a variable number of arguments expect 24-bit (<span 
+class="ec-lmtt-10">__memx </span>type)
+     pointers  to  be  passed  in  the  variable  argument  list  when  the  const-data-in-progmem
+     feature  is  enabled.  Arguments  that  were  pointers  to  data  memory  were  being  passed
+     as  16-bit  objects,  causing  code  failure  when  they  were  ultimately  read.  When  the
+     const-data-in-progmem feature is enabled, all 16-bit pointers arguments are now converted
+     to 24-bit pointers.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">strtoxxx</span><span 
+class="ec-lmbx-10">&#x00A0;library</span><span 
+class="ec-lmbx-10">&#x00A0;functions</span><span 
+class="ec-lmbx-10">&#x00A0;failing</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2620)</span> </dt><dd 
+class="description">
+     <!--l. 1152--><p class="noindent" >When const-data-in-progmem feature was enabled, the <span 
+class="ec-lmtt-10">endptr </span>parameter in the strtoxxx
+     library functions was not updated properly for source string arguments not in program
+     memory.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Alerts</span><span 
+class="ec-lmbx-10">&#x00A0;for</span><span 
+class="ec-lmbx-10">&#x00A0;invalid</span><span 
+class="ec-lmbx-10">&#x00A0;casts</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2612)</span> </dt><dd 
+class="description">
+                                                                               
+                                                                               
+     <!--l. 1156--><p class="noindent" >The compiler will now issue an error if const-in-progmem feature is enabled and the address
+     of a string literal is explicitly cast to data address space (dropping the <span 
+class="ec-lmtt-10">const </span>qualifier),
+     for example, <span 
+class="ec-lmtt-10">(uint8_t</span><span 
+class="ec-lmtt-10">&#x00A0;*)</span><span 
+class="ec-lmtt-10">&#x00A0;"Hello</span><span 
+class="ec-lmtt-10">&#x00A0;World!</span>". A warning is issue if the address might be
+     invalid when a <span 
+class="ec-lmtt-10">const </span>data pointer is explicitly cast to data address space.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Placement</span><span 
+class="ec-lmbx-10">&#x00A0;of</span><span 
+class="ec-lmbx-10">&#x00A0;uninitialized</span><span 
+class="ec-lmbx-10">&#x00A0;const</span><span 
+class="ec-lmbx-10">&#x00A0;objects</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2408)</span> </dt><dd 
+class="description">
+     <!--l. 1162--><p class="noindent" >Uninitialized  <span 
+class="ec-lmtt-10">const </span>and  <span 
+class="ec-lmtt-10">const</span><span 
+class="ec-lmtt-10">&#x00A0;volatile </span>objects  were  not  being  placed  in  program
+     memory on devices that map all or part of their program memory into the data address
+     space. For these devices, such objects are now placed in program memory, making their
+     operation consistent with other devices.</dd></dl>
+<!--l. 1170--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-64000"></a>Version 2.39 (Functional Safety Release)</h4>
+<!--l. 1172--><p class="noindent" >None.
+<!--l. 1174--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-65000"></a>Version 2.36</h4>
+<!--l. 1175--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Error</span><span 
+class="ec-lmbx-10">&#x00A0;when</span><span 
+class="ec-lmbx-10">&#x00A0;delaying</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2774)</span> </dt><dd 
+class="description">
+     <!--l. 1176--><p class="noindent" >Minor                     changes                     in                     the                     default
+     Free mode optimizations prevented constant folding of operand expressions to the delay
+     built-in functions, resulting in them being treated as non-constants and triggering the
+     error: <span 
+class="ec-lmtt-10">__builtin_avr_delay_cycles</span><span 
+class="ec-lmtt-10">&#x00A0;expects</span><span 
+class="ec-lmtt-10">&#x00A0;a</span><span 
+class="ec-lmtt-10">&#x00A0;compile</span><span 
+class="ec-lmtt-10">&#x00A0;time</span><span 
+class="ec-lmtt-10">&#x00A0;integer</span><span 
+class="ec-lmtt-10">&#x00A0;constant</span>.</dd></dl>
+<!--l. 1182--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-66000"></a>Version 2.35</h4>
+<!--l. 1183--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Contiguous</span><span 
+class="ec-lmbx-10">&#x00A0;allocation</span><span 
+class="ec-lmbx-10">&#x00A0;using</span><span 
+class="ec-lmbx-10">&#x00A0;__at</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2653)</span> </dt><dd 
+class="description">
+     <!--l. 1184--><p class="noindent" >Contiguous allocation of multiple objects places in a section with the same name and using
+     <span 
+class="ec-lmtt-10">__at() </span>did not work correctly. For example:</dd></dl>
+<!--l. 1188--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 1188--><p class="noindent" ><span 
+class="ec-lmtt-10">const</span><span 
+class="ec-lmtt-10">&#x00A0;char</span><span 
+class="ec-lmtt-10">&#x00A0;arr1[]</span><span 
+class="ec-lmtt-10">&#x00A0;__attribute__((section(".mysec")))</span><span 
+class="ec-lmtt-10">&#x00A0;__at</span><span 
+class="ec-lmtt-10">&#x00A0;(0x500)</span><span 
+class="ec-lmtt-10">&#x00A0;=</span>
+     <!--l. 1191--><p class="noindent" ><span 
+class="ec-lmtt-10">&#x00A0;</span><span 
+class="ec-lmtt-10">&#x00A0;</span><span 
+class="ec-lmtt-10">&#x00A0;</span><span 
+class="ec-lmtt-10">&#x00A0;{</span><span 
+class="ec-lmtt-10">&#x00A0;0xAB,</span><span 
+class="ec-lmtt-10">&#x00A0;0xCD</span><span 
+class="ec-lmtt-10">&#x00A0;};</span>
+     <!--l. 1193--><p class="noindent" ><span 
+class="ec-lmtt-10">const</span><span 
+class="ec-lmtt-10">&#x00A0;char</span><span 
+class="ec-lmtt-10">&#x00A0;arr2[]</span><span 
+class="ec-lmtt-10">&#x00A0;__attribute__((section(".mysec")))</span><span 
+class="ec-lmtt-10">&#x00A0;=</span>
+     <!--l. 1195--><p class="noindent" ><span 
+class="ec-lmtt-10">&#x00A0;</span><span 
+class="ec-lmtt-10">&#x00A0;</span><span 
+class="ec-lmtt-10">&#x00A0;</span><span 
+class="ec-lmtt-10">&#x00A0;{</span><span 
+class="ec-lmtt-10">&#x00A0;0xEF,</span><span 
+class="ec-lmtt-10">&#x00A0;0xFE</span><span 
+class="ec-lmtt-10">&#x00A0;};</span>
+                                                                               
+                                                                               
+     <!--l. 1197--><p class="noindent" >should
+     have
+     placed
+     <span 
+class="ec-lmtt-10">arr2</span>
+     immediately
+     after
+     <span 
+class="ec-lmtt-10">arr1</span>.</dd></dl>
+<!--l. 1199--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Specifying</span><span 
+class="ec-lmbx-10">&#x00A0;section</span><span 
+class="ec-lmbx-10">&#x00A0;start</span><span 
+class="ec-lmbx-10">&#x00A0;addresses</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2650)</span> </dt><dd 
+class="description">
+     <!--l. 1200--><p class="noindent" >The <span 
+class="ec-lmtt-10">-Wl,--section-start </span>option was silently failing to place sections at the nominated
+     start address. This issue has been fixed for any custom-named sections; however, it will
+     not work for any standard sections, such as <span 
+class="ec-lmtt-10">.text </span>or <span 
+class="ec-lmtt-10">.bss</span>, which must be placed using a
+     <span 
+class="ec-lmtt-10">-Wl,-T </span>option.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Linker</span><span 
+class="ec-lmbx-10">&#x00A0;crashes</span><span 
+class="ec-lmbx-10">&#x00A0;when</span><span 
+class="ec-lmbx-10">&#x00A0;relaxing</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2647)</span> </dt><dd 
+class="description">
+     <!--l. 1205--><p class="noindent" >When the <span 
+class="ec-lmtt-10">-mrelax </span>optimization was enabled and there were code or data sections that
+     did not fit into the available memory, the linker crashed. Now, in such a circumstance,
+     error messages are issued instead.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">No</span><span 
+class="ec-lmbx-10">&#x00A0;no-falling-back</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2646)</span> </dt><dd 
+class="description">
+     <!--l. 1209--><p class="noindent" >The <span 
+class="ec-lmtt-10">--nofallback </span>option was not correctly implemented, nor documented. This can now
+     be selected to ensure that the compiler will not fall back to a lower optimization setting if
+     the compiler is unlicensed, and will instead issue an error.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Inappropriate</span><span 
+class="ec-lmbx-10">&#x00A0;speed</span><span 
+class="ec-lmbx-10">&#x00A0;optimizations</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2637)</span> </dt><dd 
+class="description">
+     <!--l. 1213--><p class="noindent" >Procedural  abstraction  optimizations  were  being  enabled  when  selecting  level  3
+     optimizations (<span 
+class="ec-lmtt-10">-O3</span>). These optimizations reduce code size at the expense of code speed,
+     so should not have been performed.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Bad</span><span 
+class="ec-lmbx-10">&#x00A0;EEPROM</span><span 
+class="ec-lmbx-10">&#x00A0;access</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2629)</span> </dt><dd 
+class="description">
+     <!--l. 1217--><p class="noindent" >The  <span 
+class="ec-lmtt-10">eeprom_read_block </span>routine  did  not  work  correctly  on  Xmega  devices  when  the
+     <span 
+class="ec-lmtt-10">-mconst-data-in-progmem </span>option was enabled (which is the default state), resulting in
+     EEPROM memory not being read correctly.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Invalid</span><span 
+class="ec-lmbx-10">&#x00A0;memory</span><span 
+class="ec-lmbx-10">&#x00A0;allocation</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2593,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-2651)</span> </dt><dd 
+class="description">
+     <!--l. 1221--><p class="noindent" >When the <span 
+class="ec-lmtt-10">-Ttext </span>or <span 
+class="ec-lmtt-10">-Tdata </span>linker option (for example passed through using a <span 
+class="ec-lmtt-10">-Wl </span>driver
+     option) is specified, the corresponding text/data region origin was updated; however, the
+     end address was not adjusted accordingly, which could have led to the region exceeding
+     the target device&#8217;s memory range.&#x00A0;
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Crash</span><span 
+class="ec-lmbx-10">&#x00A0;with</span><span 
+class="ec-lmbx-10">&#x00A0;over-attributed</span><span 
+class="ec-lmbx-10">&#x00A0;function</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2580)</span> </dt><dd 
+class="description">
+     <!--l. 1227--><p class="noindent" >The compiler crashed if a function was declared using more than one of the interrupt,
+     signal or nmi attributes, e.g., <span 
+class="ec-lmtt-10">__attribute__((__signal__,</span><span 
+class="ec-lmtt-10">&#x00A0;__interrupt__))</span>.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Invalid</span><span 
+class="ec-lmbx-10">&#x00A0;ATtiny</span><span 
+class="ec-lmbx-10">&#x00A0;interrupt</span><span 
+class="ec-lmbx-10">&#x00A0;code</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2465)</span> </dt><dd 
+class="description">
+                                                                               
+                                                                               
+     <!--l. 1230--><p class="noindent" >When building for ATtiny devices and the optimizations were disabled (<span 
+class="ec-lmtt-10">-O0</span>), interrupt
+     functions may have triggered <span 
+class="ec-lmtt-10">operand</span><span 
+class="ec-lmtt-10">&#x00A0;out</span><span 
+class="ec-lmtt-10">&#x00A0;of</span><span 
+class="ec-lmtt-10">&#x00A0;range </span>assembler messages.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Options</span><span 
+class="ec-lmbx-10">&#x00A0;not</span><span 
+class="ec-lmbx-10">&#x00A0;being</span><span 
+class="ec-lmbx-10">&#x00A0;passed</span><span 
+class="ec-lmbx-10">&#x00A0;through</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2452)</span> </dt><dd 
+class="description">
+     <!--l. 1234--><p class="noindent" >When using the <span 
+class="ec-lmtt-10">-Wl </span>option with multiple, comma-separated linker options, not all of the
+     linker options were being passed to the linker.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Error</span><span 
+class="ec-lmbx-10">&#x00A0;indirectly</span><span 
+class="ec-lmbx-10">&#x00A0;reading</span><span 
+class="ec-lmbx-10">&#x00A0;program</span><span 
+class="ec-lmbx-10">&#x00A0;memory</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2450)</span> </dt><dd 
+class="description">
+     <!--l. 1237--><p class="noindent" >In some instances, the compiler produced an internal error (<span 
+class="ec-lmtt-10">unrecognizable</span><span 
+class="ec-lmtt-10">&#x00A0;insn</span>) when
+     reading a two byte value from a pointer to program memory</dd></dl>
+<!--l. 1242--><p class="noindent" >
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-67000"></a>Version 2.32</h5>
+<!--l. 1243--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Second</span><span 
+class="ec-lmbx-10">&#x00A0;access</span><span 
+class="ec-lmbx-10">&#x00A0;of</span><span 
+class="ec-lmbx-10">&#x00A0;library</span><span 
+class="ec-lmbx-10">&#x00A0;fails</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2381)</span> </dt><dd 
+class="description">
+     <!--l. 1244--><p class="noindent" >Invoking&#x00A0;the Windows version of the <span 
+class="ec-lmtt-10">xc8-ar.exe </span>library archiver a second time to access
+     an existing library archive may have failed with an <span 
+class="ec-lmtt-10">unable</span><span 
+class="ec-lmtt-10">&#x00A0;to</span><span 
+class="ec-lmtt-10">&#x00A0;rename </span>error message.</dd></dl>
+<!--l. 1250--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-68000"></a>Version 2.31</h4>
+<!--l. 1251--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Unexplained</span><span 
+class="ec-lmbx-10">&#x00A0;compiler</span><span 
+class="ec-lmbx-10">&#x00A0;failures</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2367)</span> </dt><dd 
+class="description">
+     <!--l. 1252--><p class="noindent" >When running on Windows platforms that had the system temporary directory set to a
+     path that included a dot &#8217;<span 
+class="ec-lmtt-10">.</span>&#8217; character, the compiler may have failed to execute.</dd></dl>
+<!--l. 1258--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-69000"></a>Version 2.30</h4>
+<!--l. 1259--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Global</span><span 
+class="ec-lmbx-10">&#x00A0;labels</span><span 
+class="ec-lmbx-10">&#x00A0;misplaced</span><span 
+class="ec-lmbx-10">&#x00A0;after</span><span 
+class="ec-lmbx-10">&#x00A0;outlining</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2299)</span> </dt><dd 
+class="description">
+     <!--l. 1260--><p class="noindent" >Hand-written assembly code that places global labels within assembly sequences that are
+     factored out by procedural abstraction might not have been correctly repositioned.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">A</span><span 
+class="ec-lmbx-10">&#x00A0;relaxing</span><span 
+class="ec-lmbx-10">&#x00A0;crash</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2287)</span> </dt><dd 
+class="description">
+     <!--l. 1264--><p class="noindent" >Using the <span 
+class="ec-lmtt-10">-mrelax </span>option might have caused the linker to crash when tail jump relaxation
+     optimizations attempted to remove <span 
+class="ec-lmtt-10">ret </span>instruction that were not at the end of a section.
+                                                                               
+                                                                               
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Crash</span><span 
+class="ec-lmbx-10">&#x00A0;when</span><span 
+class="ec-lmbx-10">&#x00A0;optimizing</span><span 
+class="ec-lmbx-10">&#x00A0;labels</span><span 
+class="ec-lmbx-10">&#x00A0;as</span><span 
+class="ec-lmbx-10">&#x00A0;values</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2282)</span> </dt><dd 
+class="description">
+     <!--l. 1268--><p class="noindent" >Code          using          the          "Labels          as          values"          GNU          C
+     language extension might have caused the procedural abstraction optimizations to crash,
+     with an <span 
+class="ec-lmtt-10">Outlined</span><span 
+class="ec-lmtt-10">&#x00A0;VMA</span><span 
+class="ec-lmtt-10">&#x00A0;range</span><span 
+class="ec-lmtt-10">&#x00A0;spans</span><span 
+class="ec-lmtt-10">&#x00A0;fixup </span>error.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Not</span><span 
+class="ec-lmbx-10">&#x00A0;so</span><span 
+class="ec-lmbx-10">&#x00A0;const</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2271)</span> </dt><dd 
+class="description">
+     <!--l. 1273--><p class="noindent" >The   prototypes   for   <span 
+class="ec-lmtt-10">strstr()  </span>and   other   functions   from   <span 
+class="ec-lmtt-10">&#x003C;string.h&#x003E;  </span>no   longer
+     specify  the  non-standard  <span 
+class="ec-lmtt-10">const  </span>qualifier  on  returned  string  pointers  when  the
+     <span 
+class="ec-lmtt-10">-mconst-data-in-progmem </span>feature is disabled. Note that with avrxmega3 and avrtiny
+     devices, this feature is permanently enabled.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Lost</span><span 
+class="ec-lmbx-10">&#x00A0;initializers</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2269)</span> </dt><dd 
+class="description">
+     <!--l. 1279--><p class="noindent" >When more than one variable in a translation unit was placed in a section (using <span 
+class="ec-lmtt-10">__section</span>
+     or <span 
+class="ec-lmtt-10">__attribute__((section))</span>), and the first such variable was zero initialized or did not
+     have an initializer, initializers for other variables in the same translation unit that were
+     placed in the same section were lost.</dd></dl>
+<!--l. 1287--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-70000"></a>Version 2.29 (Functional Safety Release)</h4>
+<!--l. 1289--><p class="noindent" >None.
+<!--l. 1291--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-71000"></a>Version 2.20</h4>
+<!--l. 1292--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Error</span><span 
+class="ec-lmbx-10">&#x00A0;with</span><span 
+class="ec-lmbx-10">&#x00A0;long</span><span 
+class="ec-lmbx-10">&#x00A0;commands</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1983)</span> </dt><dd 
+class="description">
+     <!--l. 1293--><p class="noindent" >When using an AVR target, the compiler may have stopped with a file not found error,
+     if the command line was extremely large and contained special characters such a quotes,
+     backslashes, etc.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Unassigned</span><span 
+class="ec-lmbx-10">&#x00A0;rodata</span><span 
+class="ec-lmbx-10">&#x00A0;section</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1920)</span> </dt><dd 
+class="description">
+     <!--l. 1297--><p class="noindent" >The AVR linker failed to assign memory for custom rodata sections when building for
+     avrxmega3 and avrtiny architectures, potentially producing memory overlap errors</dd></dl>
+<!--l. 1302--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-72000"></a>Version 2.19 (Functional Safety Release)</h4>
+<!--l. 1304--><p class="noindent" >None.
+                                                                               
+                                                                               
+<!--l. 1306--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-73000"></a>Version 2.10</h4>
+<!--l. 1307--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Relocation</span><span 
+class="ec-lmbx-10">&#x00A0;failures</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1891)</span> </dt><dd 
+class="description">
+     <!--l. 1308--><p class="noindent" >The best fit allocator was leaving memory &#8217;holes&#8217; in between sections after linker relaxation.
+     Aside  from  fragmenting  memory,  this  increased  the  possibility  of  there  being  linker
+     relocation failures relating to pc-relative jumps or calls becoming out of range.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Instructions</span><span 
+class="ec-lmbx-10">&#x00A0;not</span><span 
+class="ec-lmbx-10">&#x00A0;transformed</span><span 
+class="ec-lmbx-10">&#x00A0;by</span><span 
+class="ec-lmbx-10">&#x00A0;relaxation</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1889)</span> </dt><dd 
+class="description">
+     <!--l. 1313--><p class="noindent" >Linker  relaxation  did  not  occur  for  jump  or  call  instructions  whose  targets  become
+     reachable if relaxed.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Missing</span><span 
+class="ec-lmbx-10">&#x00A0;&#x003C;power.h&#x003E;</span><span 
+class="ec-lmbx-10">&#x00A0;functionality</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8E-388)</span> </dt><dd 
+class="description">
+     <!--l. 1316--><p class="noindent" >Several definitions from <span 
+class="ec-lmtt-10">&#x003C;power.h</span>&#x003E;, such as <span 
+class="ec-lmtt-10">clock_div_t </span>and <span 
+class="ec-lmtt-10">clock_prescale_set()</span>,
+     were not defined for devices, including the ATmega324PB, ATmega328PB, ATtiny441,
+     and ATtiny841.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Missing</span><span 
+class="ec-lmbx-10">&#x00A0;macros</span> </dt><dd 
+class="description">
+     <!--l. 1320--><p class="noindent" >The  preprocessor  macros  <span 
+class="ec-lmtt-10">_XC8_MODE_</span>,  <span 
+class="ec-lmtt-10">__XC8_VERSION</span>,  <span 
+class="ec-lmtt-10">__XC</span>,  and  <span 
+class="ec-lmtt-10">__XC8 </span>were  not
+     automatically defined by the compiler. These are now available.</dd></dl>
+<!--l. 1325--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-74000"></a>Version 2.05</h4>
+<!--l. 1326--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Internal</span><span 
+class="ec-lmbx-10">&#x00A0;compiler</span><span 
+class="ec-lmbx-10">&#x00A0;error</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1822)</span> </dt><dd 
+class="description">
+     <!--l. 1327--><p class="noindent" >When building under Windows, an internal compiler error might have been produced when
+     optimizing code.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">RAM</span><span 
+class="ec-lmbx-10">&#x00A0;overflow</span><span 
+class="ec-lmbx-10">&#x00A0;not</span><span 
+class="ec-lmbx-10">&#x00A0;detected</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1800,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-1796)</span> </dt><dd 
+class="description">
+     <!--l. 1330--><p class="noindent" >Programs that exceeded that available RAM were not detected by the compiler in some
+     situations, resulting in a runtime code failure.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Omitted</span><span 
+class="ec-lmbx-10">&#x00A0;flash</span><span 
+class="ec-lmbx-10">&#x00A0;memory</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1792)</span> </dt><dd 
+class="description">
+     <!--l. 1333--><p class="noindent" >For  avrxmega3  and  avrtiny  devices,  parts  of  the  flash  memory  might  have  been  left
+     un-programmed by the MPLAB X IDE.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Failure</span><span 
+class="ec-lmbx-10">&#x00A0;to</span><span 
+class="ec-lmbx-10">&#x00A0;execute</span><span 
+class="ec-lmbx-10">&#x00A0;main</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1788)</span> </dt><dd 
+class="description">
+     <!--l. 1336--><p class="noindent" >In some situations where the program had no global variables defined, the runtime startup
+     code did not exit and the <span 
+class="ec-lmtt-10">main() </span>function was never reached.
+                                                                               
+                                                                               
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Incorrect</span><span 
+class="ec-lmbx-10">&#x00A0;memory</span><span 
+class="ec-lmbx-10">&#x00A0;information</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1787)</span> </dt><dd 
+class="description">
+     <!--l. 1339--><p class="noindent" >For avrxmega3 and avrtiny devices, the avr-size program was reporting that read-only
+     data was consuming RAM instead of program memory.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Incorrect</span><span 
+class="ec-lmbx-10">&#x00A0;program</span><span 
+class="ec-lmbx-10">&#x00A0;memory</span><span 
+class="ec-lmbx-10">&#x00A0;read</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1783)</span> </dt><dd 
+class="description">
+     <!--l. 1342--><p class="noindent" >Projects compiled for devices with program memory mapped into the data address space
+     and that define objects using the PROGMEM macro/attribute might have read these
+     objects from the wrong address.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Internal</span><span 
+class="ec-lmbx-10">&#x00A0;error</span><span 
+class="ec-lmbx-10">&#x00A0;with</span><span 
+class="ec-lmbx-10">&#x00A0;attributes</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1773)</span> </dt><dd 
+class="description">
+     <!--l. 1346--><p class="noindent" >An  internal  error  occurred  if  you  defined  pointer  objects  with  the  <span 
+class="ec-lmtt-10">__at()  </span>or
+     attribute()  tokens  in  between  the  pointer  name  and  dereferenced  type,  for  example,
+     <span 
+class="ec-lmtt-10">char</span><span 
+class="ec-lmtt-10">&#x00A0;*</span><span 
+class="ec-lmtt-10">&#x00A0;__at(0x800150)</span><span 
+class="ec-lmtt-10">&#x00A0;cp; </span>A warning is now issued if such code is encountered.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Failure</span><span 
+class="ec-lmbx-10">&#x00A0;to</span><span 
+class="ec-lmbx-10">&#x00A0;execute</span><span 
+class="ec-lmbx-10">&#x00A0;main</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1780,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-1767,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-1754)</span> </dt><dd 
+class="description">
+     <!--l. 1351--><p class="noindent" >Using EEPROM variables or defining fuses using the config pragma might have caused
+     incorrect data initialisation and/or locked up program execution in the runtime startup
+     code, before reaching <span 
+class="ec-lmtt-10">main()</span>.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Fuse</span><span 
+class="ec-lmbx-10">&#x00A0;error</span><span 
+class="ec-lmbx-10">&#x00A0;with</span><span 
+class="ec-lmbx-10">&#x00A0;tiny</span><span 
+class="ec-lmbx-10">&#x00A0;devices</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1778,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-1742)</span> </dt><dd 
+class="description">
+     <!--l. 1355--><p class="noindent" >The attiny4/5/9/10/20/40 devices had an incorrect fuse length specified in their header
+     files that lead to linker errors when attempting to build code that defined fuses.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Segmentation</span><span 
+class="ec-lmbx-10">&#x00A0;fault</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1777)</span> </dt><dd 
+class="description">
+     <!--l. 1359--><p class="noindent" >An intermittent segmentation fault has been corrected.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Assembler</span><span 
+class="ec-lmbx-10">&#x00A0;crash</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1761)</span> </dt><dd 
+class="description">
+     <!--l. 1361--><p class="noindent" >The <span 
+class="ec-lmtt-10">avr-as </span>assembler might have crashed when the compiler was run under Ubuntu 18.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Objects</span><span 
+class="ec-lmbx-10">&#x00A0;not</span><span 
+class="ec-lmbx-10">&#x00A0;cleared</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1752)</span> </dt><dd 
+class="description">
+     <!--l. 1363--><p class="noindent" >Uninitialized static storage duration objects might not have been cleared by the runtime
+     startup code.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Conflicting</span><span 
+class="ec-lmbx-10">&#x00A0;device</span><span 
+class="ec-lmbx-10">&#x00A0;specification</span><span 
+class="ec-lmbx-10">&#x00A0;ignored</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1749)</span> </dt><dd 
+class="description">
+     <!--l. 1366--><p class="noindent" >The compiler was not generating an error when multiple device specification options were
+     used and indicated different devices.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Memory</span><span 
+class="ec-lmbx-10">&#x00A0;corruption</span><span 
+class="ec-lmbx-10">&#x00A0;by</span><span 
+class="ec-lmbx-10">&#x00A0;heap</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1748)</span> </dt><dd 
+class="description">
+     <!--l. 1369--><p class="noindent" >The <span 
+class="ec-lmtt-10">__heap_start </span>symbol was being incorrectly set, resulting in the possibility of ordinary
+     variables being corrupted by the heap.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Linker</span><span 
+class="ec-lmbx-10">&#x00A0;relocation</span><span 
+class="ec-lmbx-10">&#x00A0;error</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1739)</span> </dt><dd 
+class="description">
+                                                                               
+                                                                               
+     <!--l. 1372--><p class="noindent" >A linker relocation error might have been emitted when code contained a <span 
+class="ec-lmtt-10">rjmp </span>or <span 
+class="ec-lmtt-10">rcall</span>
+     with a target exactly 4k bytes away.</dd></dl>
+<!--l. 1377--><p class="noindent" >
+<h4 class="likesubsectionHead"><a 
+ id="x1-75000"></a>Version 2.00</h4>
+<!--l. 1379--><p class="noindent" >None.
+<!--l. 1381--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-760006"></a>Known Issues</h3>
+<!--l. 1383--><p class="noindent" >The following are limitations in the compiler&#8217;s operation. These may be general coding restrictions, or
+deviations from information contained in the user&#8217;s manual. The bracketed label(s) in the title are that
+issue&#8217;s identification in the tracking database. This may be of benefit if you need to contact support.
+Those items which do not have labels are limitations that describe <span 
+class="ec-lmri-10">modi operandi </span>and which are likely
+to remain in effect permanently.
+<!--l. 1391--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x1-77000"></a>IDE Integration</h5>
+<!--l. 1392--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">MPLAB</span><span 
+class="ec-lmbx-10">&#x00A0;IDE</span><span 
+class="ec-lmbx-10">&#x00A0;integration</span> </dt><dd 
+class="description">
+     <!--l. 1393--><p class="noindent" >If Compiler is to be used from MPLAB IDE, then you must install MPLAB IDE prior to
+     installing Compiler.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">No</span><span 
+class="ec-lmbx-10">&#x00A0;pragma</span><span 
+class="ec-lmbx-10">&#x00A0;suggestions</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3517)</span> </dt><dd 
+class="description">
+     <!--l. 1395--><p class="noindent" >The MPLAB Extensions for VS Code are not able to make suggestions for the arguments
+     to any <span 
+class="ec-lmtt-10">#pragma config </span>directives.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Array</span><span 
+class="ec-lmbx-10">&#x00A0;debug</span><span 
+class="ec-lmbx-10">&#x00A0;information</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3157)</span> </dt><dd 
+class="description">
+     <!--l. 1398--><p class="noindent" >The debug information produced by the compiler does not accurately convey the object
+     type for arrays in the <span 
+class="ec-lmtt-10">__memx </span>address space. This will prevent observation of the object in
+     an IDE.</dd></dl>
+<!--l. 1404--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x1-78000"></a>Code Generation</h5>
+<a 
+ id="x1-78000doc"></a>
+<!--l. 1407--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Bad</span><span 
+class="ec-lmbx-10">&#x00A0;register-constraint</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3499)</span> </dt><dd 
+class="description">
+                                                                               
+                                                                               
+     <!--l. 1408--><p class="noindent" >In the <span 
+class="ec-lmtt-10">wdt_enable </span>macro, the constraint for <span 
+class="ec-lmtt-10">tmp </span>(<span 
+class="ec-lmtt-10">"r"</span>) is incorrect, as it is used in a SBR
+     instruction that requires R16-R31. The correct constraint should be <span 
+class="ec-lmtt-10">"d"</span>.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">No</span><span 
+class="ec-lmbx-10">&#x00A0;unique</span><span 
+class="ec-lmbx-10">&#x00A0;section</span><span 
+class="ec-lmbx-10">&#x00A0;allocation</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3387)</span> </dt><dd 
+class="description">
+     <!--l. 1412--><p class="noindent" >The <span 
+class="ec-lmtt-10">-fdata-sections </span>option does not create a uniquely named section for an object
+     defined as <span 
+class="ec-lmtt-10">const</span><span 
+class="ec-lmtt-10">&#x00A0;volatile </span>and using the <span 
+class="ec-lmtt-10">progmem </span>attribute. It is instead assigned to the
+     same generic section that would have been selected if the <span 
+class="ec-lmtt-10">-fdata-sections </span>was not used.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Error</span><span 
+class="ec-lmbx-10">&#x00A0;dumping</span><span 
+class="ec-lmbx-10">&#x00A0;libraries</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3487)</span> </dt><dd 
+class="description">
+     <!--l. 1417--><p class="noindent" >Using the avr-objdump utility on <span 
+class="ec-lmtt-10">.a </span>library archive files distributed with the compiler
+     generates <span 
+class="ec-lmtt-10">File format not recognized </span>errors for certain libraries.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Custom</span><span 
+class="ec-lmbx-10">&#x00A0;section</span><span 
+class="ec-lmbx-10">&#x00A0;allocation</span><span 
+class="ec-lmbx-10">&#x00A0;failure</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3256)</span> </dt><dd 
+class="description">
+     <!--l. 1420--><p class="noindent" >Section-ref based allocation is not ignoring sections mapped to a different region, and is
+     not handling absolute addressed sections in the linker script as it would orphaned sections
+     with an absolute address. This might result in a linker error when using the <span 
+class="ec-lmtt-10">-mrelax</span>
+     option and custom output sections that are mapped to a region other than <span 
+class="ec-lmtt-10">text</span>.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Errno</span><span 
+class="ec-lmbx-10">&#x00A0;not</span><span 
+class="ec-lmbx-10">&#x00A0;set</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3239)</span> </dt><dd 
+class="description">
+     <!--l. 1426--><p class="noindent" >The <span 
+class="ec-lmtt-10">strtod()</span><span 
+class="ec-lmtt-10">&#x00A0;</span>function does not correctly set <span 
+class="ec-lmtt-10">errno </span>to <span 
+class="ec-lmtt-10">ERANGE </span>when appropriate.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Section</span><span 
+class="ec-lmbx-10">&#x00A0;overlap</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3185)</span> </dt><dd 
+class="description">
+     <!--l. 1428--><p class="noindent" >The  best  fit  allocator  might  ignore  any  linker-script-defined  output  sections  that  are
+     mapped to the data memory region, leading to a possible overlap of input sections with
+     linker-script-defined sections. There is no indication from the compiler if sections overlap.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Segfault</span><span 
+class="ec-lmbx-10">&#x00A0;with</span><span 
+class="ec-lmbx-10">&#x00A0;section-anchors</span><span 
+class="ec-lmbx-10">&#x00A0;option</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-3045)</span> </dt><dd 
+class="description">
+     <!--l. 1433--><p class="noindent" >Program
+     that defined functions with variable argument lists and that use the <span 
+class="ec-lmtt-10">-fsection-anchors</span>
+     option might have triggered a <span 
+class="ec-lmtt-10">internal</span><span 
+class="ec-lmtt-10">&#x00A0;compiler</span><span 
+class="ec-lmtt-10">&#x00A0;error:</span><span 
+class="ec-lmtt-10">&#x00A0;Segmentation</span><span 
+class="ec-lmtt-10">&#x00A0;fault</span>.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Debug</span><span 
+class="ec-lmbx-10">&#x00A0;info</span><span 
+class="ec-lmbx-10">&#x00A0;out</span><span 
+class="ec-lmbx-10">&#x00A0;of</span><span 
+class="ec-lmbx-10">&#x00A0;sync</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2948)</span> </dt><dd 
+class="description">
+     <!--l. 1436--><p class="noindent" >When linker relaxation optimizations shrinks instructions (for example <span 
+class="ec-lmtt-10">call </span>to <span 
+class="ec-lmtt-10">rcall</span>
+     instructions), source line to address mappings might not remain in sync when there is
+     more than one shrink operation occurring in a section.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">PA</span><span 
+class="ec-lmbx-10">&#x00A0;memory</span><span 
+class="ec-lmbx-10">&#x00A0;allocation</span><span 
+class="ec-lmbx-10">&#x00A0;failure</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2881)</span> </dt><dd 
+class="description">
+     <!--l. 1440--><p class="noindent" >When  using  the  procedural  abstraction  optimizers,  the  linker  might  report  memory
+     allocation errors when code size is close to the amount of available program memory on
+     the device, even though the program should be able to fit the available space.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Not</span><span 
+class="ec-lmbx-10">&#x00A0;so</span><span 
+class="ec-lmbx-10">&#x00A0;smart</span><span 
+class="ec-lmbx-10">&#x00A0;Smart-IO</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2872)</span> </dt><dd 
+class="description">
+     <!--l. 1445--><p class="noindent" >The compiler&#8217;s smart-io feature will generate valid but sub-optimal code for the <span 
+class="ec-lmtt-10">snprintf</span>
+     function if the const-data-in-progmem feature has been disabled or if the device has all of
+     its flash mapped into data memory.
+                                                                               
+                                                                               
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Even</span><span 
+class="ec-lmbx-10">&#x00A0;less</span><span 
+class="ec-lmbx-10">&#x00A0;smart</span><span 
+class="ec-lmbx-10">&#x00A0;Smart-IO</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2869)</span> </dt><dd 
+class="description">
+     <!--l. 1449--><p class="noindent" >The compiler&#8217;s smart-io feature will will generate valid but sub-optimal code when the
+     <span 
+class="ec-lmtt-10">-flto </span>and <span 
+class="ec-lmtt-10">-fno-builtin </span>options are both used.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Suboptimal</span><span 
+class="ec-lmbx-10">&#x00A0;read-only</span><span 
+class="ec-lmbx-10">&#x00A0;data</span><span 
+class="ec-lmbx-10">&#x00A0;placement</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2849)</span> </dt><dd 
+class="description">
+     <!--l. 1452--><p class="noindent" >The linker is currently not aware of the APPCODE and APPDATA memory sections,
+     nor  the  [No-]Read-While-Write  divisions  in  the  memory  map.  As  a  result,  there  is  a
+     small  chance  that  the  linker  might  allocate  read-only  data  in  an  unsuitable  area  of
+     memory. The chance of misplaced data increases if the const-data-in-progmem feature is
+     enabled, especially if the const-data-in-config-mapped-progmem feature is also enabled.
+     These features can be disabled if required.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Object</span><span 
+class="ec-lmbx-10">&#x00A0;file</span><span 
+class="ec-lmbx-10">&#x00A0;processing</span><span 
+class="ec-lmbx-10">&#x00A0;order</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2863)</span> </dt><dd 
+class="description">
+     <!--l. 1460--><p class="noindent" >The order in which objects files will be processed by the linker might differ based on the
+     use of procedural abstraction optimizations (<span 
+class="ec-lmtt-10">-mpa </span>option). This would only affect code
+     which defines weak functions across multiple modules.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Linker</span><span 
+class="ec-lmbx-10">&#x00A0;error</span><span 
+class="ec-lmbx-10">&#x00A0;with</span><span 
+class="ec-lmbx-10">&#x00A0;absolute</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2777)</span> </dt><dd 
+class="description">
+     <!--l. 1465--><p class="noindent" >When  an  object  has  been  made  absolute  at  an  address  at  the  start  of  RAM  and
+     uninitialized objects have also been defined, a linker error might be triggered.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Short</span><span 
+class="ec-lmbx-10">&#x00A0;wake-up</span><span 
+class="ec-lmbx-10">&#x00A0;IDs</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2775)</span> </dt><dd 
+class="description">
+     <!--l. 1468--><p class="noindent" >For ATA5700/2 devices, the <span 
+class="ec-lmtt-10">PHID0</span>/<span 
+class="ec-lmtt-10">1 </span>registers are only defined as being 16 bits wide,
+     rather than 32 bits wide.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Linker</span><span 
+class="ec-lmbx-10">&#x00A0;crash</span><span 
+class="ec-lmbx-10">&#x00A0;when</span><span 
+class="ec-lmbx-10">&#x00A0;calling</span><span 
+class="ec-lmbx-10">&#x00A0;symbol</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2758)</span> </dt><dd 
+class="description">
+     <!--l. 1471--><p class="noindent" >The linker might crash if the <span 
+class="ec-lmtt-10">-mrelax </span>driver option is used when the source code calls a
+     symbol that has been defined using the <span 
+class="ec-lmtt-10">-Wl,--defsym </span>linker option.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Incorrect</span><span 
+class="ec-lmbx-10">&#x00A0;initialization</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2679)</span> </dt><dd 
+class="description">
+     <!--l. 1475--><p class="noindent" >There is a discrepancy between where the initial values for some global/static byte-sized
+     objects are placed in data memory and where the variables will be accessed at runtime.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Bad</span><span 
+class="ec-lmbx-10">&#x00A0;indirect</span><span 
+class="ec-lmbx-10">&#x00A0;function</span><span 
+class="ec-lmbx-10">&#x00A0;calls</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2628)</span> </dt><dd 
+class="description">
+     <!--l. 1479--><p class="noindent" >In some instances, function calls made via a function pointer stored as part of a structure
+     might fail.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Inaccurate</span><span 
+class="ec-lmbx-10">&#x00A0;stack</span><span 
+class="ec-lmbx-10">&#x00A0;advisor</span><span 
+class="ec-lmbx-10">&#x00A0;messaging</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2542,</span><span 
+class="ec-lmbx-10">&#x00A0;XC8-2541)</span> </dt><dd 
+class="description">
+     <!--l. 1482--><p class="noindent" >In some instances, the stack advisor warning regarding recursion or indeterminate stack
+     used (possibly through the use of alloca()) is not emitted.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Failure</span><span 
+class="ec-lmbx-10">&#x00A0;with</span><span 
+class="ec-lmbx-10">&#x00A0;duplicate</span><span 
+class="ec-lmbx-10">&#x00A0;interrupt</span><span 
+class="ec-lmbx-10">&#x00A0;code</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2421)</span> </dt><dd 
+class="description">
+     <!--l. 1485--><p class="noindent" >Where more than one interrupt function has the same body, the compiler might have
+     the output for one interrupt function call the other. This will result in all call-clobbered
+                                                                               
+                                                                               
+     registers being saved unnecessarily, and the interrupts will be enabled even before the
+     epilogue of the current interrupt handler has run, which could lead to code failure.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Bad</span><span 
+class="ec-lmbx-10">&#x00A0;output</span><span 
+class="ec-lmbx-10">&#x00A0;with</span><span 
+class="ec-lmbx-10">&#x00A0;invalid</span><span 
+class="ec-lmbx-10">&#x00A0;DFP</span><span 
+class="ec-lmbx-10">&#x00A0;path</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-2376)</span> </dt><dd 
+class="description">
+     <!--l. 1491--><p class="noindent" >If the compiler is invoked with an invalid DFP path and a &#8217;spec&#8217; file exists for the&#x00A0;selected
+     device, the compiler is not reporting the missing device family pack and instead selecting
+     the &#8217;spec&#8217; file, which might then lead to an invalid output. The &#8217;spec&#8217; files might not be
+     up to date with the distributed DFPs and were intended for use with internal compiler
+     testing only.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Memory</span><span 
+class="ec-lmbx-10">&#x00A0;overlap</span><span 
+class="ec-lmbx-10">&#x00A0;undetected</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1966)</span> </dt><dd 
+class="description">
+     <!--l. 1498--><p class="noindent" >The compiler is not detecting the memory overlap of objects made absolute at an address
+     (via <span 
+class="ec-lmtt-10">__at()</span>) and other objects using the <span 
+class="ec-lmtt-10">__section() </span>specifier and that are linked to the
+     same address.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Failure</span><span 
+class="ec-lmbx-10">&#x00A0;with</span><span 
+class="ec-lmbx-10">&#x00A0;library</span><span 
+class="ec-lmbx-10">&#x00A0;functions</span><span 
+class="ec-lmbx-10">&#x00A0;and</span><span 
+class="ec-lmbx-10">&#x00A0;__memx</span><span 
+class="ec-lmbx-10">&#x00A0;(XC8-1763)</span> </dt><dd 
+class="description">
+     <!--l. 1502--><p class="noindent" >Called libgcc float functions with an argument in the <span 
+class="ec-lmtt-10">__memx </span>address space might fail.
+     Note that library routines are called from some C operators, so, for example, the following
+     code is affected:</dd></dl>
+<!--l. 1507--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 1507--><p class="noindent" ><span 
+class="ec-lmtt-10">return</span>
+     <span 
+class="ec-lmtt-10">regFloatVar</span>
+     <span 
+class="ec-lmtt-10">&#x003E;</span>
+     <span 
+class="ec-lmtt-10">memxFloatVar;</span></dd></dl>
+<!--l. 1510--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ec-lmbx-10">Limited</span><span 
+class="ec-lmbx-10">&#x00A0;libgcc</span><span 
+class="ec-lmbx-10">&#x00A0;implementation</span><span 
+class="ec-lmbx-10">&#x00A0;(AVRTC-731)</span> </dt><dd 
+class="description">
+     <!--l. 1511--><p class="noindent" >For the ATTiny4/5/9/10/20/40 products, the standard C / Math library implementation
+     in libgcc is very limited or not present.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Program</span><span 
+class="ec-lmbx-10">&#x00A0;memory</span><span 
+class="ec-lmbx-10">&#x00A0;limitations</span><span 
+class="ec-lmbx-10">&#x00A0;(AVRTC-732)</span> </dt><dd 
+class="description">
+     <!--l. 1514--><p class="noindent" >Program memory images beyond 128 kb are supported by the toolchain; however, there are
+     known instances of linker aborts without relaxation and without a helpful error message
+     rather than generating the required function stubs when the <span 
+class="ec-lmtt-10">-mrelax </span>option is used.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Name</span><span 
+class="ec-lmbx-10">&#x00A0;space</span><span 
+class="ec-lmbx-10">&#x00A0;limitations</span><span 
+class="ec-lmbx-10">&#x00A0;(AVRTC-733)</span> </dt><dd 
+class="description">
+     <!--l. 1519--><p class="noindent" >Named address spaces are supported by the toolchain, subject to the limitations mentioned
+     in the user&#8217;s guide section Special Type Qualifiers.
+     </dd><dt class="description">
+<span 
+class="ec-lmbx-10">Time</span><span 
+class="ec-lmbx-10">&#x00A0;zones</span> </dt><dd 
+class="description">
+     <!--l. 1522--><p class="noindent" >The <span 
+class="ec-lmtt-10">&#x003C;time.h&#x003E; </span>library functions assume GMT and do not support local time zones, thus
+     <span 
+class="ec-lmtt-10">localtime() </span>will return the same time as <span 
+class="ec-lmtt-10">gmtime()</span>, for example.</dd></dl>
+                                                                               
+                                                                               
+ 
+</body></html> 
+
+                                                                               
+
+

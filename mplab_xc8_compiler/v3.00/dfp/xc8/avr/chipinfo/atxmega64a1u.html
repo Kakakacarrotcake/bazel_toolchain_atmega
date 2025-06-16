@@ -1,0 +1,431 @@
+<!-- Version 2.20 -->
+<!-- Generated 29/06/2021 GMT -->
+
+<!--
+ Copyright © 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ All rights reserved.
+ 
+ This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
+ 
+ Redistribution and use in source and binary forms, with or without modification, are
+ permitted provided that the following conditions are met:
+ 
+     1. Redistributions of source code must retain the above copyright notice, this list of
+        conditions and the following disclaimer.
+ 
+     2. Redistributions in binary form must reproduce the above copyright notice, this list
+        of conditions and the following disclaimer in the documentation and/or other
+        materials provided with the distribution. Publication is not required when
+        this file is used in an embedded application.
+ 
+     3. Microchip's name may not be used to endorse or promote products derived from this
+        software without specific prior written permission.
+ 
+ THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Microchip MPLAB XC8 C Compiler: ATXMEGA64A1U Support Information</TITLE>
+</HEAD>
+<BODY>
+<h2>ATXMEGA64A1U Support Information</h2>
+<h3>#pragma config Usage</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;setting&gt;=&lt;named value&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Watchdog Timeout Period : 8 cycles (8ms @ 3.3V)<br/>// Watchdog Window Timeout Period : 8 cycles (8ms @ 3.3V)<br/>#pragma config WDPER = WDPER_8CLK, WDWPER = WDWPER_8CLK</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;setting&gt;=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Watchdog Timeout Period : 8 cycles (8ms @ 3.3V)<br/>// Watchdog Window Timeout Period : 8 cycles (8ms @ 3.3V)<br/>#pragma config WDPER = 0x0, WDWPER = 0x0</code></td>
+</tr>
+</tbody></table>
+<br/>
+<h3>#pragma config Settings</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: FUSEBYTE0</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>JTAGUID</tt></b></td>
+<td><b>JTAG User ID</b></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: FUSEBYTE1</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDPER</tt></b></td>
+<td><b>Watchdog Timeout Period</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDPER_8CLK</tt></td>
+<td>8 cycles (8ms @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDPER_16CLK</tt></td>
+<td>16 cycles (16ms @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDPER_32CLK</tt></td>
+<td>32 cycles (32ms @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDPER_64CLK</tt></td>
+<td>64 cycles (64ms @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDPER_128CLK</tt></td>
+<td>128 cycles (0.125s @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDPER_256CLK</tt></td>
+<td>256 cycles (0.25s @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDPER_512CLK</tt></td>
+<td>512 cycles (0.5s @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDPER_1KCLK</tt></td>
+<td>1K cycles (1s @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDPER_2KCLK</tt></td>
+<td>2K cycles (2s @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDPER_4KCLK</tt></td>
+<td>4K cycles (4s @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDPER_8KCLK</tt></td>
+<td>8K cycles (8s @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDWPER</tt></b></td>
+<td><b>Watchdog Window Timeout Period</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDWPER_8CLK</tt></td>
+<td>8 cycles (8ms @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDWPER_16CLK</tt></td>
+<td>16 cycles (16ms @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDWPER_32CLK</tt></td>
+<td>32 cycles (32ms @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDWPER_64CLK</tt></td>
+<td>64 cycles (64ms @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDWPER_128CLK</tt></td>
+<td>128 cycles (0.125s @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDWPER_256CLK</tt></td>
+<td>256 cycles (0.25s @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDWPER_512CLK</tt></td>
+<td>512 cycles (0.5s @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDWPER_1KCLK</tt></td>
+<td>1K cycles (1s @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDWPER_2KCLK</tt></td>
+<td>2K cycles (2s @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDWPER_4KCLK</tt></td>
+<td>4K cycles (4s @ 3.3V)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>WDWPER_8KCLK</tt></td>
+<td>8K cycles (8s @ 3.3V)</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: FUSEBYTE2</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BODPD</tt></b></td>
+<td><b>BOD Operation in Power-Down Mode</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODPD_SAMPLED</tt></td>
+<td>BOD enabled in sampled mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODPD_CONTINUOUS</tt></td>
+<td>BOD enabled continuously</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODPD_DISABLED</tt></td>
+<td>BOD Disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>TOSCSEL</tt></b></td>
+<td><b>Timer Oscillator pin location</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>TOSCSEL_ALTERNATE</tt></td>
+<td>TOSC1 / TOSC2 on separate pins</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>TOSCSEL_XTAL</tt></td>
+<td>TOSC1 / TOSC2 shared with XTAL1 / XTAL2</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BOOTRST</tt></b></td>
+<td><b>Boot Loader Section Reset Vector</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BOOTRST_BOOTLDR</tt></td>
+<td>Boot Loader Reset</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BOOTRST_APPLICATION</tt></td>
+<td>Application Reset</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: FUSEBYTE4</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>JTAGEN</tt></b></td>
+<td><b>JTAG Interface Enable</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>SET</tt></td>
+<td></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>CLEAR</tt></td>
+<td></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDLOCK</tt></b></td>
+<td><b>Watchdog Timer Lock</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>SET</tt></td>
+<td></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>CLEAR</tt></td>
+<td></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>STARTUPTIME</tt></b></td>
+<td><b>Start-up Time</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>STARTUPTIME_0MS</tt></td>
+<td>0 ms</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>STARTUPTIME_4MS</tt></td>
+<td>4 ms</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>STARTUPTIME_64MS</tt></td>
+<td>64 ms</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>RSTDISBL</tt></b></td>
+<td><b>External Reset Disable</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>SET</tt></td>
+<td></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>CLEAR</tt></td>
+<td></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: FUSEBYTE5</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BODLEVEL</tt></b></td>
+<td><b>Brownout Detection Voltage Level</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODLEVEL_1V6</tt></td>
+<td>1.6 V</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODLEVEL_1V8</tt></td>
+<td>1.8 V</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODLEVEL_2V0</tt></td>
+<td>2.0 V</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODLEVEL_2V2</tt></td>
+<td>2.2 V</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODLEVEL_2V4</tt></td>
+<td>2.4 V</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODLEVEL_2V6</tt></td>
+<td>2.6 V</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODLEVEL_2V8</tt></td>
+<td>2.8 V</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODLEVEL_3V0</tt></td>
+<td>3.0 V</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>EESAVE</tt></b></td>
+<td><b>Preserve EEPROM Through Chip Erase</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>SET</tt></td>
+<td></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>CLEAR</tt></td>
+<td></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BODACT</tt></b></td>
+<td><b>BOD Operation in Active Mode</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODACT_SAMPLED</tt></td>
+<td>BOD enabled in sampled mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODACT_CONTINUOUS</tt></td>
+<td>BOD enabled continuously</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BODACT_DISABLED</tt></td>
+<td>BOD Disabled</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: LOCKBITS</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>LB</tt></b></td>
+<td><b>Lock Bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>LB_RWLOCK</tt></td>
+<td>Read and write not allowed</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>LB_WLOCK</tt></td>
+<td>Write not allowed</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>LB_NOLOCK</tt></td>
+<td>No locks</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BLBAT</tt></b></td>
+<td><b>Boot Lock Bits - Application Table</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BLBAT_RWLOCK</tt></td>
+<td>Read and write not allowed</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BLBAT_RLOCK</tt></td>
+<td>Read not allowed</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BLBAT_WLOCK</tt></td>
+<td>Write not allowed</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BLBAT_NOLOCK</tt></td>
+<td>No locks</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BLBA</tt></b></td>
+<td><b>Boot Lock Bits - Application Section</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BLBA_RWLOCK</tt></td>
+<td>Read and write not allowed</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BLBA_RLOCK</tt></td>
+<td>Read not allowed</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BLBA_WLOCK</tt></td>
+<td>Write not allowed</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BLBA_NOLOCK</tt></td>
+<td>No locks</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BLBB</tt></b></td>
+<td><b>Boot Lock Bits - Boot Section</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BLBB_RWLOCK</tt></td>
+<td>Read and write not allowed</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BLBB_RLOCK</tt></td>
+<td>Read not allowed</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BLBB_WLOCK</tt></td>
+<td>Write not allowed</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BLBB_NOLOCK</tt></td>
+<td>No locks</td>
+</tr>
+</tbody></table>
+<br/>
+</BODY>
+</HTML>

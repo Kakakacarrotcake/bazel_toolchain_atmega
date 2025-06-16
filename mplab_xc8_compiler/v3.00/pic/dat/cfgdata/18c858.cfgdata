@@ -1,0 +1,116 @@
+# Generated 05/12/2024 GMT
+
+# Copyright © 2024, Microchip Technology Inc. and its subsidiaries ("Microchip")
+# All rights reserved.
+# 
+# This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
+# 
+# Redistribution and use in source and binary forms, with or without modification, are
+# permitted provided that the following conditions are met:
+# 
+#     1. Redistributions of source code must retain the above copyright notice, this list of
+#        conditions and the following disclaimer.
+# 
+#     2. Redistributions in binary form must reproduce the above copyright notice, this list
+#        of conditions and the following disclaimer in the documentation and/or other
+#        materials provided with the distribution. Publication is not required when
+#        this file is used in an embedded application.
+# 
+#     3. Microchip's name may not be used to endorse or promote products derived from this
+#        software without specific prior written permission.
+# 
+# THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+# PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+# THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Microchip PIC18C858 Configuration Word Definitions
+
+# File Syntax:
+# Each configuration register is given as:
+# 
+#     CWORD:<address>:<mask>:<default value>[:<name>[,<alias list>]]
+# 
+# for each CWORD the configuration settings are listed as
+# 
+#     CSETTING:<mask>:<name>[,<alias list>]:<description>
+# 
+# lastly for each CSETTING all possible values are listed as
+# 
+#     CVALUE:<value>:<name>[,<alias list>]:<description>
+# 
+# All numerical values are given in unqualified hex.  In terms of
+# #pragma config, note the following correspondence:
+# 
+#    #pragma config CSETTING<name> = CVALUE<name>
+# 
+# The compiler may also emit a message when it detects certain programming.
+# This behaviour is defined by the following record
+# 
+#     CMSG:<CSETTING name>=<CVALUE name>[,...]:<message number>
+# 
+# If the compiler encounters the given programming then it will emit the
+# with the corresponding numnber.  Note that these records must appear last
+# in the file.
+# 
+# Comments are also permitted.  Any line beginning with a '#'
+# character will be treated as a comment.
+
+CWORD:300000:FF:FF:CONFIG1L,_CONFIG0
+CSETTING:FF:CP:Code Protection bits
+CVALUE:FF:OFF,_CP_OFF_0:Program memory code protection off
+CVALUE:0:ON,_CP_ON_0:All of program memory code protected
+CWORD:300001:E7:E7:CONFIG1H,_CONFIG1
+CSETTING:7:OSC:Oscillator Selection bits
+CVALUE:7:RCIO,_RCIO_OSC_1:RC oscillator w/ OSC2 configured as RA6
+CVALUE:6:HSPLL,_HSPLL_OSC_1:HS4 oscillator with PLL enabled/Clock frequency = (4 x Fosc)
+CVALUE:5:ECIO,_ECIO_OSC_1:EC oscillator w/ OSC2 configured as RA6
+CVALUE:4:EC,_EC_OSC_1:EC oscillator w/ OSC2 configured as divide by 4 clock output
+CVALUE:3:RC,_RC_OSC_1:RC oscillator
+CVALUE:2:HS,_HS_OSC_1:HS oscillator
+CVALUE:1:XT,_XT_OSC_1:XT oscillator
+CVALUE:0:LP,_LP_OSC_1:LP oscillator
+CSETTING:20:OSCS:Oscillator System Clock Switch Enable bit
+CVALUE:20:OFF,_OSCS_OFF_1:Oscillator system clock switch option is disabled (Main oscillator is source)
+CVALUE:0:ON,_OSCS_ON_1:Oscillator system clock switch option is enabled (Oscillator switching is enabled)
+CWORD:300002:F:F:CONFIG2L,_CONFIG2
+CSETTING:1:PWRT:Power-up Timer Enable bit
+CVALUE:1:OFF,_PWRT_OFF_2:PWRT disabled
+CVALUE:0:ON,_PWRT_ON_2:PWRT enabled
+CSETTING:2:BOR:Brown-out Reset Enable bit
+CVALUE:2:ON,_BOR_ON_2:Brown-out Reset enabled
+CVALUE:0:OFF,_BOR_OFF_2:Brown-out Reset disabled
+CSETTING:C:BORV:Brown-out Reset Voltage bits
+CVALUE:C:25,_BORV_25_2:VBOR set to 2.5V
+CVALUE:8:27,_BORV_27_2:VBOR set to 2.7V
+CVALUE:4:42,_BORV_42_2:VBOR set to 4.2V
+CVALUE:0:45,_BORV_45_2:VBOR set to 4.5V
+CWORD:300003:F:F:CONFIG2H,_CONFIG3
+CSETTING:1:WDT:Watchdog Timer Enable bit
+CVALUE:1:ON,_WDT_ON_3:WDT enabled
+CVALUE:0:OFF,_WDT_OFF_3:WDT disabled (control is placed on the SWDTEN bit)
+CSETTING:E:WDTPS:Watchdog Timer Postscale Select bits
+CVALUE:E:128,_WDTPS_128_3:1:128
+CVALUE:C:64,_WDTPS_64_3:1:64
+CVALUE:A:32,_WDTPS_32_3:1:32
+CVALUE:8:16,_WDTPS_16_3:1:16
+CVALUE:6:8,_WDTPS_8_3:1:8
+CVALUE:4:4,_WDTPS_4_3:1:4
+CVALUE:2:2,_WDTPS_2_3:1:2
+CVALUE:0:1,_WDTPS_1_3:1:1
+CWORD:300006:3:3:CONFIG4L,_CONFIG6
+CSETTING:1:STVR:Stack Full/Underflow RESET Enable bit
+CVALUE:1:ON,_STVR_ON_6:Stack Full/Underflow will cause RESET
+CVALUE:0:OFF,_STVR_OFF_6:Stack Full/Underflow will not cause RESET
+CWORD:200000:FF:FF:IDLOC0
+CWORD:200001:FF:FF:IDLOC1
+CWORD:200002:FF:FF:IDLOC2
+CWORD:200003:FF:FF:IDLOC3
+CWORD:200004:FF:FF:IDLOC4
+CWORD:200005:FF:FF:IDLOC5
+CWORD:200006:FF:FF:IDLOC6
+CWORD:200007:FF:FF:IDLOC7

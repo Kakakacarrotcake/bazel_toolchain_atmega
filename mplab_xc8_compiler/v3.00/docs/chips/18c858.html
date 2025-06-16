@@ -1,0 +1,348 @@
+<!-- Generated 05/12/2024 GMT -->
+
+<!--
+ Copyright © 2024, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ All rights reserved.
+ 
+ This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
+ 
+ Redistribution and use in source and binary forms, with or without modification, are
+ permitted provided that the following conditions are met:
+ 
+     1. Redistributions of source code must retain the above copyright notice, this list of
+        conditions and the following disclaimer.
+ 
+     2. Redistributions in binary form must reproduce the above copyright notice, this list
+        of conditions and the following disclaimer in the documentation and/or other
+        materials provided with the distribution. Publication is not required when
+        this file is used in an embedded application.
+ 
+     3. Microchip's name may not be used to endorse or promote products derived from this
+        software without specific prior written permission.
+ 
+ THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Microchip MPLAB XC8 C Compiler: 18C858 Support Information</TITLE>
+</HEAD>
+<BODY>
+<h2>18C858 Support Information</h2>
+<h3>XC8-CC #pragma config Usage</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;setting&gt;=&lt;named value&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Oscillator Selection bits : RC oscillator w/ OSC2 configured as RA6<br/>// Oscillator System Clock Switch Enable bit : Oscillator system clock switch option is disabled (Main oscillator is source)<br/>#pragma config OSC = RCIO, OSCS = OFF</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;setting&gt;=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Oscillator Selection bits : RC oscillator w/ OSC2 configured as RA6<br/>// Oscillator System Clock Switch Enable bit : Oscillator system clock switch option is disabled (Main oscillator is source)<br/>#pragma config OSC = 0x7, OSCS = 0x1</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;register&gt;=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Oscillator Selection bits : RC oscillator w/ OSC2 configured as RA6<br/>// Oscillator System Clock Switch Enable bit : Oscillator system clock switch option is disabled (Main oscillator is source)<br/>#pragma config CONFIG1H = 0xE7</code></td>
+</tr>
+<tr bgcolor="white">
+<td>For example:<br/><code>// IDLOC @ 0x200000<br/>#pragma config IDLOC0 = 0x255</code></td>
+</tr>
+</tbody></table>
+<br/>
+<h3>PIC-AS config Usage</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;setting&gt;"="&lt;named value&gt;"</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Oscillator Selection bits : RC oscillator w/ OSC2 configured as RA6<br/>; Oscillator System Clock Switch Enable bit : Oscillator system clock switch option is disabled (Main oscillator is source)<br/>config "OSC" = "RCIO", "OSCS" = "OFF"</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;setting&gt;"=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Oscillator Selection bits : RC oscillator w/ OSC2 configured as RA6<br/>; Oscillator System Clock Switch Enable bit : Oscillator system clock switch option is disabled (Main oscillator is source)<br/>config "OSC" = 0x7, "OSCS" = 0x1</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;register&gt;"=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Oscillator Selection bits : RC oscillator w/ OSC2 configured as RA6<br/>; Oscillator System Clock Switch Enable bit : Oscillator system clock switch option is disabled (Main oscillator is source)<br/>config "CONFIG1H" = 0xE7</code></td>
+</tr>
+<tr bgcolor="white">
+<td>For example:<br/><code>; IDLOC @ 0x200000<br/>config "IDLOC0" = 0x255</code></td>
+</tr>
+</tbody></table>
+<br/>
+<h3>Configuration Registers & Settings</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG1L @ 0x300000</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>CP</tt></b></td>
+<td><b>Code Protection bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Program memory code protection off</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>All of program memory code protected</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG1H @ 0x300001</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>OSC</tt></b></td>
+<td><b>Oscillator Selection bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>RCIO</tt></td>
+<td>RC oscillator w/ OSC2 configured as RA6</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>HSPLL</tt></td>
+<td>HS4 oscillator with PLL enabled/Clock frequency = (4 x Fosc)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ECIO</tt></td>
+<td>EC oscillator w/ OSC2 configured as RA6</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>EC</tt></td>
+<td>EC oscillator w/ OSC2 configured as divide by 4 clock output</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>RC</tt></td>
+<td>RC oscillator</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>HS</tt></td>
+<td>HS oscillator</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>XT</tt></td>
+<td>XT oscillator</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>LP</tt></td>
+<td>LP oscillator</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>OSCS</tt></b></td>
+<td><b>Oscillator System Clock Switch Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Oscillator system clock switch option is disabled (Main oscillator is source)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Oscillator system clock switch option is enabled (Oscillator switching is enabled)</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG2L @ 0x300002</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>PWRT</tt></b></td>
+<td><b>Power-up Timer Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>PWRT disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>PWRT enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BOR</tt></b></td>
+<td><b>Brown-out Reset Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Brown-out Reset enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Brown-out Reset disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BORV</tt></b></td>
+<td><b>Brown-out Reset Voltage bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>25</tt></td>
+<td>VBOR set to 2.5V</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>27</tt></td>
+<td>VBOR set to 2.7V</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>42</tt></td>
+<td>VBOR set to 4.2V</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>45</tt></td>
+<td>VBOR set to 4.5V</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG2H @ 0x300003</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDT</tt></b></td>
+<td><b>Watchdog Timer Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>WDT enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>WDT disabled (control is placed on the SWDTEN bit)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDTPS</tt></b></td>
+<td><b>Watchdog Timer Postscale Select bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>128</tt></td>
+<td>1:128</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>64</tt></td>
+<td>1:64</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>32</tt></td>
+<td>1:32</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>16</tt></td>
+<td>1:16</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>8</tt></td>
+<td>1:8</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>4</tt></td>
+<td>1:4</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>2</tt></td>
+<td>1:2</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>1</tt></td>
+<td>1:1</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG4L @ 0x300006</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>STVR</tt></b></td>
+<td><b>Stack Full/Underflow RESET Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Stack Full/Underflow will cause RESET</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Stack Full/Underflow will not cause RESET</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC0 @ 0x200000</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC1 @ 0x200001</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC2 @ 0x200002</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC3 @ 0x200003</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC4 @ 0x200004</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC5 @ 0x200005</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC6 @ 0x200006</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC7 @ 0x200007</div>
+</th>
+</tbody></table>
+<br/>
+</BODY>
+</HTML>

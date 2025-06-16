@@ -3,7 +3,7 @@
 cc_binary(
     name = "main",
     srcs = [
-        "src/main.cpp"
+        "src/main.c"
     ],
     deps = [
         ":math"
@@ -13,21 +13,22 @@ cc_binary(
 cc_library(
     name = "math",
     srcs = [
-        "src/math.cpp",
+        "src/math.c",
     ],
     hdrs = [
-        "hdr/math.hpp"
+        "hdr/math.h"
     ],
 )
 
 cc_test(
     name = "test_math",
+    size = "small",
     srcs = [
-        "test/test_math.cpp"
+        "test/test_math.c"
     ],
     deps = [
-        "@googletest//:gtest",
-        "@googletest//:gtest_main",
+        # "@googletest//:gtest",
+        # "@googletest//:gtest_main",
         ":math"
     ]
 )

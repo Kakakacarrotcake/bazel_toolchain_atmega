@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=0.9.4
+Name=Uninstall MPLAB XC8 C Compiler
+Comment=Uninstall
+Icon=
+Exec=/opt/microchip/xc8/v3.00/Uninstall-xc8-v3.00
+Terminal=false
+Path=/opt/microchip/xc8/v3.00

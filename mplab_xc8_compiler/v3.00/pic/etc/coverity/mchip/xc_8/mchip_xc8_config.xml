@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE coverity SYSTEM "coverity_config.dtd">
+
+<coverity>
+  <config>
+    <build>
+	    <compiler>
+		  <comp_name>xc8</comp_name>
+		  <default_comp_name>xc8</default_comp_name>
+		  <comp_translator>mchip:xc8</comp_translator>
+		  <comp_lang>C</comp_lang>
+		  <comp_desc>Microchip MPLAB XC compiler for 8-bit devices (CIT)</comp_desc>
+		  <comp_cxx>false</comp_cxx>
+        </compiler>
+		 <options>
+          <trans>
+            <options>
+			  <prepend_arg>--c99</prepend_arg>
+            </options>
+          </trans>
+        </options>
+  	    <config_gen_info>
+		  <test_type_size>true</test_type_size>
+          <test_declspec>false</test_declspec>
+          <test__Bool>true</test__Bool>
+		   <extra_header>adc.h</extra_header>
+		</config_gen_info>
+		      <options>
+        <compile_switch>--pass1</compile_switch>
+        <preprocess_switch>--PRE</preprocess_switch>
+        <preprocess_output>$FILEBASENP$.pre</preprocess_output>
+
+        <skip_arg>--pre</skip_arg>
+        <skip_arg>--PRE</skip_arg>
+
+        <prepend_arg>--allow_0b_binary_literals</prepend_arg>
+        <prepend_arg>--incompat_proto</prepend_arg>
+        <prepend_arg>--lazy_hex_pp_number</prepend_arg>
+        <prepend_arg>--short_enums</prepend_arg>
+        <prepend_arg>--pp_sizeof</prepend_arg>
+
+        <prepend_arg>--ppp_translator</prepend_arg>
+        <prepend_arg>replace/__packed__\\s*(\\([^)]*\\))?/</prepend_arg>
+
+        <prepend_arg>--ppp_translator</prepend_arg>
+        <prepend_arg>replace/@(.|\\n)*?(;|\\{)/$2</prepend_arg>
+
+        <prepend_arg>--ppp_translator</prepend_arg>
+        <prepend_arg>replace/^\\s*(#|_)\\s*asm/#if 0</prepend_arg>
+        <prepend_arg>--ppp_translator</prepend_arg>
+        <prepend_arg>replace/^\\s*(#|_)\\s*endasm/#endif</prepend_arg>
+		
+        <prepend_arg>--ppp_translator</prepend_arg>
+        <prepend_arg>replace/sizeof\(double\)/__coverity_sizeof_double</prepend_arg>
+
+        <prepend_arg>--ppp_translator</prepend_arg>
+        <prepend_arg>replace/short long int/int</prepend_arg>
+
+        <expand>
+          <options>
+            <replace_arg_regex>
+              <replace>@(.*)</replace>
+              <with>--coverity_resp_file=$1</with>
+            </replace_arg_regex>
+          </options>
+        </expand>
+
+      </options>
+	</build>
+  </config>
+</coverity>

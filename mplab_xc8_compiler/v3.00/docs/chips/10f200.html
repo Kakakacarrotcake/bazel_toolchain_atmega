@@ -1,0 +1,180 @@
+<!-- Generated 05/12/2024 GMT -->
+
+<!--
+ Copyright © 2024, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ All rights reserved.
+ 
+ This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
+ 
+ Redistribution and use in source and binary forms, with or without modification, are
+ permitted provided that the following conditions are met:
+ 
+     1. Redistributions of source code must retain the above copyright notice, this list of
+        conditions and the following disclaimer.
+ 
+     2. Redistributions in binary form must reproduce the above copyright notice, this list
+        of conditions and the following disclaimer in the documentation and/or other
+        materials provided with the distribution. Publication is not required when
+        this file is used in an embedded application.
+ 
+     3. Microchip's name may not be used to endorse or promote products derived from this
+        software without specific prior written permission.
+ 
+ THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Microchip MPLAB XC8 C Compiler: 10F200 Support Information</TITLE>
+</HEAD>
+<BODY>
+<h2>10F200 Support Information</h2>
+<h3>XC8-CC #pragma config Usage</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;setting&gt;=&lt;named value&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Oscillator : This is the only option. It is here for backward compatibility<br/>// Watchdog Timer : WDT enabled<br/>// Code Protect : Code protection off<br/>// Master Clear Enable : GP3/MCLR pin function  is MCLR<br/>#pragma config OSC = IntRC, WDTE = ON, CP = OFF, MCLRE = ON</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;setting&gt;=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Oscillator : This is the only option. It is here for backward compatibility<br/>// Watchdog Timer : WDT enabled<br/>// Code Protect : Code protection off<br/>// Master Clear Enable : GP3/MCLR pin function  is MCLR<br/>#pragma config OSC = 0x1, WDTE = 0x1, CP = 0x1, MCLRE = 0x1</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;register&gt;=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Oscillator : This is the only option. It is here for backward compatibility<br/>// Watchdog Timer : WDT enabled<br/>// Code Protect : Code protection off<br/>// Master Clear Enable : GP3/MCLR pin function  is MCLR<br/>#pragma config CONFIG = 0xFFF</code></td>
+</tr>
+<tr bgcolor="white">
+<td>For example:<br/><code>// IDLOC @ 0x100<br/>#pragma config IDLOC0 = 0x4095</code></td>
+</tr>
+</tbody></table>
+<br/>
+<h3>PIC-AS config Usage</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;setting&gt;"="&lt;named value&gt;"</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Oscillator : This is the only option. It is here for backward compatibility<br/>; Watchdog Timer : WDT enabled<br/>; Code Protect : Code protection off<br/>; Master Clear Enable : GP3/MCLR pin function  is MCLR<br/>config "OSC" = "IntRC", "WDTE" = "ON", "CP" = "OFF", "MCLRE" = "ON"</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;setting&gt;"=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Oscillator : This is the only option. It is here for backward compatibility<br/>; Watchdog Timer : WDT enabled<br/>; Code Protect : Code protection off<br/>; Master Clear Enable : GP3/MCLR pin function  is MCLR<br/>config "OSC" = 0x1, "WDTE" = 0x1, "CP" = 0x1, "MCLRE" = 0x1</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;register&gt;"=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Oscillator : This is the only option. It is here for backward compatibility<br/>; Watchdog Timer : WDT enabled<br/>; Code Protect : Code protection off<br/>; Master Clear Enable : GP3/MCLR pin function  is MCLR<br/>config "CONFIG" = 0xFFF</code></td>
+</tr>
+<tr bgcolor="white">
+<td>For example:<br/><code>; IDLOC @ 0x100<br/>config "IDLOC0" = 0x4095</code></td>
+</tr>
+</tbody></table>
+<br/>
+<h3>Configuration Registers & Settings</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG @ 0xFFF</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>OSC</tt></b></td>
+<td><b>Oscillator</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>IntRC</tt></td>
+<td>This is the only option. It is here for backward compatibility</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDTE</tt></b></td>
+<td><b>Watchdog Timer</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>WDT enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>WDT disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>CP</tt></b></td>
+<td><b>Code Protect</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Code protection off</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Code protection on</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>MCLRE</tt></b></td>
+<td><b>Master Clear Enable</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>GP3/MCLR pin function  is MCLR</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>GP3/MCLR pin fuction is digital I/O, MCLR internally tied to VDD</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC0 @ 0x100</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC1 @ 0x101</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC2 @ 0x102</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC3 @ 0x103</div>
+</th>
+</tbody></table>
+<br/>
+</BODY>
+</HTML>

@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<title></title>
+	<meta name="Generator" content="Cocoa HTML Writer">
+	<meta name="CocoaVersion" content="2113.4">
+	<style type="text/css">
+		ol {
+			list-style-type: none;
+			counter-reset: item;
+			margin: 0;
+			padding: 0;
+		}
+
+		ol>li {
+			display: table;
+			counter-increment: item;
+			margin-bottom: 0.6em;
+		}
+
+		ol>li:before {
+			content: counters(item, ".") ". ";
+			display: table-cell;
+			padding-right: 0.6em;
+			font-weight: 600;
+			font-size: 20px;
+		}
+
+		li ol>li {
+			margin: 0;
+		}
+
+		li ol>li:before {
+			content: counters(item, ".") " ";
+			font-weight: 600;
+			font-size: 16px;
+		}
+	</style>
+</head>
+
+<body>
+	<h2><span class="s1"><b>Release Notes for MPLAB® XC Network Server Version 3.20</b></span></h2>
+	<p class="p2"><span class="s1"><b>November 06, 2023</b></span></p>
+	<p class="p3"><span class="s2"><a href="#1">1 Introduction</a></span></p>
+	<p class="p3"><span class="s2"><a href="#2">2 What’s New</a></span></p>
+	<p class="p3"><span class="s2"><a href="#3">3 Migration Issues</a></span></p>
+	<p class="p3"><span class="s2"><a href="#4">4 Fixed Issues</a></span></p>
+	<p class="p3"><span class="s2"><a href="#5">5 Known Issues</a></span></p>
+	<p class="p4"><span class="s1"></span><br></p>
+	<ol>
+		<li id="1">
+			<h2>
+				<span class="s1"><b>Introduction</b></span>
+			</h2>
+			<p class="p5"><span class="s1">This is a
+					general update
+					to the Microchip MPLAB<sup>®</sup> XC
+					Network Server. This version updates RLM server to 15.1(BL2) .</span></p>
+			<ol>
+				<li>
+					<h3>
+						<span class="s1"><b>Previous Versions</b></span>
+					</h3>
+					<p class="p5"><span class="s1">The previous MPLAB XC
+							Network Server was version
+							3.10 which was
+							based on RLM 15.0(BL1) .</span></p>
+				</li>
+				<li>
+					<h3>
+						<span class="s1"><b>System Requirements</b></span>
+					</h3>
+					<p class="p5"><span class="s1">MPLAB XC Network Server is available for a variety of 64-bit
+							operating systems, including Microsoft® Windows® 10 and above;
+							Ubuntu® 18.04 and above; or Mac OS® X 13.2 and above.</span></p>
+					<p class="p5"><span class="s1">The
+							server may also run on various other operating systems including Windows
+							Server, Linux distributions, such as Oracle® Enterprise Linux® and Red Hat® Enterprise Linux
+							as well
+							as older versions of supported operating systems. However, XC License server
+							is not evaluated on these operating systems.</span></p>
+					<p class="p5"><span class="s1">MPLAB
+							XC Network License Server can be run on Virtual Machines of the supported OS
+							using a virtual machine license for network licenses (<a
+								href="https://www.microchip.com/DevelopmentTools/ProductDetails/SW006021-VM"><span
+									class="s4">SW006021-VM</span></a>). 32-bit versions of MPLAB XC Network
+							Server are discontinued starting from version 3.00.</span></p>
+				</li>
+				<li>
+					<h3>
+						<span class="s1"><b> Installation</b></span>
+					</h3>
+					<p class="p5"><span class="s1">Run the .exe (Windows), .run (Linux) or .app (OS X) server installer
+							application (for example, XCNetLicServer-3.20-windows.exe) and follow the directions on the
+							screen. Using the default installation directory is recommended.</span></p>
+					<p class="p5"><span class="s1">If you are using Linux, you must install the compiler using a
+							terminal and from a root account. Install using a Mac OS X account with administrator
+							privileges.</span></p>
+					<p class="p5"><span class="s1">Full information on installation and operation of the MPLAB XC
+							License Server is covered in the newest version of the XC License Server Manual
+							(DS5002334).</span></p>
+				</li>
+			</ol>
+		</li>
+		<li id="2">
+			<h2>
+				<span class="s1"><b>What’s New</b></span>
+			</h2>
+			<ol>
+				<li>
+					<h3>
+						<span class="s1"><b> Version 3.20</b></span>
+					</h3>
+					<ul>
+						<li>
+							<p class="p5"><span class="s1"><b>Updated
+										to the latest version of RLM - </b>MPLAB XC Network Server v3.20 is
+									based on the Reprise License Manager version 15.1(BL2). This upgrade
+									provides various enhancements and bug fixes made by Reprise to RLM
+									license server.</span></p>
+						</li>
+						<li>
+							<p class="p5"><span class="s1"><b>RLM server now requires users
+										to log
+										in for additional security. </b></span></p>
+							<ul>
+								<p class="p5"><span class="s1"><b>
+											A default
+											rlm.pw file is created with an admin user : </b>The login capability is
+										provided
+										via
+										the RLM
+										password file, named rlm.pw. Beginning in RLM
+										v15.1, if this file doesn’t exist, RLM will create it automatically at startup
+										with
+										a
+										default
+										<i>'admin:admin:all'</i> account. Reprise Software recommends that you protect
+										access to this
+										file so
+										that
+										ordinary users can't write it. The RLM password file, as well as the directory
+										which
+										contains
+										it,
+										must be read-write to the RLM process.
+										The RLM password file has one line for each user, formatted as follows:
+										<i>'username:password:list-of-permissions'</i>.
+										The username must not contain a ':' character.
+										If the password field is blank, then the user can log in without supplying a
+										password.
+										When
+										adding
+										new users, you must set a password within 10 minutes or the server will
+										automatically
+										shut down
+										if it is running. To change their password, select the "Change Password" menu
+										item
+										once
+										logged
+										in
+										as that user. The password field is an encrypted hash of the actual password
+										(similar to
+										the
+										Unix
+										password file).</span></p>
+							</ul>
+							<ul>
+								<p class="p5"><span class="s1"><b>Adding New Users: </b> Beginning in RLM v15.1, a
+										default user with
+										the
+										username
+										admin and password admin is created
+										if rlm.pw does not already exist.<br /><br />
+										To add a new user:<br /><br />
+										1. Open rlm.pw (located in the RLM binary directory)<br />
+										2. Add a new user with a blank
+										password and
+										desired permissions:
+										johndoe::status<br />
+										3. Log in to the web server as this new user and click Change Password to set a
+										password
+										for the user.<br /><br />
+										<b>Note:</b> If there are any users without passwords and/or the admin password
+										is still
+										the
+										default, for longer than 10 minutes the server will shut down automatically.
+
+									</span></p>
+							</ul>
+						</li>
+						<li><span class="s1"><b>RLM web server now supports
+									HTTPS.
+								</b></span>
+							<ul><br />To enable HTTPS in the web server you should use the two new startup options,
+								-sslcert and
+								-sslpriv to point to your SSL certificate and SSL private key. E.g.:
+								<ul><br />% ./rlm -sslcert /path/to/cert.pem -sslpriv /path/to/privkey.pem</ul><br />
+							</ul>
+							<ul>Now you can access your web server by typing https://your-server-host:5054 (be sure to
+								include the https:// if you are not automatically redirecting the url via other means).
+								If you are running your server as root/administrator, it is possible to set your web
+								server to run on port 443 (the default HTTPS port) by running the following:
+								<ul><br />% ./rlm -sslcert /path/to/cert.pem -sslpriv /path/to/privkey.pem -ws 443 </ul>
+								<br />
+							</ul>
+
+							<ul>While running
+								on port
+								443 and pointing at valid SSL certificate and private key, your browser
+								should automatically redirect to https:// without needing to type it explicitly. i.e.,
+								typing
+								yourserver-host/ should take you to https://your-server-host:443.</ul>
+
+							<ul><br />
+								<b>Note:</b> If you prefer to generate your own self-signed certificates, your traffic
+								to the
+								web
+								server will
+								still be encrypted, but your browser will likely display a warning before you can get to
+								the web
+								server. Self-signed certificates cannot be generated with a password to use the web
+								server.
+							</ul>
+							</span>
+						</li>
+						<li>
+							<p class="p5"><span class="s1"><b>Running RLM server as root/administrator  is no longer restricted</b></span></p>
+						</li>
+						<li>
+							<p class="p5"><span class="s1"><b>Passwords are now case-sensitive. The rlm.pw file will need to be regenerated</b></span></p>
+						</li>
+					</ul>
+					<ul><br />
+						<b>NOTE:</b> For more detailed information about the above-mentioned new features in RLM v15.1,
+						please
+						refer to the <a href="https://www.reprisesoftware.com/RLM_License_Administration.pdf" target="_blank">RLM License Administration manual</a>. 
+					</ul>
+				</li>
+				<li>
+					<h3>
+						<span class="s1"><b> Version 3.10</b></span>
+					</h3>
+					<ul>
+						<li><span class="s1"><b>Updated
+									to the latest version of RLM - </b>MPLAB XC Network Server v3.10 is
+								based on the Reprise License Manager version 15.0(BL1). This upgrade
+								provides various enhancements and bug fixes made by Reprise to RLM
+								license server.</span></li>
+					</ul>
+				</li>
+				<li>
+
+					<h3>
+						<span class="s1"><b> Version 3.00</b></span>
+					</h3>
+					<ul>
+						<li>
+							<p class="p12"><span class="s1"><b>Updated to the latest version of RLM - </b>MPLAB XC
+									Network Server v3.00 is based on the Reprise License Manager version 14.1(BL3). This
+									upgrade provides various enhancements and bug fixes made by Reprise to RLM license
+									server.</span></p>
+						</li><b>Updated
+							XC Network Server manual - </b>This release includes an updated manual <li>
+							<p class="p12"><span class="s1"><b>RLM as
+										windows service can longer be added from web interface - </b>Refer the
+									updated user manual to know how RLM can be added as a Windows service
+									from the command prompt.</span></p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h3>
+						<span class="s1"><b> Version 2.00</b></span>
+					</h3>
+					<ul>
+						<li><span class="s1"><b>Separate
+									Installer - </b>Previous versions of the MPLAB XC Network Server were
+								installed by selecting the Server Install in one of the MPLAB XC Compiler
+								installers. Starting with version 2.00, the Network Server has its own
+								installer.</span></p>
+						</li><b>Updated
+							to the newest version of RLM - </b>MPLAB XC Network Server is based on
+						the Reprise License Manager version 11.2(BL2). <li>
+							<p class="p12"><span class="s1"><b>Status
+										messages include additional information - </b>The status option for the
+									included xclm command now displays additional information on when the HPA
+									(High Priority Access) for the license expires.</span>
+						</li>
+						<li>
+							<p class="p12"><span class="s1"><b>New XC
+										Network Server manual - </b>This release includes a new manual that
+									includes information on Installation and Operation of the MPLAB XC
+									Network Server. Also included is a “How To” section that answers commonly
+									asked questions.</span></p>
+						</li>
+						<li>
+							<p class="p12"><span class="s1"><b>Warnings
+										are issued when HPA and demo licenses are about to expire - </b>A
+									warning is displayed when the license is within 14 days of the HPA or the
+									demo license expiring.</span></p>
+						</li>
+					</ul>
+				</li>
+			</ol>
+		</li>
+
+		<li id="3">
+			<h2>
+				<span class="s1"><b>Migration Issues</b></span>
+			</h2>
+			<ol>
+				<li>
+					<p class="p12"><span class="s7"><b>Before migrating from an older
+								version to a newer version</b></span></p>
+					<ul>
+						<li>
+							<p class="p5"><span class="s1"><b>Before
+										taking down the older server, make sure that all the roamed licenses are
+										returned to the server. </b>RLM does not support roaming out licenses
+									from one version and roaming it in on another version</span></p>
+						</li>
+					</ul>
+
+				</li>
+			</ol>
+		</li>
+		<li id="4">
+			<h2>
+				<span class="s1"><b>Fixed Issues</b></span>
+			</h2>
+			<ol>
+				<li>
+					<p class="p6"><span class="s1"><b>Version 3.20</b></span></p>
+					<p class="p14"><span class="s1">None</span></p>
+				</li>
+				<li>
+					<p class="p6"><span class="s1"><b>Version 3.10</b></span></p>
+					<p class="p14"><span class="s1">None</span></p>
+				</li>
+				<li>
+					<p class="p6"><span class="s1"><b>Version 3.00</b></span></p>
+					<p class="p5">
+						<span class="s1"><b>XCLM-140: Network server installer fails on some Windows machines - </b>On
+							some Windows machines, the installer aborts with a
+							message saying C:\ProgramData\Microchip is not present</span>
+					</p>
+				</li>
+				<li>
+					<p class="p6"><span class="s1"><b>Version 2.00</b></span></p>
+					<p class="p5">
+						<span class="s1"><b>XCLM-77:
+								Unable to Roam a license back into the server -</b> If the Windows version
+							of the rlm command is shut down with a license roamed out, then the license
+							server may forget that the license is roamed out and may issue an error if
+							an attempt to return the license occurs before it times out.</span>
+					</p>
+					<p class="p5"><span class="s1"><b>XCLM-78: Can’t read license data (-102) error issued when running
+								any xlcm command -</b> The Network Server
+							installer that was included with each compiler was not configuring the xclm
+							command. The new, separate installer used for v2.00 of the Network Server
+							now configures the xclm command</span></p>
+				</li>
+			</ol>
+		</li>
+		<li id="5">
+			<h2>
+				<span class="s1"><b>Known
+						Issues</b></span>
+			</h2>
+			<ol>
+				<li>
+					<p class="p6"><span class="s1"><b>Version 3.00</b></span></p>
+					<p class="p5"><span class="s1"><b>XCLM-180: Links on the final page of installer do not
+								work</b></span><span class="s1"><b> - </b>There will be no response on clicking any
+							hyperlinks on the last page of
+							Linux installer.</span></p>
+				</li>
+				<li>
+					<p class="p6"><span class="s1"><b>Version 2.00</b></span></p>
+					<p class="p5"><span class="s1"><b>XCLM-56: Host ID reported by 'xclm -hostinfo' changes on a same
+								computer - </b>If a removable network device (like an Android phone or a WiFi adapter)
+							is recognized as the first MAC address found, it will display as the hostID when xclm
+							-hostinfo runs.<span class="Apple-converted-space"> </span></span></p>
+					<p class="p5"><span class="s1">If the device is
+							removed, and that
+							hostID was used to activate a license, then the license will not be valid.
+							xclm will always check each MAC address to see if it matches the hostID in
+							the license file, so any fixed MAC address (with the '-'s removed) can be
+							used as the hostID when the license is activated.</span></p>
+				</li>
+			</ol>
+		</li>
+	</ol>
+
+</body>
+
+</html>

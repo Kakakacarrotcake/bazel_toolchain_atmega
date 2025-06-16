@@ -54,7 +54,10 @@ def _linux_x86_64_toolchain_config_info_impl(ctx):
                         flag_group(
                             flags = [
                                 "-Wall",
-                                "-std=c++17"
+                                "-v",
+                                # "-stdlib=libc++",
+                                # "-stdlib=libstdc++",
+                                # "-std=c++17",
                             ]
                         )
                     ]
@@ -103,7 +106,8 @@ def _linux_x86_64_toolchain_config_info_impl(ctx):
 
     cxx_builtin_include_directories = [
         "/usr/include/",
-        "/usr/lib/llvm-14/lib/clang/"
+        "/usr/lib/llvm-14/lib/clang/",
+        "/usr/include/c++/11"
     ]
 
     return cc_common.create_cc_toolchain_config_info(

@@ -1,0 +1,782 @@
+<!-- Generated 05/12/2024 GMT -->
+
+<!--
+ Copyright © 2024, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ All rights reserved.
+ 
+ This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
+ 
+ Redistribution and use in source and binary forms, with or without modification, are
+ permitted provided that the following conditions are met:
+ 
+     1. Redistributions of source code must retain the above copyright notice, this list of
+        conditions and the following disclaimer.
+ 
+     2. Redistributions in binary form must reproduce the above copyright notice, this list
+        of conditions and the following disclaimer in the documentation and/or other
+        materials provided with the distribution. Publication is not required when
+        this file is used in an embedded application.
+ 
+     3. Microchip's name may not be used to endorse or promote products derived from this
+        software without specific prior written permission.
+ 
+ THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Microchip MPLAB XC8 C Compiler: 18LF8527 Support Information</TITLE>
+</HEAD>
+<BODY>
+<h2>18LF8527 Support Information</h2>
+<h3>XC8-CC #pragma config Usage</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;setting&gt;=&lt;named value&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Oscillator Selection bits : External RC oscillator, port function on RA6<br/>// Fail-Safe Clock Monitor Enable bit : Fail-Safe Clock Monitor disabled<br/>// Internal/External Oscillator Switchover bit : Two-Speed Start-up disabled<br/>#pragma config OSC = RCIO6, FCMEN = OFF, IESO = OFF</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;setting&gt;=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Oscillator Selection bits : External RC oscillator, port function on RA6<br/>// Fail-Safe Clock Monitor Enable bit : Fail-Safe Clock Monitor disabled<br/>// Internal/External Oscillator Switchover bit : Two-Speed Start-up disabled<br/>#pragma config OSC = 0x7, FCMEN = 0x0, IESO = 0x0</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>#pragma config &lt;register&gt;=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>// Oscillator Selection bits : External RC oscillator, port function on RA6<br/>// Fail-Safe Clock Monitor Enable bit : Fail-Safe Clock Monitor disabled<br/>// Internal/External Oscillator Switchover bit : Two-Speed Start-up disabled<br/>#pragma config CONFIG1H = 0x7</code></td>
+</tr>
+<tr bgcolor="white">
+<td>For example:<br/><code>// IDLOC @ 0x200000<br/>#pragma config IDLOC0 = 0x255</code></td>
+</tr>
+</tbody></table>
+<br/>
+<h3>PIC-AS config Usage</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;setting&gt;"="&lt;named value&gt;"</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Oscillator Selection bits : External RC oscillator, port function on RA6<br/>; Fail-Safe Clock Monitor Enable bit : Fail-Safe Clock Monitor disabled<br/>; Internal/External Oscillator Switchover bit : Two-Speed Start-up disabled<br/>config "OSC" = "RCIO6", "FCMEN" = "OFF", "IESO" = "OFF"</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;setting&gt;"=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Oscillator Selection bits : External RC oscillator, port function on RA6<br/>; Fail-Safe Clock Monitor Enable bit : Fail-Safe Clock Monitor disabled<br/>; Internal/External Oscillator Switchover bit : Two-Speed Start-up disabled<br/>config "OSC" = 0x7, "FCMEN" = 0x0, "IESO" = 0x0</code></td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="10">
+<tbody>
+<th colspan="1">
+<div align="left"><tt>config "&lt;register&gt;"=&lt;literal constant&gt;</tt></div>
+</th>
+<tr bgcolor="white">
+<td>For example:<br/><code>; Oscillator Selection bits : External RC oscillator, port function on RA6<br/>; Fail-Safe Clock Monitor Enable bit : Fail-Safe Clock Monitor disabled<br/>; Internal/External Oscillator Switchover bit : Two-Speed Start-up disabled<br/>config "CONFIG1H" = 0x7</code></td>
+</tr>
+<tr bgcolor="white">
+<td>For example:<br/><code>; IDLOC @ 0x200000<br/>config "IDLOC0" = 0x255</code></td>
+</tr>
+</tbody></table>
+<br/>
+<h3>Configuration Registers & Settings</h3>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG1H @ 0x300001</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>OSC</tt></b></td>
+<td><b>Oscillator Selection bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>INTIO7</tt></td>
+<td>Internal oscillator block, CLKO function on RA6, port function on RA7</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>INTIO67</tt></td>
+<td>Internal oscillator block, port function on RA6 and RA7</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>RCIO6</tt></td>
+<td>External RC oscillator, port function on RA6</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>HSPLL</tt></td>
+<td>HS oscillator, PLL enabled (Clock Frequency = 4 x FOSC1)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ECIO6</tt></td>
+<td>EC oscillator, port function on RA6</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>EC</tt></td>
+<td>EC oscillator, CLKO function on RA6</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>RC</tt></td>
+<td>External RC oscillator, CLKO function on RA6</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>HS</tt></td>
+<td>HS oscillator</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>XT</tt></td>
+<td>XT oscillator</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>LP</tt></td>
+<td>LP oscillator</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>FCMEN</tt></b></td>
+<td><b>Fail-Safe Clock Monitor Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Fail-Safe Clock Monitor disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Fail-Safe Clock Monitor enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>IESO</tt></b></td>
+<td><b>Internal/External Oscillator Switchover bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Two-Speed Start-up disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Two-Speed Start-up enabled</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG2L @ 0x300002</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>PWRT</tt></b></td>
+<td><b>Power-up Timer Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>PWRT disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>PWRT enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BOREN</tt></b></td>
+<td><b>Brown-out Reset Enable bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>SBORDIS</tt></td>
+<td>Brown-out Reset enabled in hardware only (SBOREN is disabled)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>NOSLP</tt></td>
+<td>Brown-out Reset enabled in hardware only and disabled in Sleep mode (SBOREN is disabled)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Brown-out Reset enabled and controlled by software (SBOREN is enabled)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Brown-out Reset disabled in hardware and software</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BORV</tt></b></td>
+<td><b>Brown-out Voltage bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>3</tt></td>
+<td>Minimum setting</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>2</tt></td>
+<td></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>1</tt></td>
+<td></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>0</tt></td>
+<td>Maximum setting</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG2H @ 0x300003</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDT</tt></b></td>
+<td><b>Watchdog Timer</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>WDT enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>WDT disabled (control is placed on the SWDTEN bit)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WDTPS</tt></b></td>
+<td><b>Watchdog Timer Postscale Select bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>32768</tt></td>
+<td>1:32768</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>16384</tt></td>
+<td>1:16384</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>8192</tt></td>
+<td>1:8192</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>4096</tt></td>
+<td>1:4096</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>2048</tt></td>
+<td>1:2048</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>1024</tt></td>
+<td>1:1024</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>512</tt></td>
+<td>1:512</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>256</tt></td>
+<td>1:256</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>128</tt></td>
+<td>1:128</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>64</tt></td>
+<td>1:64</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>32</tt></td>
+<td>1:32</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>16</tt></td>
+<td>1:16</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>8</tt></td>
+<td>1:8</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>4</tt></td>
+<td>1:4</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>2</tt></td>
+<td>1:2</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>1</tt></td>
+<td>1:1</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG3L @ 0x300004</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>MODE</tt></b></td>
+<td><b>Processor Data Memory Mode Select bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>MC</tt></td>
+<td>Microcontroller mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>MP</tt></td>
+<td>Microprocessor mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>MPB</tt></td>
+<td>Microprocessor with Boot Block mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>EM</tt></td>
+<td>Extended Microcontroller mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>ADDRBW</tt></b></td>
+<td><b>Address Bus Width Select bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ADDR20BIT</tt></td>
+<td>20-bit Address Bus</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ADDR16BIT</tt></td>
+<td>16-bit Address Bus</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ADDR12BIT</tt></td>
+<td>12-bit Address Bus</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ADDR8BIT</tt></td>
+<td>8-bit Address Bus</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>DATABW</tt></b></td>
+<td><b>Data Bus Width Select bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DATA16BIT</tt></td>
+<td>16-bit External Bus mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>DATA8BIT</tt></td>
+<td>8-bit External Bus mode</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WAIT</tt></b></td>
+<td><b>External Bus Data Wait Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Wait selections are unavailable for table reads and table writes</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Wait selections for table reads and table writes are determined by the WAIT1:WAIT0 bits</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG3H @ 0x300005</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>CCP2MX</tt></b></td>
+<td><b>CCP2 MUX bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PORTC</tt></td>
+<td>ECCP2 input/output is multiplexed with RC1</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PORTBE</tt></td>
+<td>ECCP2 is multiplexed with RB3 in Extended Microcontroller, Microprocessor or Microprocessor with Boot Block mode. Or with RE7 in Microcontroller mode.</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>ECCPMX</tt></b></td>
+<td><b>ECCP MUX bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PORTE</tt></td>
+<td>ECCP1/3 (P1B/P1C/P3B/P3C) are multiplexed onto RE6, RE5, RE4 and RE3 respectively</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>PORTH</tt></td>
+<td>ECCP1/3 (P1B/P1C/P3B/P3C) are multiplexed onto RH7, RH6, RH5 and RH4 respectively</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>LPT1OSC</tt></b></td>
+<td><b>Low-Power Timer1 Oscillator Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Timer1 configured for low-power operation</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Timer1 configured for higher power operation</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>MCLRE</tt></b></td>
+<td><b>MCLR Pin Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>MCLR pin enabled; RG5 input pin disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>RG5 input pin enabled; MCLR disabled</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG4L @ 0x300006</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>STVREN</tt></b></td>
+<td><b>Stack Full/Underflow Reset Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Stack full/underflow will cause Reset</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Stack full/underflow will not cause Reset</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>LVP</tt></b></td>
+<td><b>Single-Supply ICSP Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Single-Supply ICSP enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Single-Supply ICSP disabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>BBSIZ</tt></b></td>
+<td><b>Boot Block Size Select bits</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BB8K</tt></td>
+<td>4K words (8 Kbytes) Boot Block size</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BB4K</tt></td>
+<td>2K words (4 Kbytes) Boot Block size</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>BB2K</tt></td>
+<td>1K word (2 Kbytes) Boot Block size</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>XINST</tt></b></td>
+<td><b>Extended Instruction Set Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Instruction set extension and Indexed Addressing mode enabled</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Instruction set extension and Indexed Addressing mode disabled (Legacy mode)</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>DEBUG</tt></b></td>
+<td><b>Background Debugger Enable bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Background debugger disabled, RB6 and RB7 configured as general purpose I/O pins</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Background debugger enabled, RB6 and RB7 are dedicated to In-Circuit Debug</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG5L @ 0x300008</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>CP0</tt></b></td>
+<td><b>Code Protection bit Block 0</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Block 0 (000800, 001000 or 002000-003FFFh) not code-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Block 0 (000800, 001000 or 002000-003FFFh) code-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>CP1</tt></b></td>
+<td><b>Code Protection bit Block 1</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Block 1 (004000-007FFFh) not code-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Block 1 (004000-007FFFh) code-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>CP2</tt></b></td>
+<td><b>Code Protection bit Block 2</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Block 2 (008000-00BFFFh) not code-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Block 2 (008000-00BFFFh) code-protected</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG5H @ 0x300009</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>CPB</tt></b></td>
+<td><b>Boot Block Code Protection bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Boot Block (000000-0007FFh) not code-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Boot Block (000000-0007FFh) code-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>CPD</tt></b></td>
+<td><b>Data EEPROM Code Protection bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Data EEPROM not code-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Data EEPROM code-protected</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG6L @ 0x30000A</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WRT0</tt></b></td>
+<td><b>Write Protection bit Block 0</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Block 0 (000800, 001000 or 002000-003FFFh) not write-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Block 0 (000800, 001000 or 002000-003FFFh) write-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WRT1</tt></b></td>
+<td><b>Write Protection bit Block 1</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Block 1 (004000-007FFFh) not write-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Block 1 (004000-007FFFh) write-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WRT2</tt></b></td>
+<td><b>Write Protection bit Block 2</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Block 2 (008000-00BFFFh) not write-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Block 2 (008000-00BFFFh) write-protected</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG6H @ 0x30000B</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WRTC</tt></b></td>
+<td><b>Configuration Register Write Protection bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Configuration registers (300000-3000FFh) not write-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Configuration registers (300000-3000FFh) write-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WRTB</tt></b></td>
+<td><b>Boot Block Write Protection bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Boot Block (000000-007FFF, 000FFF or 001FFFh) not write-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Boot Block (000000-007FFF, 000FFF or 001FFFh) write-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>WRTD</tt></b></td>
+<td><b>Data EEPROM Write Protection bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Data EEPROM not write-protected</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Data EEPROM write-protected</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG7L @ 0x30000C</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>EBTR0</tt></b></td>
+<td><b>Table Read Protection bit Block 0</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Block 0 (000800, 001000 or 002000-003FFFh) not protected from table reads executed in other blocks</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Block 0 (000800, 001000 or 002000-003FFFh) protected from table reads executed in other blocks</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>EBTR1</tt></b></td>
+<td><b>Table Read Protection bit Block 1</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Block 1 (004000-007FFFh) not protected from table reads executed in other blocks</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Block 1 (004000-007FFFh) protected from table reads executed in other blocks</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><b><tt>EBTR2</tt></b></td>
+<td><b>Table Read Protection bit Block 2</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Block 2 (008000-00BFFFh) not protected from table reads executed in other blocks</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Block 2 (008000-00BFFFh) protected from table reads executed in other blocks</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: CONFIG7H @ 0x30000D</div>
+</th>
+<tr bgcolor="white">
+<td width="20%"><b><tt>EBTRB</tt></b></td>
+<td><b>Boot Block Table Read Protection bit</b></td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>OFF</tt></td>
+<td>Boot Block (000000-007FFF, 000FFF or 001FFFh) not protected from table reads executed in other blocks</td>
+</tr>
+<tr bgcolor="white">
+<td width="20%"><tt>ON</tt></td>
+<td>Boot Block (000000-007FFF, 000FFF or 001FFFh) protected from table reads executed in other blocks</td>
+</tr>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC0 @ 0x200000</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC1 @ 0x200001</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC2 @ 0x200002</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC3 @ 0x200003</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC4 @ 0x200004</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC5 @ 0x200005</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC6 @ 0x200006</div>
+</th>
+</tbody></table>
+<table bgcolor="lightgray" width="100%" cellpadding="2">
+<tbody>
+<th colspan="2">
+<div align="left">Register: IDLOC7 @ 0x200007</div>
+</th>
+</tbody></table>
+<br/>
+</BODY>
+</HTML>
