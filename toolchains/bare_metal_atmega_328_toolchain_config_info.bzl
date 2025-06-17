@@ -14,9 +14,9 @@ compile_actions = [
     ACTION_NAMES.c_compile,
     # ACTION_NAMES.cpp_compile,
     ACTION_NAMES.linkstamp_compile,
-    ACTION_NAMES.cpp_header_parsing,
-    ACTION_NAMES.cpp_module_compile,
-    ACTION_NAMES.cpp_module_codegen,
+    # ACTION_NAMES.cpp_header_parsing,
+    # ACTION_NAMES.cpp_module_compile,
+    # ACTION_NAMES.cpp_module_codegen,
     # ACTION_NAMES.lot_backend,
     ACTION_NAMES.clif_match
 ]
@@ -32,13 +32,9 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
 
     tool_paths = [
         tool_path(name = "gcc", path = "wrappers/xc8-cc-wrapper.sh"),
-        # tool_path(name = "gcc", path = "mplab_xc8_compiler/v3.00/bin/xc8-cc"),
         tool_path(name = "ar", path = "wrappers/xc8-ar-wrapper.sh"),
-        # tool_path(name = "ccov", path = "bin/xc8-ar"),
-        # tool_path(name = "lm", path = "bin/xc8-ar"),
         tool_path(name = "objcopy", path = "wrappers/xc8-objcopy-wrapper.sh"),
         tool_path(name = "objdump", path = "wrappers/xc8-objdump-wrapper.sh"),
-        # tool_path(name = "gcov", path = tool_paths_list[5]),
         tool_path(name = "nm", path = "wrappers/xc8-nm-wrapper.sh"),
         tool_path(name = "strip", path = "wrappers/xc8-strip-wrapper.sh"),
         tool_path(name = "ld", path = "wrappers/xc8-ld-wrapper.sh"),
@@ -59,7 +55,7 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
                                 "-Wall",
                                 "-mcpu=atmega328",
                                 "-v",
-                                "-I/home/nedzad/Desktop/bazel_experiments/gtest_atmega_328/mplab_xc8_compiler/v3.00/avr/avr/include/avr/"
+                                "-I/home/nedzad/Desktop/bazel_experiments/atmega_328_xc8_compiler_toolchain/mplab_xc8_compiler/v3.00/avr/avr/include/avr/"
                             ]
                         )
                     ]
@@ -107,9 +103,9 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
 
     cxx_builtin_include_directories = [
         "/usr/include/",
-        "/home/nedzad/Desktop/bazel_experiments/gtest_atmega_328/mplab_xc8_compiler/v3.00/avr/avr/include/",
-        "/home/nedzad/Desktop/bazel_experiments/gtest_atmega_328/mplab_xc8_compiler/v3.00/dfp/xc8/avr/include",
-        "/home/nedzad/Desktop/bazel_experiments/gtest_atmega_328/mplab_xc8_compiler/v3.00/avr/lib/gcc/avr/5.4.0/include",
+        "/home/nedzad/Desktop/bazel_experiments/atmega_328_xc8_compiler_toolchain/mplab_xc8_compiler/v3.00/avr/avr/include/",
+        "/home/nedzad/Desktop/bazel_experiments/atmega_328_xc8_compiler_toolchain/mplab_xc8_compiler/v3.00/dfp/xc8/avr/include",
+        "/home/nedzad/Desktop/bazel_experiments/atmega_328_xc8_compiler_toolchain/mplab_xc8_compiler/v3.00/avr/lib/gcc/avr/5.4.0/include",
     ]
 
     return cc_common.create_cc_toolchain_config_info(

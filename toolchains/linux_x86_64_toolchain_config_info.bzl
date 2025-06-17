@@ -55,9 +55,7 @@ def _linux_x86_64_toolchain_config_info_impl(ctx):
                             flags = [
                                 "-Wall",
                                 "-v",
-                                # "-stdlib=libc++",
-                                # "-stdlib=libstdc++",
-                                # "-std=c++17",
+                                "-std=c++17",
                             ]
                         )
                     ]
@@ -69,7 +67,6 @@ def _linux_x86_64_toolchain_config_info_impl(ctx):
             flag_sets = [
                 flag_set(
                     actions = compile_actions,
-                    # with_features = [""]
                     flag_groups = [
                         flag_group(
                             flags = [

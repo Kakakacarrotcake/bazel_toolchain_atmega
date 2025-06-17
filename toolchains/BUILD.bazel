@@ -97,7 +97,6 @@ filegroup(
         "@mplab_xc8_compiler//:avr-gcc",
         ":wrappers",
         "wrappers/xc8-cc-wrapper.sh",
-        # "@mplab_xc8_compiler//:compiler_data",
     ]
 )
 
