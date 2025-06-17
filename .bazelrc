@@ -1,0 +1,3 @@
+
+
+build:treat_warnings_as_errors --features=treat_warnings_as_errors

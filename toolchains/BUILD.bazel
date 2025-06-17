@@ -62,15 +62,13 @@ load("//:bare_metal_atmega_328_toolchain_config_info.bzl", "bare_metal_atmega_32
 
 bare_metal_atmega_328_toolchain_config_info(
     name = "bare_metal_atmega_328_toolchain_config_info",
-    tool_paths = [
-        ":wrappers",
-    ]
 )
 
 filegroup(
     name = "wrappers",
     srcs = glob(["wrappers/*.sh"])
 )
+
 
 filegroup(
     name = "all_files",
@@ -98,7 +96,26 @@ filegroup(
         "@mplab_xc8_compiler//:xc8_compiler",
         "@mplab_xc8_compiler//:avr-gcc",
         ":wrappers",
-        "@mplab_xc8_compiler//:compiler_data"
+        "wrappers/xc8-cc-wrapper.sh",
+        # "@mplab_xc8_compiler//:compiler_data",
+    ]
+)
+
+filegroup(
+    name = "ar_files",
+    srcs = [
+        "@mplab_xc8_compiler//:ar",
+        ":wrappers",
+    ]
+)
+
+filegroup(
+    name = "linker_files",
+    srcs = [
+        "@mplab_xc8_compiler//:ld",
+        ":wrappers",
+        "@mplab_xc8_compiler//:xc8_compiler",
+
     ]
 )
 
@@ -109,11 +126,11 @@ cc_toolchain(
     all_files = ":all_files",
     compiler_files = ":compiler_files",
     dwp_files = ":empty",
-    linker_files = "@mplab_xc8_compiler//:ld",
+    linker_files = ":linker_files",
     objcopy_files = "@mplab_xc8_compiler//:objcopy",
     strip_files = "@mplab_xc8_compiler//:strip",
     coverage_files = "@mplab_xc8_compiler//:gcov",
-    ar_files = "@mplab_xc8_compiler//:ar"
+    ar_files = ":ar_files"
 )
 
 toolchain(
@@ -129,3 +146,5 @@ toolchain(
         ":bare_metal"
     ]
 )
+
+# bazel-bin/external/code_repo+/main

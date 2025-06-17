@@ -32,7 +32,8 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
 
     tool_paths = [
         tool_path(name = "gcc", path = "wrappers/xc8-cc-wrapper.sh"),
-        tool_path(name = "ar", path = "/wrappers/xc8-ar-wrapper.sh"),
+        # tool_path(name = "gcc", path = "mplab_xc8_compiler/v3.00/bin/xc8-cc"),
+        tool_path(name = "ar", path = "wrappers/xc8-ar-wrapper.sh"),
         # tool_path(name = "ccov", path = "bin/xc8-ar"),
         # tool_path(name = "lm", path = "bin/xc8-ar"),
         tool_path(name = "objcopy", path = "wrappers/xc8-objcopy-wrapper.sh"),
@@ -55,9 +56,10 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
                     flag_groups = [
                         flag_group(
                             flags = [
-                                # "-Wall",
-                                # "-std=c++17",
+                                "-Wall",
                                 "-mcpu=atmega328",
+                                "-v",
+                                "-I/home/nedzad/Desktop/bazel_experiments/gtest_atmega_328/mplab_xc8_compiler/v3.00/avr/avr/include/avr/"
                             ]
                         )
                     ]
@@ -91,8 +93,7 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
                     flag_groups = [
                         flag_group(
                             flags = [
-                                ""
-                                # "-lstdc++",
+                                "-mcpu=atmega328",
                             ]
                         )
                     ]
@@ -103,8 +104,12 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
 
     features = default_compile_flags_features + default_linking_flags_features
 
+
     cxx_builtin_include_directories = [
         "/usr/include/",
+        "/home/nedzad/Desktop/bazel_experiments/gtest_atmega_328/mplab_xc8_compiler/v3.00/avr/avr/include/",
+        "/home/nedzad/Desktop/bazel_experiments/gtest_atmega_328/mplab_xc8_compiler/v3.00/dfp/xc8/avr/include",
+        "/home/nedzad/Desktop/bazel_experiments/gtest_atmega_328/mplab_xc8_compiler/v3.00/avr/lib/gcc/avr/5.4.0/include",
     ]
 
     return cc_common.create_cc_toolchain_config_info(
@@ -120,8 +125,6 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
 
 bare_metal_atmega_328_toolchain_config_info = rule(
     implementation = _bare_metal_atmega_328_toolchain_config_info_impl,
-    attrs = {
-        "tool_paths": attr.label_list(mandatory = True, allow_files = True),
-    },
+    attrs = {},
     provides = [CcToolchainConfigInfo]
 )
