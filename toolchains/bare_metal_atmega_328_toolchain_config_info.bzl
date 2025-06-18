@@ -10,6 +10,7 @@ load(
 load("@bazel_skylib//lib:paths.bzl", "paths")
 load("//:tools/paths_helper.bzl", "MPLAB_XC8_COMPILER_REPO_NAME")
 
+# XC8 is a c compiler so cpp actions are not used.
 compile_actions = [
     ACTION_NAMES.assemble,
     ACTION_NAMES.preprocess_assemble,
@@ -68,7 +69,10 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
                                 "-Wall",
                                 "-mcpu=atmega328",
                                 "-v",
-                            ] + list(all_include_dirs)
+                            ]
+                        ),
+                        flag_group(
+                            flags = list(all_include_dirs)
                         )
                     ]
                 )

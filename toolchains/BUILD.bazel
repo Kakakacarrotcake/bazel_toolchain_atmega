@@ -109,6 +109,7 @@ filegroup(
     srcs = [
         "@mplab_xc8_compiler//:ar",
         ":wrappers",
+        "@mplab_xc8_compiler//:compiler_data"
     ]
 )
 
@@ -118,9 +119,37 @@ filegroup(
         "@mplab_xc8_compiler//:ld",
         ":wrappers",
         "@mplab_xc8_compiler//:xc8_compiler",
-
+        "@mplab_xc8_compiler//:compiler_data"
     ]
 )
+
+filegroup(
+    name = "objcopy_files",
+    srcs = [
+        "@mplab_xc8_compiler//:objcopy",
+        ":wrappers",
+        "@mplab_xc8_compiler//:compiler_data"
+    ]
+)
+
+filegroup(
+    name = "strip_files",
+    srcs = [
+        "@mplab_xc8_compiler//:strip",
+        ":wrappers",
+        "@mplab_xc8_compiler//:compiler_data"
+    ]
+)
+
+filegroup(
+    name = "gcov_files",
+    srcs = [
+        "@mplab_xc8_compiler//:gcov",
+        ":wrappers",
+        "@mplab_xc8_compiler//:compiler_data"
+    ]
+)
+
 
 cc_toolchain(
     name = "bare_metal_atmega_328_toolchain",
@@ -130,9 +159,9 @@ cc_toolchain(
     compiler_files = ":compiler_files",
     dwp_files = ":empty",
     linker_files = ":linker_files",
-    objcopy_files = "@mplab_xc8_compiler//:objcopy",
-    strip_files = "@mplab_xc8_compiler//:strip",
-    coverage_files = "@mplab_xc8_compiler//:gcov",
+    objcopy_files = ":objcopy_files",
+    strip_files = ":strip_files",
+    coverage_files = "gcov_files",
     ar_files = ":ar_files"
 )
 
