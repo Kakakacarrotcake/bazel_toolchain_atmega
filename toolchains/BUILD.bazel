@@ -62,6 +62,9 @@ load("//:bare_metal_atmega_328_toolchain_config_info.bzl", "bare_metal_atmega_32
 
 bare_metal_atmega_328_toolchain_config_info(
     name = "bare_metal_atmega_328_toolchain_config_info",
+    include_directories = [
+        "@mplab_xc8_compiler//:builtin_include"
+    ]
 )
 
 filegroup(

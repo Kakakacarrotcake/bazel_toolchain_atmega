@@ -1,6 +1,7 @@
 module(name = "toolchains", version = "0.1")
 
 bazel_dep(name = "platforms", version = "1.0.0")
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
 
 local_path_override(module_name = "mplab_xc8_compiler", path = "../mplab_xc8_compiler")
 bazel_dep(name = "mplab_xc8_compiler", version = "0.1")

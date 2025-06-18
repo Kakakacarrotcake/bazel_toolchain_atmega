@@ -7,6 +7,7 @@ load(
     "flag_set",   
     "tool_path",
 )
+load("@bazel_skylib//lib:paths.bzl", "paths")
 load("//:tools/paths_helper.bzl", "MPLAB_XC8_COMPILER_REPO_NAME")
 
 compile_actions = [
@@ -43,6 +44,17 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
         tool_path(name = "avr-gcc", path = "wrappers/xc8-avr-gcc-wrapper.sh"),
     ]
 
+    all_include_dirs = set([])
+    # For some reason for some files like in "include/avr" both directories need to be separately included.
+    # Once ending in "/include/avr" and another as "/include".
+    for path in ctx.files.include_directories:
+        path_str = path.path
+        # rstrip was not working so I decided to go with this option.
+        number_of_chars_in_include = 9 
+        include_dir = path_str[0:path_str.find("/include/") + number_of_chars_in_include]
+        all_include_dirs.add("-I" + include_dir)
+        all_include_dirs.add("-I" + paths.dirname(path_str))
+
     default_compile_flags_features = [
         feature(
             name = "default_compile_features",
@@ -56,10 +68,7 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
                                 "-Wall",
                                 "-mcpu=atmega328",
                                 "-v",
-                                "-Iexternal/mplab_xc8_compiler+/v3.00/avr/avr/include/avr",
-                                "-Iexternal/mplab_xc8_compiler+/v3.00/avr/avr/include/",
-                                "-Iexternal/mplab_xc8_compiler+/v3.00/dfp/xc8/avr/include/",
-                            ]
+                            ] + list(all_include_dirs)
                         )
                     ]
                 )
@@ -120,6 +129,12 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
 
 bare_metal_atmega_328_toolchain_config_info = rule(
     implementation = _bare_metal_atmega_328_toolchain_config_info_impl,
-    attrs = {},
+    attrs = {
+        "include_directories": attr.label_list(
+            allow_files = True,
+            mandatory = True,
+            doc = "Directories to be included in the compilation process."
+        ),
+    },
     provides = [CcToolchainConfigInfo]
 )

@@ -28,5 +28,11 @@ filegroup(
 
 filegroup(
     name = "builtin_include",
-    srcs = glob(["v3.00/avr/avr/include/*"])
+    srcs = glob(
+        [
+        "v3.00/avr/avr/include/avr/**/*",
+        "v3.00/avr/avr/include/**/*",
+        "v3.00/dfp/xc8/avr/include/**/*",
+        ]
+    )
 )
