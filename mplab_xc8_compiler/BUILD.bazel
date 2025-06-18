@@ -22,7 +22,7 @@ filegroup(name = "avr-gcc", srcs = ["v3.00/avr/bin/avr-gcc"])
 
 filegroup(
     name = "compiler_data",
-    srcs = glob(["*"])
+    srcs = glob(["**/*"])
 )
 
 

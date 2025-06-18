@@ -97,6 +97,7 @@ filegroup(
         "@mplab_xc8_compiler//:avr-gcc",
         ":wrappers",
         "wrappers/xc8-cc-wrapper.sh",
+        "@mplab_xc8_compiler//:compiler_data"
     ]
 )
 
@@ -145,5 +146,3 @@ toolchain(
         ":bare_metal"
     ]
 )
-
-# bazel-bin/external/code_repo+/main

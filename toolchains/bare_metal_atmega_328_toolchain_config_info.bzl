@@ -7,6 +7,7 @@ load(
     "flag_set",   
     "tool_path",
 )
+load("//:tools/paths_helper.bzl", "MPLAB_XC8_COMPILER_REPO_NAME")
 
 compile_actions = [
     ACTION_NAMES.assemble,
@@ -55,7 +56,9 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
                                 "-Wall",
                                 "-mcpu=atmega328",
                                 "-v",
-                                "-I/home/nedzad/Desktop/bazel_experiments/atmega_328_xc8_compiler_toolchain/mplab_xc8_compiler/v3.00/avr/avr/include/avr/"
+                                "-Iexternal/mplab_xc8_compiler+/v3.00/avr/avr/include/avr",
+                                "-Iexternal/mplab_xc8_compiler+/v3.00/avr/avr/include/",
+                                "-Iexternal/mplab_xc8_compiler+/v3.00/dfp/xc8/avr/include/",
                             ]
                         )
                     ]
@@ -100,12 +103,8 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
 
     features = default_compile_flags_features + default_linking_flags_features
 
-
     cxx_builtin_include_directories = [
-        "/usr/include/",
-        "/home/nedzad/Desktop/bazel_experiments/atmega_328_xc8_compiler_toolchain/mplab_xc8_compiler/v3.00/avr/avr/include/",
-        "/home/nedzad/Desktop/bazel_experiments/atmega_328_xc8_compiler_toolchain/mplab_xc8_compiler/v3.00/dfp/xc8/avr/include",
-        "/home/nedzad/Desktop/bazel_experiments/atmega_328_xc8_compiler_toolchain/mplab_xc8_compiler/v3.00/avr/lib/gcc/avr/5.4.0/include",
+        "%package(@@" + MPLAB_XC8_COMPILER_REPO_NAME + "//)%/v3.00/avr/avr/include" 
     ]
 
     return cc_common.create_cc_toolchain_config_info(
