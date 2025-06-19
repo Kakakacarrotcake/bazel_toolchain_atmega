@@ -63,7 +63,7 @@ load("//:bare_metal_atmega_328_toolchain_config_info.bzl", "bare_metal_atmega_32
 bare_metal_atmega_328_toolchain_config_info(
     name = "bare_metal_atmega_328_toolchain_config_info",
     include_directories = [
-        "@xc8-compiler//:builtin_include"
+        "@avr-compiler//:builtin_include"
     ]
 )
 
@@ -76,18 +76,17 @@ filegroup(
 filegroup(
     name = "all_files",
     srcs = [
-        "@xc8-compiler//:avr-gcc",
-        "@xc8-compiler//:ar",
-        "@xc8-compiler//:ccov",
-        "@xc8-compiler//:lm",
-        "@xc8-compiler//:objcopy",
-        "@xc8-compiler//:objdump",
-        "@xc8-compiler//:gcov",
-        "@xc8-compiler//:nm",
-        "@xc8-compiler//:strip",
-        "@xc8-compiler//:ld",
-        "@xc8-compiler//:cpp",
-        "@xc8-compiler//:compiler_data"
+        "@avr-compiler//:avr-gcc",
+        "@avr-compiler//:ar",
+        "@avr-compiler//:ccov",
+        "@avr-compiler//:objcopy",
+        "@avr-compiler//:objdump",
+        "@avr-compiler//:gcov",
+        "@avr-compiler//:nm",
+        "@avr-compiler//:strip",
+        "@avr-compiler//:ld",
+        "@avr-compiler//:cpp",
+        "@avr-compiler//:compiler_data",
         ":wrappers",
     ]
 )
@@ -95,55 +94,55 @@ filegroup(
 filegroup(
     name = "compiler_files",
     srcs = [
-        "@xc8-compiler//:avr-gcc",
+        "@avr-compiler//:avr-gcc",
         ":wrappers",
-        "@xc8-compiler//:compiler_data"
+        "@avr-compiler//:compiler_data"
     ]
 )
 
 filegroup(
     name = "ar_files",
     srcs = [
-        "@xc8-compiler//:ar",
+        "@avr-compiler//:ar",
         ":wrappers",
-        "@xc8-compiler//:compiler_data"
+        "@avr-compiler//:compiler_data"
     ]
 )
 
 filegroup(
     name = "linker_files",
     srcs = [
-        "@xc8-compiler//:ld",
+        "@avr-compiler//:ld",
         ":wrappers",
-        "@xc8-compiler//:avr-gcc",
-        "@xc8-compiler//:compiler_data"
+        "@avr-compiler//:avr-gcc",
+        "@avr-compiler//:compiler_data"
     ]
 )
 
 filegroup(
     name = "objcopy_files",
     srcs = [
-        "@xc8-compiler//:objcopy",
+        "@avr-compiler//:objcopy",
         ":wrappers",
-        "@xc8-compiler//:compiler_data"
+        "@avr-compiler//:compiler_data"
     ]
 )
 
 filegroup(
     name = "strip_files",
     srcs = [
-        "@xc8-compiler//:strip",
+        "@avr-compiler//:strip",
         ":wrappers",
-        "@xc8-compiler//:compiler_data"
+        "@avr-compiler//:compiler_data"
     ]
 )
 
 filegroup(
     name = "gcov_files",
     srcs = [
-        "@xc8-compiler//:gcov",
+        "@avr-compiler//:gcov",
         ":wrappers",
-        "@xc8-compiler//:compiler_data"
+        "@avr-compiler//:compiler_data"
     ]
 )
 
