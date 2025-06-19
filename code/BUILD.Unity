@@ -1,0 +1,13 @@
+
+package(default_visibility = [""//visibility:public"])
+
+cc_library(
+    name = "unity",
+    srcs = [
+        "Unity-2.6.1/src/unity.c"
+    ],
+    hdrs = [
+        "Unity-2.6.1/src/unity.h",
+        "Unity-2.6.1/src/unity_internals.h"
+    ]
+)

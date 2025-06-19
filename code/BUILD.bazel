@@ -27,8 +27,7 @@ cc_test(
         "test/test_math.c"
     ],
     deps = [
-        # "@googletest//:gtest",
-        # "@googletest//:gtest_main",
-        ":math"
+        ":math",
+        "@unity//:unity"
     ]
 )

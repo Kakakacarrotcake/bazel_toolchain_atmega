@@ -69,6 +69,7 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
                                 "-Wall",
                                 "-mcpu=atmega328",
                                 "-v",
+                                # "-O2"
                             ]
                         ),
                         flag_group(
