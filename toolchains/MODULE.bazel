@@ -3,5 +3,10 @@ module(name = "toolchains", version = "0.1")
 bazel_dep(name = "platforms", version = "1.0.0")
 bazel_dep(name = "bazel_skylib", version = "1.7.1")
 
-local_path_override(module_name = "mplab_xc8_compiler", path = "../mplab_xc8_compiler")
-bazel_dep(name = "mplab_xc8_compiler", version = "0.1")
+http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "xc8-compiler",
+    url = "https://ww1.microchip.com/downloads/aemDocuments/documents/DEV/ProductDocuments/SoftwareTools/avr8-gnu-toolchain-3.7.0.1796-linux.any.x86_64.tar.gz",
+    build_file = "//:BUILD.xc8-compiler",
+)

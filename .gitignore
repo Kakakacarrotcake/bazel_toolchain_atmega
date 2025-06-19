@@ -2,4 +2,5 @@ bazel-bin
 bazel-atmega*
 bazel-out
 bazel-testlogs
-mplab_xc8_compiler/v3.00
+main.hex
+.compiler_data_for_testing/

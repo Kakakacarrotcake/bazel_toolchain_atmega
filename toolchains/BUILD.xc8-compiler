@@ -1,0 +1,31 @@
+package(default_visibility = ["//visibility:public"])
+
+filegroup(name = "avr-gcc", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc"])
+filegroup(name = "ar", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-ar"])
+filegroup(name = "objdump", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-objdump"])
+filegroup(name = "objcopy", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-objcopy"])
+filegroup(name = "ccov", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-gcov"])
+filegroup(name = "ld", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-ld"])
+filegroup(name = "cpp", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-cpp"])
+filegroup(name = "gcov", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-gcov"])
+filegroup(name = "strip", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-strip"])
+filegroup(name = "nm", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-nm"])
+filegroup(name = "avr-gcc", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc"])
+
+
+filegroup(
+    name = "compiler_data",
+    srcs = glob(["**/*"])
+)
+
+
+filegroup(
+    name = "builtin_include",
+    srcs = glob(
+        [
+        "avr8-gnu-toolchain-linux_x86_64/avr/include/avr/**/*",
+        "avr8-gnu-toolchain-linux_x86_64/avr/include/**/*",
+        "avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0/include/**/*",
+        ]
+    )
+)

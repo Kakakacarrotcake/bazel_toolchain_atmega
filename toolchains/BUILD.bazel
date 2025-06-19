@@ -63,7 +63,7 @@ load("//:bare_metal_atmega_328_toolchain_config_info.bzl", "bare_metal_atmega_32
 bare_metal_atmega_328_toolchain_config_info(
     name = "bare_metal_atmega_328_toolchain_config_info",
     include_directories = [
-        "@mplab_xc8_compiler//:builtin_include"
+        "@xc8-compiler//:builtin_include"
     ]
 )
 
@@ -76,77 +76,74 @@ filegroup(
 filegroup(
     name = "all_files",
     srcs = [
-        "@mplab_xc8_compiler//:xc8_compiler",
-        "@mplab_xc8_compiler//:ar",
-        "@mplab_xc8_compiler//:ccov",
-        "@mplab_xc8_compiler//:lm",
-        "@mplab_xc8_compiler//:objcopy",
-        "@mplab_xc8_compiler//:objdump",
-        "@mplab_xc8_compiler//:gcov",
-        "@mplab_xc8_compiler//:nm",
-        "@mplab_xc8_compiler//:strip",
-        "@mplab_xc8_compiler//:ld",
-        "@mplab_xc8_compiler//:cpp",
-        "@mplab_xc8_compiler//:avr-gcc",
+        "@xc8-compiler//:avr-gcc",
+        "@xc8-compiler//:ar",
+        "@xc8-compiler//:ccov",
+        "@xc8-compiler//:lm",
+        "@xc8-compiler//:objcopy",
+        "@xc8-compiler//:objdump",
+        "@xc8-compiler//:gcov",
+        "@xc8-compiler//:nm",
+        "@xc8-compiler//:strip",
+        "@xc8-compiler//:ld",
+        "@xc8-compiler//:cpp",
+        "@xc8-compiler//:compiler_data"
         ":wrappers",
-        "@mplab_xc8_compiler//:compiler_data"
     ]
 )
 
 filegroup(
     name = "compiler_files",
     srcs = [
-        "@mplab_xc8_compiler//:xc8_compiler",
-        "@mplab_xc8_compiler//:avr-gcc",
+        "@xc8-compiler//:avr-gcc",
         ":wrappers",
-        "wrappers/xc8-cc-wrapper.sh",
-        "@mplab_xc8_compiler//:compiler_data"
+        "@xc8-compiler//:compiler_data"
     ]
 )
 
 filegroup(
     name = "ar_files",
     srcs = [
-        "@mplab_xc8_compiler//:ar",
+        "@xc8-compiler//:ar",
         ":wrappers",
-        "@mplab_xc8_compiler//:compiler_data"
+        "@xc8-compiler//:compiler_data"
     ]
 )
 
 filegroup(
     name = "linker_files",
     srcs = [
-        "@mplab_xc8_compiler//:ld",
+        "@xc8-compiler//:ld",
         ":wrappers",
-        "@mplab_xc8_compiler//:xc8_compiler",
-        "@mplab_xc8_compiler//:compiler_data"
+        "@xc8-compiler//:avr-gcc",
+        "@xc8-compiler//:compiler_data"
     ]
 )
 
 filegroup(
     name = "objcopy_files",
     srcs = [
-        "@mplab_xc8_compiler//:objcopy",
+        "@xc8-compiler//:objcopy",
         ":wrappers",
-        "@mplab_xc8_compiler//:compiler_data"
+        "@xc8-compiler//:compiler_data"
     ]
 )
 
 filegroup(
     name = "strip_files",
     srcs = [
-        "@mplab_xc8_compiler//:strip",
+        "@xc8-compiler//:strip",
         ":wrappers",
-        "@mplab_xc8_compiler//:compiler_data"
+        "@xc8-compiler//:compiler_data"
     ]
 )
 
 filegroup(
     name = "gcov_files",
     srcs = [
-        "@mplab_xc8_compiler//:gcov",
+        "@xc8-compiler//:gcov",
         ":wrappers",
-        "@mplab_xc8_compiler//:compiler_data"
+        "@xc8-compiler//:compiler_data"
     ]
 )
 

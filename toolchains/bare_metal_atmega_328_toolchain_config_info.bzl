@@ -34,7 +34,8 @@ link_actions = [
 def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
 
     tool_paths = [
-        tool_path(name = "gcc", path = "wrappers/xc8-cc-wrapper.sh"),
+        # tool_path(name = "gcc", path = "wrappers/xc8-cc-wrapper.sh"),
+        # tool_path(name = "avr-gcc", path = "wrappers/xc8-avr-gcc-wrapper.sh"),
         tool_path(name = "ar", path = "wrappers/xc8-ar-wrapper.sh"),
         tool_path(name = "objcopy", path = "wrappers/xc8-objcopy-wrapper.sh"),
         tool_path(name = "objdump", path = "wrappers/xc8-objdump-wrapper.sh"),
@@ -42,7 +43,8 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
         tool_path(name = "strip", path = "wrappers/xc8-strip-wrapper.sh"),
         tool_path(name = "ld", path = "wrappers/xc8-ld-wrapper.sh"),
         tool_path(name = "cpp", path = "wrappers/xc8-cpp-wrapper.sh"),
-        tool_path(name = "avr-gcc", path = "wrappers/xc8-avr-gcc-wrapper.sh"),
+        tool_path(name = "gcc", path = "wrappers/xc8-avr-gcc-wrapper.sh"),
+
     ]
 
     all_include_dirs = set([])
@@ -67,9 +69,12 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
                         flag_group(
                             flags = [
                                 "-Wall",
-                                "-mcpu=atmega328",
                                 "-v",
-                                # "-O2"
+                                "-mmcu=atmega328p",
+                                "-nostdlib",
+                                "-nostdinc",
+                                "-nodefaultlibs",
+                                "-nostartfiles",
                             ]
                         ),
                         flag_group(
@@ -106,7 +111,8 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
                     flag_groups = [
                         flag_group(
                             flags = [
-                                "-mcpu=atmega328",
+                                # "-mcpu=atmega328",
+                                ""
                             ]
                         )
                     ]

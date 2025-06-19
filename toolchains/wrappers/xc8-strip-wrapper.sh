@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-./external/mplab_xc8_compiler+/v3.00/avr/bin/avr-strip $@
+./external/toolchains++_repo_rules+xc8-compiler/avr8-gnu-toolchain-linux_x86_64/bin/avr-strip $@
