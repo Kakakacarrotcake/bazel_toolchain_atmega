@@ -6,6 +6,8 @@ load(
     "flag_group", 
     "flag_set",   
     "tool_path",
+    "action_config",
+    "tool",
 )
 load("@bazel_skylib//lib:paths.bzl", "paths")
 load("//:tools/paths_helper.bzl", "AVR_COMPILER")
@@ -73,6 +75,7 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
                                 "-nostdinc",
                                 "-nodefaultlibs",
                                 "-nostartfiles",
+                                "-Os",
                             ]
                         ),
                         flag_group(
@@ -109,8 +112,10 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
                     flag_groups = [
                         flag_group(
                             flags = [
-                                # "-mcpu=atmega328",
-                                ""
+                                "-mmcu=atmega328p",
+                                "-mrelax",
+                                "-mshort-calls",
+                                "-fwhole-program"
                             ]
                         )
                     ]
@@ -125,6 +130,11 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
         "%package(@@" + AVR_COMPILER + "//)%/v3.00/avr/avr/include" 
     ]
 
+    objcopy_cfg = action_config(
+        action_name = "objcopy_action",
+        tools = [tool(path = "wrappers/avr-objcopy-wrapper.sh")],
+    )
+
     return cc_common.create_cc_toolchain_config_info(
         ctx = ctx,
         features = features,
@@ -132,6 +142,7 @@ def _bare_metal_atmega_328_toolchain_config_info_impl(ctx):
         # I think this value is not used but the documentation does not state it is depreceated
         compiler = "avr",
         tool_paths = tool_paths,
+        action_configs = [objcopy_cfg],
         toolchain_identifier = "bare_metal_atmega_328_toolchain"
     )
 

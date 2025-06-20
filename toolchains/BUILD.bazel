@@ -72,7 +72,6 @@ filegroup(
     srcs = glob(["wrappers/*.sh"])
 )
 
-
 filegroup(
     name = "all_files",
     srcs = [
@@ -91,12 +90,13 @@ filegroup(
     ]
 )
 
+# I believe adding specific tools is not necessary but I left it as is if it becomes necessary in the future
 filegroup(
     name = "compiler_files",
     srcs = [
         "@avr-compiler//:avr-gcc",
+        "@avr-compiler//:compiler_data",
         ":wrappers",
-        "@avr-compiler//:compiler_data"
     ]
 )
 
@@ -104,8 +104,8 @@ filegroup(
     name = "ar_files",
     srcs = [
         "@avr-compiler//:ar",
+        "@avr-compiler//:compiler_data",
         ":wrappers",
-        "@avr-compiler//:compiler_data"
     ]
 )
 
@@ -113,9 +113,8 @@ filegroup(
     name = "linker_files",
     srcs = [
         "@avr-compiler//:ld",
+        "@avr-compiler//:compiler_data",
         ":wrappers",
-        "@avr-compiler//:avr-gcc",
-        "@avr-compiler//:compiler_data"
     ]
 )
 
@@ -123,8 +122,8 @@ filegroup(
     name = "objcopy_files",
     srcs = [
         "@avr-compiler//:objcopy",
+        "@avr-compiler//:compiler_data",
         ":wrappers",
-        "@avr-compiler//:compiler_data"
     ]
 )
 
@@ -132,8 +131,8 @@ filegroup(
     name = "strip_files",
     srcs = [
         "@avr-compiler//:strip",
+        "@avr-compiler//:compiler_data",
         ":wrappers",
-        "@avr-compiler//:compiler_data"
     ]
 )
 
@@ -141,8 +140,8 @@ filegroup(
     name = "gcov_files",
     srcs = [
         "@avr-compiler//:gcov",
+        "@avr-compiler//:compiler_data",
         ":wrappers",
-        "@avr-compiler//:compiler_data"
     ]
 )
 

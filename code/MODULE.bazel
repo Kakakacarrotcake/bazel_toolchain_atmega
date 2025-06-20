@@ -8,3 +8,6 @@ http_archive(
     # sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     build_file = "//:BUILD.Unity",
 )
+
+local_path_override(module_name = "toolchains", path = "toolchains/")
+bazel_dep(name = "toolchains", version = "0.1")

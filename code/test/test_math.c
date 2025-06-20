@@ -1,5 +1,4 @@
 #include "hdr/math.h"
-#include <math.h>
 #include <assert.h>
 #include "Unity-2.6.1/src/unity.h"
 #include <avr/io.h>
@@ -7,7 +6,6 @@
 #define F_CPU 20000000UL
 
 #include <util/delay.h>
-
 
 void setUp(void) {
     DDRB |= (1 << PB5); // Set PB5 (Arduino pin 13) as output

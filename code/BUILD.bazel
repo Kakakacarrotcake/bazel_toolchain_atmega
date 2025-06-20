@@ -1,4 +1,4 @@
-
+# load("@toolchains//:tools/hex.bzl", "convert_to_hex")
 
 cc_binary(
     name = "main",
@@ -31,3 +31,8 @@ cc_test(
         "@unity//:unity"
     ]
 )
+
+# convert_to_hex(
+#     name = "main_hex",
+#     src = ":main",
+# )

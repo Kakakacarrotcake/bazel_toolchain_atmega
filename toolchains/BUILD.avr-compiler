@@ -10,7 +10,6 @@ filegroup(name = "cpp", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-cpp"])
 filegroup(name = "gcov", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-gcov"])
 filegroup(name = "strip", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-strip"])
 filegroup(name = "nm", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-nm"])
-filegroup(name = "avr-gcc", srcs = ["avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc"])
 
 
 filegroup(
@@ -26,6 +25,7 @@ filegroup(
         "avr8-gnu-toolchain-linux_x86_64/avr/include/avr/**/*",
         "avr8-gnu-toolchain-linux_x86_64/avr/include/**/*",
         "avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0/include/**/*",
+        "avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0/install-tools/include/**/*",
         ]
     )
 )
